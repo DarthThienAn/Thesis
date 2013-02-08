@@ -1,26 +1,28 @@
+import activityobject.ActivityObject;
+
 import java.util.ArrayList;
+import java.util.List;
 
 /* Object class that represents a program being built */
 public class ActivityCode {
     String packageName;
     String className;
     Imports imports;
-    ArrayList<ActivityObject> activityObjects;
+    List<ActivityObject> activityObjects;
+    List<CustomFunction> customFunctions;
 
-    private static final String DEFAULT_PACKAGE_NAME = "com.example";
-    private static final String DEFAULT_CLASS_NAME = "MyActivity";
-
-    //TODO: more constructors for every case
+    //TODO: more convenience constructors for every case
     // constructors
-    public ActivityCode(String packageName, String className, Imports imports, ArrayList<ActivityObject> activityObjects) {
-        this.packageName = ((packageName == null) || (packageName.isEmpty())) ? DEFAULT_PACKAGE_NAME : packageName;
-        this.className = ((className == null) || (className.isEmpty())) ? DEFAULT_CLASS_NAME : className;
+    public ActivityCode(String packageName, String className, Imports imports, ArrayList<ActivityObject> activityObjects, ArrayList<CustomFunction> customFunctions) {
+        this.packageName = ((packageName == null) || (packageName.isEmpty())) ? DefaultConstants.DEFAULT_PACKAGE_NAME : packageName;
+        this.className = ((className == null) || (className.isEmpty())) ? DefaultConstants.DEFAULT_MAIN_ACTIVITY : className;
         this.imports = (imports == null) ? new Imports() : imports;
         this.activityObjects = (activityObjects == null) ? new ArrayList<ActivityObject>() : activityObjects;
+        this.customFunctions = (customFunctions == null) ? new ArrayList<CustomFunction>() : customFunctions;
     }
 
     public ActivityCode() {
-        this(null, null, null, null);
+        this(null, null, null, null, null);
     }
 
     // interface methods
@@ -30,19 +32,37 @@ public class ActivityCode {
         activityObjects.add(activityObject);
     }
 
+    public void addCustomFunction(CustomFunction customFunction) {
+        if (customFunctions == null) throw new RuntimeException("CustomFunctions was null");
+        if (customFunction == null) throw new IllegalArgumentException("CustomFunction cannot be null");
+        customFunctions.add(customFunction);
+    }
+
     public void setPackageName(String packageName) {
         this.packageName = packageName;
+    }
+
+    public String getPackageName() {
+        return packageName;
     }
 
     public void setClassName(String className) {
         this.className = className;
     }
 
+    public String getClassName() {
+        return className;
+    }
+
+    public String printImports() {
+        return imports.toString();
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
 
-        sb.append("\n");
+//        sb.append("\n");
         // package name
         sb.append("package ").append(packageName).append(";\n\n");
         // imports
@@ -55,7 +75,10 @@ public class ActivityCode {
         sb.append("\t\tsuper.onCreate(savedInstanceState);\n");
         sb.append("\n");
         // get the rootView
-        sb.append("\t\tViewGroup rootView = (ViewGroup) getWindow().getDecorView().findViewById(android.R.id.content);\n\n");
+        sb.append("\t\tLinearLayout rootView = new LinearLayout(this);\n");
+        sb.append("\t\taddContentView(rootView, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.FILL_PARENT));\n\n");
+        sb.append("\t\trootView.setOrientation(LinearLayout.VERTICAL);\n");
+//        sb.append("\t\tViewGroup rootView = (ViewGroup) getWindow().getDecorView().findViewById(android.R.id.content);\n\n");
         // parse through activityObjects and add them to the code
         for (ActivityObject activityObject : activityObjects) {
             // create the object
@@ -66,6 +89,13 @@ public class ActivityCode {
 
         // closing onCreate brace
         sb.append("\t}\n");
+
+        for (CustomFunction function : customFunctions) {
+            // print the custom function
+            sb.append("\n");
+            sb.append(function.toString());
+        }
+
         // closing class brace
         sb.append("}");
 
@@ -74,5 +104,13 @@ public class ActivityCode {
 
     public String getDefaultObjectName() {
         return "object" + (activityObjects.size() + 1);
+    }
+
+    public void setImportFlag(Imports.ImportType type, boolean value) {
+        imports.setFlag(type, value);
+    }
+
+    public void addCustomImport(String customImport) {
+        imports.addCustomImport(customImport);
     }
 }
