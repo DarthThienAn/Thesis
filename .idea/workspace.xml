@@ -11,35 +11,419 @@
       </filter>
     </filters>
   </component>
-  <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="thesis" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="61634fbf-e237-46de-bcc1-c6f65b6ae12b" name="Default" comment="" />
+    <list default="true" id="61634fbf-e237-46de-bcc1-c6f65b6ae12b" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/swing/SwingApp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/src.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/activityobject/ActivityObject.java" afterPath="$PROJECT_DIR$/src/activityobject/ActivityObject.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/activityobject/ActivityObjectType.java" afterPath="$PROJECT_DIR$/src/activityobject/ActivityObjectType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AndroidManifestGenerator.java" afterPath="$PROJECT_DIR$/src/AndroidManifestGenerator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/thesis/BuildConfig.java" afterPath="$PROJECT_DIR$/gen/com/thesis/BuildConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CommandLine.java" afterPath="$PROJECT_DIR$/src/CommandLine.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/activityobject/ContactsListActivityObject.java" afterPath="$PROJECT_DIR$/src/activityobject/ContactsListActivityObject.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DefaultConstants.java" afterPath="$PROJECT_DIR$/src/DefaultConstants.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Imports.java" afterPath="$PROJECT_DIR$/src/Imports.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/thesis/Manifest.java" afterPath="$PROJECT_DIR$/gen/com/thesis/Manifest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/thesis/R.java" afterPath="$PROJECT_DIR$/gen/com/thesis/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Thesis.iml" afterPath="$PROJECT_DIR$/Thesis.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.properties" afterPath="$PROJECT_DIR$/project.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="Thesis.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="$PROJECT_DIR$/gen/com/thesis/R.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1350589660626" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/com/thesis/BuildConfig.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1350589660626" ignored="false" />
+    <file path="/TemplateActivity.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352920120384" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Sonar/android/sonar/src/me/sonar/android/activity/HomeActivity.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352920076054" ignored="false" />
+    <file path="/HomeActivity.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352920061239" ignored="false" />
+    <file path="/AndroidManifest.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360179629425" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Sonar/android/sonar/res/layout/list_notification.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352918911389" ignored="false" />
+    <file path="/list_notification.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352918830934" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Sonar/android/sonar/res/layout/list_friend.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352918418319" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Sonar/android/sonar/res/layout/list_message.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352917837514" ignored="false" />
+    <file path="/list_message.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352917756771" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Sonar/android/sonar/gen-external-apklibs/com.actionbarsherlock_actionbarsherlock_4.2.0/res/drawable/abs__list_selector_background_transition_holo_light.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352914827842" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Sonar/android/sonar/gen-external-apklibs/com.actionbarsherlock_actionbarsherlock_4.2.0/res/layout/abs__screen_action_bar.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352914827842" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Sonar/android/sonar/gen-external-apklibs/com.actionbarsherlock_actionbarsherlock_4.2.0/res/layout/abs__screen_action_bar_overlay.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352914827842" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Sonar/android/sonar/gen-external-apklibs/com.actionbarsherlock_actionbarsherlock_4.2.0/res/layout/abs__screen_simple.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352914827842" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Sonar/android/sonar/gen-external-apklibs/com.actionbarsherlock_actionbarsherlock_4.2.0/res/values-land/abs__dimens.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352914827842" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Sonar/android/sonar/gen-external-apklibs/com.actionbarsherlock_actionbarsherlock_4.2.0/res/drawable/abs__ic_clear_holo_light.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352914827842" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Sonar/android/sonar/gen-external-apklibs/com.actionbarsherlock_actionbarsherlock_4.2.0/res/layout/abs__action_menu_layout.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352914827841" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Sonar/android/sonar/gen-external-apklibs/com.actionbarsherlock_actionbarsherlock_4.2.0/res/drawable/abs__spinner_ab_holo_light.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352914827841" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Sonar/android/sonar/gen-external-apklibs/com.actionbarsherlock_actionbarsherlock_4.2.0/res/layout-xlarge/abs__screen_action_bar.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352914827841" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Sonar/android/sonar/gen-external-apklibs/com.actionbarsherlock_actionbarsherlock_4.2.0/res/drawable/abs__ic_clear.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352914827841" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Sonar/android/sonar/gen-external-apklibs/com.actionbarsherlock_actionbarsherlock_4.2.0/res/layout/abs__popup_menu_item_layout.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352914827841" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Sonar/android/sonar/gen-external-apklibs/com.actionbarsherlock_actionbarsherlock_4.2.0/res/drawable/abs__item_background_holo_dark.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352914827841" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Sonar/android/sonar/target/generated-sources/r/me/sonar/android/Manifest.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352914681715" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/android/lib/android.jar!/org/jetbrains/android/android.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360990585849" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Sonar/android/sonar/src/me/sonar/android/utility/LocationHelper.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352914571963" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Sonar/android/sonar/src/me/sonar/android/service/SonarPresenceService.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352914571963" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Sonar/android/sonar/src/me/sonar/android/SonarModule.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352914571963" ignored="false" />
+    <file path="/ManifestActivityObject.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352912669477" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Hibernate/lib/hibernate.jar!/resources/schemas/hibernate-mapping-4.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494102" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Hibernate/lib/hibernate.jar!/resources/schemas/hibernate-configuration-4.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494102" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringWebflow/lib/SpringWebflow.jar!/resources/schemas/spring-faces-2.2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494101" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringWebflow/lib/SpringWebflow.jar!/resources/schemas/spring-webflow-config-2.3.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494101" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringWebflow/lib/SpringWebflow.jar!/resources/schemas/spring-webflow-config-1.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494101" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringWebflow/lib/SpringWebflow.jar!/resources/schemas/spring-webflow-config-2.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494101" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringWebflow/lib/SpringWebflow.jar!/resources/schemas/spring-faces-2.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494101" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringWebflow/lib/SpringWebflow.jar!/resources/schemas/spring-webflow-1.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494101" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringWebflow/lib/SpringWebflow.jar!/resources/schemas/spring-webflow-2.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494101" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/jmx/spring-integration-jmx-2.1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494101" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/jmx/spring-integration-jmx-2.2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494101" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/jmx/spring-integration-jmx-2.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494101" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/sftp/spring-integration-sftp-2.1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494101" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/sftp/spring-integration-sftp-2.2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494101" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/sftp/spring-integration-sftp-2.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/xmpp/spring-integration-xmpp-2.1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/xmpp/spring-integration-xmpp-2.2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/xmpp/spring-integration-xmpp-2.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/scripting/spring-integration-scripting-2.2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/scripting/spring-integration-scripting-core-2.1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/scripting/spring-integration-scripting-core-2.2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/rabbit/spring-rabbit-1.1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/mongodb/spring-integration-mongodb-2.2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/security/spring-integration-security-2.1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/security/spring-integration-security-2.2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/security/spring-integration-security-2.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/groovy/spring-integration-groovy-2.1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/groovy/spring-integration-groovy-2.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/groovy/spring-integration-groovy-2.2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/gemfire/spring-integration-gemfire-2.2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/redis/spring-integration-redis-2.2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/gemfire/spring-integration-gemfire-2.1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/stream/spring-integration-stream-2.1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/redis/spring-integration-redis-2.1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/stream/spring-integration-stream-2.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/stream/spring-integration-stream-2.2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/http/spring-integration-http-2.1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/ws/spring-integration-ws-2.1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/http/spring-integration-http-2.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/ws/spring-integration-ws-2.2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/http/spring-integration-http-2.2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/ws/spring-integration-ws-2.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/httpinvoker/spring-integration-httpinvoker-2.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/jms/spring-integration-jms-2.1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/jms/spring-integration-jms-2.2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/jms/spring-integration-jms-2.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/xml/spring-integration-xml-2.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/xml/spring-integration-xml-2.1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/xml/spring-integration-xml-2.2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/amqp/spring-integration-amqp-2.2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/amqp/spring-integration-amqp-2.1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/jpa/spring-integration-jpa-2.2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/twitter/spring-integration-twitter-2.1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/twitter/spring-integration-twitter-2.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/twitter/spring-integration-twitter-2.2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/scripting/spring-integration-scripting-2.1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/ip/spring-integration-ip-2.2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/file/spring-integration-file-2.1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/file/spring-integration-file-2.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/file/spring-integration-file-2.2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/mail/spring-integration-mail-2.1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/mail/spring-integration-mail-2.2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/mail/spring-integration-mail-2.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/ftp/spring-integration-ftp-2.1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/ftp/spring-integration-ftp-2.2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/ftp/spring-integration-ftp-2.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/event/spring-integration-event-2.2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494100" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/event/spring-integration-event-2.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494099" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/event/spring-integration-event-2.1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494099" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/jdbc/spring-integration-jdbc-2.2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494099" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/jdbc/spring-integration-jdbc-2.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494099" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/jdbc/spring-integration-jdbc-2.1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494099" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/spring-integration-2.2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494099" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/spring-integration-2.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494099" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/spring-integration-2.1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494099" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/rabbit/spring-rabbit-1.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494099" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/feed/spring-integration-feed-2.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494099" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/feed/spring-integration-feed-2.2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494099" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/feed/spring-integration-feed-2.1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494099" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/rmi/spring-integration-rmi-2.1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494099" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/rmi/spring-integration-rmi-2.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494099" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/rmi/spring-integration-rmi-2.2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494099" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/ip/spring-integration-ip-2.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494099" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringIntegration/lib/spring-integration-support.jar!/resources/schemas/ip/spring-integration-ip-2.1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494099" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/dynamicModules/lib/spring-osgi-support.jar!/resources/schemas/spring-osgi-compendium-1.1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494097" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/dynamicModules/lib/spring-osgi-support.jar!/resources/schemas/spring-osgi-1.1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352909494097" ignored="false" />
+    <file path="/Cmd.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352402455383" ignored="false" />
     <file path="/Overridden Method Body.txt.ft" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1350571380709" ignored="false" />
     <file path="/New Method Body.txt.ft" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1350571387353" ignored="false" />
     <file path="/Implemented Method Body.txt.ft" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1350571409966" ignored="false" />
-    <file path="/strings.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1350571516080" ignored="false" />
-    <file path="/Dummy.txt" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1350579036686" ignored="false" />
+    <file path="/strings.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360353488234" ignored="false" />
     <file path="$USER_HOME$/AppData/Local/Temp/android_manifest_copy483243789452130032tmp/AndroidManifest.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1350579977954" ignored="false" />
     <file path="/NActivity.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1350580631853" ignored="false" />
     <file path="/BasicActivity.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1350581161636" ignored="false" />
-    <file path="/fragment.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1350583966066" ignored="false" />
     <file path="/ImportTypes.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1350584167404" ignored="false" />
-    <file path="/Imports.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1350584657555" ignored="false" />
-    <file path="/ActivityObject.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1350585420465" ignored="false" />
+    <file path="/ActivityObject.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360361846851" ignored="false" />
     <file path="/Button.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1350585798865" ignored="false" />
-    <file path="/ButtonActivityObject.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1350585799352" ignored="false" />
-    <file path="/TextViewActivityObject.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1350586957617" ignored="false" />
-    <file path="/CommandLine.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1350588299670" ignored="false" />
-    <file path="/AndroidManifest.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1350588317639" ignored="false" />
-    <file path="/ActivityCode.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1350588461215" ignored="false" />
+    <file path="/ButtonActivityObject.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1354772876745" ignored="false" />
+    <file path="/TextViewActivityObject.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1354773440790" ignored="false" />
     <file path="$USER_HOME$/AppData/Local/Temp/android_manifest_copy1023455917462899315tmp/AndroidManifest.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1350588573642" ignored="false" />
-    <file path="/MyActivity.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1350588773908" ignored="false" />
+    <file path="/MyActivity.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360361586149" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Sonar/android/sonar/src/me/sonar/android/activity/TemplateActivity.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352920332554" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Sonar/android/sonar/target/generated-sources/aidl/me/sonar/android/BuildConfig.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352920391666" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Sonar/android/sonar/AndroidManifest.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352920409978" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Sonar/android/sonar/pom.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352920409978" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Sonar/android/sonar/gen-external-apklibs/com.actionbarsherlock_actionbarsherlock_4.2.0/src/com/actionbarsherlock/view/MenuInflater.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352920414806" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Sonar/android/sonar/gen-external-apklibs/com.actionbarsherlock_actionbarsherlock_4.2.0/src/com/actionbarsherlock/view/MenuItem.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352920414806" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Sonar/android/sonar/gen-external-apklibs/com.actionbarsherlock_actionbarsherlock_4.2.0/src/com/actionbarsherlock/ActionBarSherlock.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352920414806" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Sonar/android/sonar/gen-external-apklibs/com.facebook.android_android-sdk_1.0.0/AndroidManifest.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352920414806" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Sonar/android/sonar/gen-external-apklibs/com.actionbarsherlock_actionbarsherlock_4.2.0/src/com/actionbarsherlock/app/SherlockActivity.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352920414806" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Sonar/android/sonar/gen-external-apklibs/com.actionbarsherlock_actionbarsherlock_4.2.0/src/com/actionbarsherlock/app/ActionBar.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352920414806" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Sonar/android/sonar/gen-external-apklibs/com.actionbarsherlock_actionbarsherlock_4.2.0/AndroidManifest.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352920414806" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Sonar/android/sonar/gen-external-apklibs/com.actionbarsherlock_actionbarsherlock_4.2.0/src/com/actionbarsherlock/view/Menu.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352920414806" ignored="false" />
+    <file path="/fragment.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360363777101" ignored="false" />
+    <file path="/DefaultConstants.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360986448524" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xslt-2_0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365186" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xhtml1-strict.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365186" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xslt-1_0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365186" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xinclude.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365186" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/relaxng.rng" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365186" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/catalog.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365186" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/XMLSchema-instance.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365186" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/XMLSchema.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365186" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xhtml1-transitional.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365186" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xhtml1-frameset.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365186" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xml.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365186" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/mojarra_ext.taglib.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365186" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/weblogicIntegration/lib/weblogicIntegration.jar!/res/v9/weblogic-ejb-jar.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365186" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/jstl.core.facelets.tld" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365186" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/weblogicIntegration/lib/weblogicIntegration.jar!/res/v9/weblogic-j2ee.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365186" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/javaee_web_services_1_2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365186" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/weblogicIntegration/lib/weblogicIntegration.jar!/res/v9/weblogic-application.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365186" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/facelets_jsf_core.taglib.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365186" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/weblogicIntegration/lib/weblogicIntegration.jar!/res/v9/weblogic-rdbms20-persistence.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365186" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/html_basic.tld" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365186" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/jsf-ui.tld" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365186" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/html5/xhtml5.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365186" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/web-facesconfig_1_1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365186" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/weblogicIntegration/lib/weblogicIntegration.jar!/res/v9/weblogic-web-app.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365186" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/jsf_core_2_0.tld" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365186" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/web-facesuicomponent_2_0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365186" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/html_basic.taglib.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365186" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/ui.taglib.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/web-facesconfig_2_0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/web-partialresponse_2_0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/jstl.fn.facelets.tld" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/composite.taglib.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/xml.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/web-facesconfig_1_2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/javaee_5.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/composite.tld" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/jsf_core.tld" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/html_basic_2_0.tld" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/jsf-ui-2_0.tld" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/web-facelettaglibrary_2_0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/javaee_web_services_client_1_2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/jstl-fn.taglib.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JSF/lib/jsf-support.jar!/resources/schemas/jstl-core.taglib.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/resources/Axis2Servlet.web.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/resources/WSServlet.web.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/resources/cxf.web.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/resources/Axis2.services.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/resources/AxisServlet.web.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/resources/Axis.services.wsdd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/wsdl/wsdl.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/wsdl/http/wsdl11_httpbinding.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/wsdl/soap/wsdl11_soapbinding.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/wsdl/mime/wsdl11_mimebinding.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringBatch/lib/SpringBatch.jar!/schemas/spring-batch-2.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/SpringBatch/lib/SpringBatch.jar!/schemas/spring-batch-2.1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/wsdl11_soapbinding.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/soap-envelope.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/cxf-jaxws.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/wsdl11.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/j2ee_jaxrpc_mapping_1_1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/sun-jaxws.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/wadl20061109.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/jersey.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/xjc.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/business-process.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/wsdl11_httpbinding.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/wsdl20.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/wsdd_provider_java.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/ws-addr2006.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/wsdl11soap12.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/bindingschema_2_0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/wsdl_customizationschema_2_0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/jboss-jaxws-config_2_0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/bindingfile.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/wsdl12.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/soap-encoding.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/ws-eventing.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/XMLSchema.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/ws-policy.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/jboss-ws-security_1_0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/jbossws-tool_1_0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/jboss-jaxrpc-config_2_0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/wsdl11_mimebinding.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/ws-addr.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/soap-encoding1_2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/cxf-soap.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/wadl20090202.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/resources/REST_SWDP.web.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/resources/cxf-servlet.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/resources/sun-jaxws.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/resources/JAXRPCServlet.web.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/resources/jaxrpc-ri-runtime.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/WebServices/lib/WebServices.jar!/schemas/resources/Axis2.conf_axis2.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/AIR_Descriptor.1.1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/AIR_Descriptor.2.5.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/AIR_Descriptor.2.7.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/AIR_Descriptor.1.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/AIR_Descriptor.2.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/AIR_Descriptor.1.5.1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/AIR_Descriptor.2.6.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/AIR_Descriptor.1.5.3.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/AIR_Descriptor.3.2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/FlexCompilerSchema.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/AIR_Descriptor.3.3.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/AIR_Descriptor.3.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/AIR_Descriptor.3.1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/AIR_Descriptor.1.5.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/AIR_Descriptor.3.4.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-cache-3.1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-tool-3.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-beans-3.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-aop-3.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-tx-3.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-jee-2.5.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-context-3.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-util-3.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-lang-2.5.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-jms-2.5.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-jee-3.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-tx-2.5.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-beans-2.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-tool-2.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-aop-2.5.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-tool-3.1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-lang-2.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-util-2.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-beans-2.5.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-beans-3.1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-tool-2.5.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-mvc-3.1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-jms-3.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-tx-2.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-util-2.5.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-context-2.5.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-mvc-3.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-aop-2.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-lang-3.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Spring/lib/spring.jar!/resources/schemas/spring-jee-2.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/xpath/lib/xpath.jar!/org/intellij/lang/xpath/xslt/resources/documentation.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/xpath/lib/xpath.jar!/org/intellij/lang/xpath/xslt/resources/xslt-schema.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/xpath/lib/xpath.jar!/org/intellij/lang/xpath/xslt/resources/documentation.xsl" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/flex/lib/FlexSupport.jar!/schemas/AIR_Descriptor.1.5.2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365187" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/web-app_2_4.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365418" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/javaee_web_services_1_3.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365418" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/jsp_2_2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365418" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/javaee_6.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365418" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/j2ee_1_4.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365418" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/orm_2_0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365418" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/application_5.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365418" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/web-app_2_5.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365418" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/j2ee_web_services_client_1_1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365418" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/javaee_web_services_1_2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365418" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/javaee_web_services_client_1_3.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365418" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/application_1_4.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365418" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/ejb-jar_3_0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365418" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/spring.tld" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365418" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/ejb-jar_2_1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365418" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/javaee_5.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365418" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/jsp_2_1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365418" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/application-client_6.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365418" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/application-client_1_4.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365418" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/web-app_3_0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365418" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/persistence_2_0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365418" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/persistence.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365418" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/web-facesconfig_1_2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365418" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/jspxml.tld" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365418" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/orm_1_0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365418" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven.jar!/schemas/maven-4.0.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365418" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/jspxml.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365418" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven.jar!/schemas/settings-1.0.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365419" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/application_6.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365419" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven.jar!/schemas/profiles-1.0.0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365419" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/ejb-jar_3_1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989366167" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/web-jsptaglibrary_2_0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989366167" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/jsp_2_0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989366167" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JBoss/lib/jbossIntegration.jar!/descriptors/jboss-deployment-structure-1_1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989366167" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/javaee_web_services_client_1_2.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989366167" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/application-client_5.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989366167" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/web-fragment_3_0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989366167" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/web-jsptaglibrary_2_1.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989366167" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/web-common_3_0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989366167" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/connector_1_6.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989366167" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JBoss/lib/jbossIntegration.jar!/descriptors/jboss-deployment-structure-1_0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989366167" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/connector_1_5.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989366167" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/spring-form.tld" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989366167" ignored="false" />
+    <file path="/Dummy.txt" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1362031759168" ignored="false" />
+    <file path="$PROJECT_DIR$/../../Sonar/android/sonar/target/generated-sources/r/me/sonar/android/R.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352993844163" ignored="false" />
+    <file path="/AndroidManifestGenerator.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360364673966" ignored="false" />
+    <file path="/Imports.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360362937404" ignored="false" />
+    <file path="/ActivityCode.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1354665705022" ignored="false" />
+    <file path="/CommandLine.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1361261785374" ignored="false" />
+    <file path="/CustomFunction.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1354603984660" ignored="false" />
+    <file path="/Parameter.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1354601438566" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/TipCalc/res/values/strings.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1354606255049" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/TipCalc/AndroidManifest.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1354606734895" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/TipCalc/res/layout/main.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1354606944024" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/TipCalc/build.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1354606255555" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/TipCalc/src/com/tipcalc/TipCalc/MyActivity.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1354669334398" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/TipCalc/.idea/compiler.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1354606333633" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/TipCalc/.idea/workspace.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1354611557404" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/TipCalc/.idea/misc.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1354606333633" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/TipCalc/gen/com/tipcalc/TipCalc/BuildConfig.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1354743138402" ignored="false" />
+    <file path="/EditTextActivityObject.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1354773429086" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/TipCalc/gen/com/tipcalc/TipCalc/Manifest.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1354743138402" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/TipCalc/gen/com/tipcalc/TipCalc/R.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1354743138402" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/Camera/res/values/strings.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1355407143921" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/Camera/AndroidManifest.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1355408227643" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/Camera/res/layout/main.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1355407144471" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/Camera/src/com/thesis/Camera/MyActivity.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1355408320089" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/Camera/build.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1355407144471" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/Accel/res/values/strings.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1355422211555" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/Accel/res/layout/main.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1355422211555" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/Accel/AndroidManifest.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1355422215997" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/Accel/build.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1355422211555" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/Accel/src/com/thesis/Accel/MyActivity.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1355422884483" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/Contacts/res/values/strings.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1355424976407" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/Contacts/res/layout/main.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1355424976407" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/Contacts/AndroidManifest.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1359926963487" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/Contacts/src/com/thesis/Contacts/MyActivity.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360361586884" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/Contacts/build.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1355424976407" ignored="false" />
+    <file path="/PermissionManifestObject.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360698013831" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/TipCalc/src/com/thesis/TipCalc/MyActivity.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360176126022" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/GPS/res/values/strings.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360176282712" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/GPS/AndroidManifest.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360179630776" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/GPS/res/layout/main.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360176283039" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/GPS/src/com/thesis/GPS/MyActivity.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360178548200" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/GPS/build.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360176283039" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/GPS/gen/com/thesis/GPS/BuildConfig.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360179637428" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/SometimesRedSometimesBlue/res/values/strings.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360353488234" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/SometimesRedSometimesBlue/AndroidManifest.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360353185652" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/SometimesRedSometimesBlue/res/layout/main.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360353186174" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/SometimesRedSometimesBlue/src/lucas/mayer/SometimesRedSometimesBlue/MyActivity.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360353445990" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/SometimesRedSometimesBlue/build.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360353186174" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/SometimesRedSometimesBlue/res/layout/red.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360353258537" ignored="false" />
+    <file path="/red.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360353257243" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/SometimesRedSometimesBlue/res/layout/blue.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360353292339" ignored="false" />
+    <file path="/blue.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360353292339" ignored="false" />
+    <file path="/ContactsListActivityObject.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360362534790" ignored="false" />
+    <file path="/ActivityObjectType.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360361369889" ignored="false" />
+    <file path="C:/easyandroid/helloworld/project.properties" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360363499789" ignored="false" />
+    <file path="C:/easyandroid/helloworld/src/com/example/MyActivity.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360365300306" ignored="false" />
+    <file path="C:/easyandroid/helloworld/gen/com/example/R.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360364302270" ignored="false" />
+    <file path="C:/easyandroid/helloworld/AndroidManifest.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360365300306" ignored="false" />
+    <file path="C:/easyandroid/helloworld/gen/com/example/Manifest.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360365083381" ignored="false" />
+    <file path="C:/easyandroid/helloworld/gen/com/example/BuildConfig.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360365083381" ignored="false" />
+    <file path="C:/easyandroid/helloworld/bin/AndroidManifest.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360364461342" ignored="false" />
+    <file path="/makestuff.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360554506792" ignored="false" />
+    <file path="/SwingApp.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1362034285267" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +431,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="Commander">
+    <leftPanel />
+    <rightPanel />
+    <splitter proportion="0.5" />
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -54,7 +443,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <breakpoint_rules default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -63,6 +452,7 @@
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
         <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
         <option name="COUNT_FILTER_ENABLED" value="false" />
         <option name="COUNT_FILTER" value="0" />
         <option name="CONDITION_ENABLED" value="false" />
@@ -78,6 +468,7 @@
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
         <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
         <option name="COUNT_FILTER_ENABLED" value="false" />
         <option name="COUNT_FILTER" value="0" />
         <option name="CONDITION_ENABLED" value="false" />
@@ -87,7 +478,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -98,19 +488,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TextViewActivityObject.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TextViewActivityObject.java">
+      <file leaf-file-name="ActivityCode.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ActivityCode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="0" selection-start="1315" selection-end="1315" vertical-scroll-proportion="0.0">
+            <state line="23" column="27" selection-start="1153" selection-end="1153" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ButtonActivityObject.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ButtonActivityObject.java">
+      <file leaf-file-name="PermissionManifestObject.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PermissionManifestObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="39" selection-start="229" selection-end="229" vertical-scroll-proportion="0.0">
+            <state line="298" column="0" selection-start="10725" selection-end="10725" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -119,34 +509,38 @@
       <file leaf-file-name="CommandLine.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CommandLine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="9" selection-start="1928" selection-end="1928" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="52" column="0" selection-start="1909" selection-end="1909" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#buildProject#0;class#CommandLine#0" expanded="false" />
+                <element signature="method#addFile#0;class#CommandLine#0" expanded="false" />
+                <element signature="method#writeManifest#0;class#CommandLine#0" expanded="false" />
+                <element signature="method#installApplication#0;class#CommandLine#0" expanded="false" />
+                <element signature="method#newObject#0;class#CommandLine#0" expanded="false" />
+                <element signature="method#print#0;class#CommandLine#0" expanded="false" />
+                <element signature="method#openProject#0;class#CommandLine#0" expanded="false" />
+                <element signature="method#saveProject#0;class#CommandLine#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thesis/MyActivity.java">
+      <file leaf-file-name="SwingApp.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/swing/SwingApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="0" selection-start="886" selection-end="886" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="2" column="20" selection-start="36" selection-end="36" vertical-scroll-proportion="0.09169055">
+              <folding>
+                <element signature="e#856#964#0" expanded="true" />
+                <element signature="e#953#954#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActivityCode.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ActivityCode.java">
+      <file leaf-file-name="DefaultConstants.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DefaultConstants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="24" selection-start="2765" selection-end="2765" vertical-scroll-proportion="0.46678966">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ActivityObject.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ActivityObject.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="27" selection-start="514" selection-end="514" vertical-scroll-proportion="0.0">
+            <state line="13" column="35" selection-start="737" selection-end="2258" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -155,34 +549,43 @@
       <file leaf-file-name="Imports.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Imports.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="24" selection-start="1464" selection-end="1464" vertical-scroll-proportion="0.0">
+            <state line="30" column="197" selection-start="1550" selection-end="1550" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActivityObjectType.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ActivityObjectType.java">
+      <file leaf-file-name="Parameter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Parameter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="12" selection-start="71" selection-end="71" vertical-scroll-proportion="0.0">
+            <state line="0" column="13" selection-start="13" selection-end="13" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/thesis/NActivity.java">
+      <file leaf-file-name="EditTextActivityObject.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/activityobject/EditTextActivityObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="21" selection-start="718" selection-end="724" vertical-scroll-proportion="0.0">
+            <state line="14" column="0" selection-start="0" selection-end="1148" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <file leaf-file-name="ContactsListActivityObject.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/activityobject/ContactsListActivityObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="42" selection-start="340" selection-end="340" vertical-scroll-proportion="0.0">
+            <state line="37" column="36" selection-start="1880" selection-end="1880" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifestGenerator.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AndroidManifestGenerator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="26" selection-start="701" selection-end="701" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -200,34 +603,43 @@
     <option name="KEY_ALIAS" value="Thesis" />
     <option name="REMEMBER_PASSWORDS" value="true" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/thesis/ButtonExample.java" />
-        <option value="$PROJECT_DIR$/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/src/com/thesis/NActivity.java" />
-        <option value="$PROJECT_DIR$/src/com/thesis/BasicActivity.java" />
-        <option value="$PROJECT_DIR$/src/ImportTypes.java" />
-        <option value="$PROJECT_DIR$/src/ActivityObjectTypes.java" />
-        <option value="$PROJECT_DIR$/src/Imports.java" />
-        <option value="$PROJECT_DIR$/src/Button.java" />
-        <option value="$PROJECT_DIR$/src/ActivityObject.java" />
-        <option value="$PROJECT_DIR$/src/CommandLine.java" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/src/TextViewActivityObject.java" />
-        <option value="$PROJECT_DIR$/src/ButtonActivityObject.java" />
-        <option value="$PROJECT_DIR$/src/com/thesis/MyActivity.java" />
+        <option value="$PROJECT_DIR$/src/EditTextActivityObject.java" />
+        <option value="$PROJECT_DIR$/src/ActivityManifestObject.java" />
         <option value="$PROJECT_DIR$/src/ActivityCode.java" />
+        <option value="$PROJECT_DIR$/src/activityobject/ButtonActivityObject.java" />
+        <option value="$PROJECT_DIR$/src/activityobject/EditTextActivityObject.java" />
+        <option value="$PROJECT_DIR$/src/activityobject/TextViewActivityObject.java" />
+        <option value="$PROJECT_DIR$/src/activityobject/ActivityObjectType.java" />
+        <option value="$PROJECT_DIR$/src/activityobject/ActivityObject.java" />
+        <option value="$PROJECT_DIR$/src/Imports.java" />
+        <option value="$PROJECT_DIR$/src/activityobject/ContactsListActivityObject.java" />
+        <option value="$PROJECT_DIR$/src/AndroidManifestGenerator.java" />
+        <option value="$PROJECT_DIR$/src/makestuff.java" />
+        <option value="$PROJECT_DIR$/src/PermissionManifestObject.java" />
+        <option value="$PROJECT_DIR$/src/DefaultConstants.java" />
+        <option value="$PROJECT_DIR$/src/CommandLine.java" />
+        <option value="$PROJECT_DIR$/src/swing/SwingApp.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1378" />
+    <option name="width" value="1382" />
     <option name="height" value="744" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -242,6 +654,11 @@
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
+  <component name="ProjectStructureProblems">
+    <ignored-problems>
+      <problem id="unused-library(library:project:src)" />
+    </ignored-problems>
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
@@ -255,26 +672,18 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Thesis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Thesis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="Thesis" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -298,6 +707,42 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Thesis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Thesis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stub" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Thesis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Thesis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="swing" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -319,36 +764,87 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Thesis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Thesis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="activityobject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Modules" />
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="OverrideImplement.combined" value="false" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="ExportedApkPath" value="C:\Users\Mark\Downloads\~school\Thesis\Thesis.apk" />
-    <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="MemberChooser.sorted" value="false" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="recentsLimit" value="5" />
-    <property name="ExportedModule" value="Thesis" />
-    <property name="last_opened_file_path" value="$USER_HOME$/.android/debug.keystore" />
+    <property name="last_opened_file_path" value="C:/Program Files/Java/jdk1.7.0_03/src.zip!/" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="AndroidRunProguardForReleaseBuild" value="false" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="restartRequiresConfirmation" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
+    <property name="dynamic.classpath" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
-    <property name="dynamic.classpath" value="false" />
   </component>
-  <component name="RunManager" selected="Application.CommandLine">
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.SwingApp">
+    <configuration default="false" name="makestuff" type="Application" factoryName="Application" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="makestuff" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Thesis" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="SwingApp" type="Application" factoryName="Application" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="swing.SwingApp" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Thesis" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
@@ -380,6 +876,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -406,19 +915,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -506,16 +1002,29 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <list size="2">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Android Application.USB" />
       <item index="1" class="java.lang.String" itemvalue="Application.CommandLine" />
+      <item index="2" class="java.lang.String" itemvalue="Application.makestuff" />
+      <item index="3" class="java.lang.String" itemvalue="Application.SwingApp" />
     </list>
+    <recent_temporary>
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Application.SwingApp" />
+        <item index="1" class="java.lang.String" itemvalue="Application.makestuff" />
+      </list>
+    </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
       <Port>5050</Port>
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SliceManager">
+    <option name="analysisUIOptions">
+      <AnalysisUIOptions />
+    </option>
+  </component>
   <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false">
     <option name="USER" value="" />
     <option name="PASSWORD" value="" />
@@ -538,39 +1047,46 @@
     <task active="true" id="Default" summary="Default task">
       <changelist id="61634fbf-e237-46de-bcc1-c6f65b6ae12b" name="Default" comment="" />
       <created>1349980407341</created>
+      <timeSpent>29075000</timeSpent>
       <updated>1349980407341</updated>
     </task>
+    <task id="LOCAL-00001" summary="update">
+      <created>1360361230270</created>
+      <updated>1360361230270</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.4969697" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.6717949" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.49772727" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33047944" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3253833" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.4939394" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24924242" sideWeight="0.21709402" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24962063" sideWeight="0.6712329" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2621212" sideWeight="0.6746167" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3168654" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="288" y="-8" width="1074" height="714" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32820514" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32876712" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -608,9 +1124,11 @@
     <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
+    <option name="LIMIT_HISTORY" value="true" />
+    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -623,126 +1141,140 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="update" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+    <entry file="file://$PROJECT_DIR$/src/activityobject/TextViewActivityObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="42" selection-start="340" selection-end="340" vertical-scroll-proportion="0.0">
+        <state line="4" column="11" selection-start="98" selection-end="98" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ButtonActivityObject.java">
+    <entry file="file://$PROJECT_DIR$/src/ActivityManifestObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="24" selection-end="75" vertical-scroll-proportion="0.0">
+        <state line="0" column="23" selection-start="23" selection-end="23" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thesis/BasicActivity.java">
+    <entry file="file://$PROJECT_DIR$/gen/com/thesis/BuildConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="19" selection-start="1004" selection-end="1004" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+    <entry file="file://$PROJECT_DIR$/src/activityobject/ActivityObjectType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="37" selection-start="88" selection-end="88" vertical-scroll-proportion="0.0">
+        <state line="6" column="16" selection-start="114" selection-end="114" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/android-sdks/platforms/android-16/android.jar!/android/R.class">
+    <entry file="file://$PROJECT_DIR$/src/activityobject/ButtonActivityObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="605" column="32" selection-start="42200" selection-end="42200" vertical-scroll-proportion="0.75136614" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thesis/NActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="21" selection-start="718" selection-end="724" vertical-scroll-proportion="0.0">
+        <state line="9" column="29" selection-start="504" selection-end="533" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ActivityObjectType.java">
+    <entry file="file://$PROJECT_DIR$/src/activityobject/ActivityObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="12" selection-start="71" selection-end="71" vertical-scroll-proportion="0.0">
+        <state line="55" column="0" selection-start="1318" selection-end="2302" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/activityobject/EditTextActivityObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="0" selection-end="1148" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/activityobject/ContactsListActivityObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="36" selection-start="1880" selection-end="1880" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Imports.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="24" selection-start="1464" selection-end="1464" vertical-scroll-proportion="0.0">
+        <state line="30" column="197" selection-start="1550" selection-end="1550" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thesis/BasicActivity.java">
+    <entry file="file://$PROJECT_DIR$/src/Parameter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="141" column="0" selection-start="5022" selection-end="5022" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="42" selection-start="340" selection-end="340" vertical-scroll-proportion="0.0">
+        <state line="0" column="13" selection-start="13" selection-end="13" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TextViewActivityObject.java">
+    <entry file="file://$PROJECT_DIR$/src/PermissionManifestObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="1315" selection-end="1315" vertical-scroll-proportion="0.0">
+        <state line="298" column="0" selection-start="10725" selection-end="10725" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CommandLine.java">
+    <entry file="file://$PROJECT_DIR$/src/AndroidManifestGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="9" selection-start="1928" selection-end="1928" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thesis/MyActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="886" selection-end="886" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ActivityObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="27" selection-start="514" selection-end="514" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ButtonActivityObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="39" selection-start="229" selection-end="229" vertical-scroll-proportion="0.0">
+        <state line="19" column="26" selection-start="701" selection-end="701" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ActivityCode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="24" selection-start="2765" selection-end="2765" vertical-scroll-proportion="0.46678966">
+        <state line="23" column="27" selection-start="1153" selection-end="1153" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DefaultConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="35" selection-start="737" selection-end="2258" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CommandLine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="0" selection-start="1909" selection-end="1909" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#buildProject#0;class#CommandLine#0" expanded="false" />
+            <element signature="method#addFile#0;class#CommandLine#0" expanded="false" />
+            <element signature="method#writeManifest#0;class#CommandLine#0" expanded="false" />
+            <element signature="method#installApplication#0;class#CommandLine#0" expanded="false" />
+            <element signature="method#newObject#0;class#CommandLine#0" expanded="false" />
+            <element signature="method#print#0;class#CommandLine#0" expanded="false" />
+            <element signature="method#openProject#0;class#CommandLine#0" expanded="false" />
+            <element signature="method#saveProject#0;class#CommandLine#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/swing/SwingApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="20" selection-start="36" selection-end="36" vertical-scroll-proportion="0.09169055">
+          <folding>
+            <element signature="e#856#964#0" expanded="true" />
+            <element signature="e#953#954#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -786,7 +1318,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>Android 4.1 Google APIs</last-edited>
+          <last-edited>1.7</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -798,7 +1330,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Android|Thesis</last-edited>
+          <last-edited>Thesis</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -822,6 +1354,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>src</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

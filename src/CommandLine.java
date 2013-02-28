@@ -1,4 +1,5 @@
 import activityobject.ButtonActivityObject;
+import activityobject.ContactsListActivityObject;
 import activityobject.EditTextActivityObject;
 import activityobject.TextViewActivityObject;
 
@@ -6,23 +7,62 @@ import java.io.*;
 
 public class CommandLine {
 
-    public static final int CMD_OFFSET = 0;
-    public static ActivityCode activityCode;
-    public static AndroidManifestGenerator androidManifestGenerator;
-    public static String path;
-    public static String projectName;
-    public static String mainActivity;
-    public static String packageName;
-    public static PermissionManifestObject permissionManifestObject;
+    private static final int CMD_OFFSET = 0;
+    private static ActivityCode activityCode;
+    private static AndroidManifestGenerator androidManifestGenerator;
+    private static String path;
+    private static String projectName;
+    private static String mainActivity;
+    private static String packageName;
+    private static PermissionManifestObject permissionManifestObject;
+    private static StringBuilder commandList;
 
-    public static void parseLine(String[] args) throws ArrayIndexOutOfBoundsException {
+    private static boolean recoveryMode;
+    private static BufferedReader recoveryReader;
+    private static String actionBodyTemp;
+
+    public static void parseCmd(String input) {
+        // split input by spaces
+        String[] args = input.split(" ");
+
         if (args.length < (CMD_OFFSET + 1)) {
             print("Usage: <command> [<args>]");
-            return;
         }
+        // try parsing it as an global command
+        else if (!parseGlobalCmd(args)) {
+            // try parsing it as a application-specific command; if so, save it to log
+            if (parseLocalCmd(args)) {
+                commandList.append(input);
+                commandList.append('\n');
+                if (actionBodyTemp != null) {
+                    commandList.append(actionBodyTemp);
+                    actionBodyTemp = null;
+                }
+            }
+            // command not recognized
+            else {
+                print(String.format(DefaultConstants.ERROR_MSG, args[CMD_OFFSET]));
+            }
+        }
+    }
+
+    public static boolean parseGlobalCmd(String[] args) throws ArrayIndexOutOfBoundsException {
         // prints out the current file contents
         if (args[CMD_OFFSET].equals("print")) {
             print(activityCode.toString());
+        }
+        // opens a saved project
+        else if (args[CMD_OFFSET].equals("open")) {
+            openProject(args[CMD_OFFSET + 1]);
+            print("Project opened");
+        }
+        // saves the current project
+        else if (args[CMD_OFFSET].equals("save")) {
+            if (args.length < 2)
+                saveProject(null);
+            else
+                saveProject(args[CMD_OFFSET + 1]);
+            print("Project state saved");
         }
         // prints out the current import string
         else if (args[CMD_OFFSET].equals("debugimports")) {
@@ -31,6 +71,7 @@ public class CommandLine {
         // prints out the project's manifest *not exact
         else if (args[CMD_OFFSET].equals("debugmanifest")) {
 //            writeManifest();
+            androidManifestGenerator.setPermissionManifestObject(permissionManifestObject);
             print(androidManifestGenerator.toString());
         }
         // creates a new android project with current name, activity, package
@@ -47,8 +88,10 @@ public class CommandLine {
         // builds the project
         else if (args[CMD_OFFSET].equals("build")) {
             androidManifestGenerator.addActivity(activityCode.getClassName());
+            androidManifestGenerator.setPermissionManifestObject(permissionManifestObject);
             writeManifest();
             print("Manifest updating. Building...");
+            addFile();
             buildProject();
             print("Project built");
         }
@@ -57,8 +100,35 @@ public class CommandLine {
             installApplication();
             print("Application installed");
         }
+        // reset the activitycode
+        else if (args[CMD_OFFSET].equals("reset")) {
+            resetProject();
+        }
+        else if (args[CMD_OFFSET].equals("help")) {
+            if (args[CMD_OFFSET + 1].equals("path"))
+                print("Usage: path <path name>");
+            else if (args[CMD_OFFSET + 1].equals("name"))
+                print("Usage: name <project name>");
+            else if (args[CMD_OFFSET + 1].equals("main"))
+                print("Usage: main <class name>");
+            else if (args[CMD_OFFSET + 1].equals("package"))
+                print("Usage: package <package name>");
+            else if (args[CMD_OFFSET + 1].equals("button"))
+                print("Usage: button [-text this is a button] [-name myButton] [-action 0,1] <package name>");
+        }
+        // shows available commands
+        else if (args[CMD_OFFSET].equals("--help")) {
+            print(DefaultConstants.HELP_MSG);
+        }
+        else {
+            return false;
+        }
+        return true;
+    }
+
+    public static boolean parseLocalCmd(String[] args) throws ArrayIndexOutOfBoundsException {
         // sets the project path to the first argument
-        else if (args[CMD_OFFSET].equals("path")) {
+        if (args[CMD_OFFSET].equals("path")) {
             path = args[CMD_OFFSET + 1];
             print("Home directory updated to " + path);
         }
@@ -114,6 +184,7 @@ public class CommandLine {
             // set default object name in case it's not specified
             String name = activityCode.getDefaultObjectName();
             // initialize these to null, ButtonActivityObject should take care of null inputs
+            StringBuilder textSb = new StringBuilder();
             String text = null;
             String height = null;
             String width = null;
@@ -122,10 +193,22 @@ public class CommandLine {
 
             for (int i = (CMD_OFFSET + 1); i < args.length; i++) {
                 if (args[i].equals("-name")) {
-                    name = args[i+1];
+                    name = args[++i];
                 }
                 else if (args[i].equals("-text")) {
-                    text = args[i+1];
+                    if (args[i+1].charAt(0) == ('\"')) {
+                        textSb.append(args[i+1].substring(1)).append(' ');
+                        i++;
+
+                        while (!args[i+1].endsWith("\"")) {
+                            textSb.append(args[i+1]).append(' ');
+                            i++;
+                        }
+
+                        textSb.append(args[i+1].substring(0, args[i+1].length() - 1));
+                    }
+                    else
+                        textSb.append(args[i+1]);
                 }
                 else if (args[i].equals("-height"))
                     height = args[i+1];
@@ -137,27 +220,9 @@ public class CommandLine {
                 }
             }
 
-            if (action) {
-                print("Enter body of action. Type QUIT to end");
-                BufferedReader inputReader = new BufferedReader(new InputStreamReader(System.in));
-                try {
-                    String line = inputReader.readLine();
-                    StringBuilder bodySb = new StringBuilder();
-                    while (line != null && !line.equals("QUIT")) {
-                        if (line.equals(""))
-                            bodySb.append("\n");
-                        else
-                            bodySb.append(line);
-                        line = inputReader.readLine();
-                    }
+            if (action) actionBody = getActionBody();
 
-                    actionBody = bodySb.toString();
-                } catch (IOException e) {
-                    print("Error with input");
-                }
-            }
-
-            activityCode.addActivityObject(new ButtonActivityObject(name, text, height, width, actionBody));
+            activityCode.addActivityObject(new ButtonActivityObject(name, textSb.toString(), height, width, actionBody));
             activityCode.setImportFlag(Imports.ImportType.BUTTON, true);
             print("button \"" + name + "\" added: ");
         }
@@ -189,25 +254,7 @@ public class CommandLine {
                 }
             }
 
-            if (action) {
-                print("Enter body of action. Type QUIT to end");
-                BufferedReader inputReader = new BufferedReader(new InputStreamReader(System.in));
-                try {
-                    String line = inputReader.readLine();
-                    StringBuilder bodySb = new StringBuilder();
-                    while (line != null && !line.equals("QUIT")) {
-                        if (line.equals(""))
-                            bodySb.append("\n");
-                        else
-                            bodySb.append(line);
-                        line = inputReader.readLine();
-                    }
-
-                    actionBody = bodySb.toString();
-                } catch (IOException e) {
-                    print("Error with input");
-                }
-            }
+            if (action) actionBody = getActionBody();
 
             activityCode.addActivityObject(new TextViewActivityObject(name, text, height, width, actionBody));
             activityCode.setImportFlag(Imports.ImportType.TEXTVIEW, true);
@@ -242,112 +289,54 @@ public class CommandLine {
                 }
             }
 
-            if (action) {
-                print("Enter body of action. Type QUIT to end");
-                BufferedReader inputReader = new BufferedReader(new InputStreamReader(System.in));
-                try {
-                    String line = inputReader.readLine();
-                    StringBuilder bodySb = new StringBuilder();
-                    while (line != null && !line.equals("QUIT")) {
-                        if (line.equals(""))
-                            bodySb.append("\n");
-                        else
-                            bodySb.append(line);
-                        line = inputReader.readLine();
-                    }
-
-                    actionBody = bodySb.toString();
-                } catch (IOException e) {
-                    print("Error with input");
-                }
-            }
+            if (action) actionBody = getActionBody();
 
             activityCode.addActivityObject(new EditTextActivityObject(name, text, hint, height, width, actionBody));
             activityCode.setImportFlag(Imports.ImportType.EDITTEXT, true);
             print("edittext \"" + name + "\" added:");
         }
         // add a contacts list
-        else if (args[CMD_OFFSET].equals("edittext")) {
+        else if (args[CMD_OFFSET].equals("contactslist")) {
             // set default object name in case it's not specified
             String name = activityCode.getDefaultObjectName();
             // initialize these to null, ButtonActivityObject should take care of null inputs
-            String text = null;
-            String hint = null;
             String height = null;
             String width = null;
             boolean action = false;
+            boolean hasName = true;
+            boolean hasNumber = true;
+            String divider = null;
             String actionBody = null;
 
             for (int i = (CMD_OFFSET + 1); i < args.length; i++) {
                 if (args[i].equals("-name"))
                     name = args[i+1];
-                else if (args[i].equals("-text"))
-                    text = args[i+1];
-                else if (args[i].equals("-hint"))
-                    hint = args[i+1];
+                else if (args[i].equals("-hasName"))
+                    hasName = args[i+1].equals("1");
+                else if (args[i].equals("-hasNumber"))
+                    hasNumber = args[i+1].equals("1");
                 else if (args[i].equals("-height"))
                     height = args[i+1];
                 else if (args[i].equals("-width"))
                     width = args[i+1];
+                else if (args[i].equals("-divider"))
+                    divider = args[i+1];
                 else if (args[i].equals("-action")) {
-                    if (args[i+1].equals("1"))
-                        action = true;
+                    action = args[i+1].equals("1");
                 }
             }
 
-            if (action) {
-                print("Enter body of action. Type QUIT to end");
-                BufferedReader inputReader = new BufferedReader(new InputStreamReader(System.in));
-                try {
-                    String line = inputReader.readLine();
-                    StringBuilder bodySb = new StringBuilder();
-                    while (line != null && !line.equals("QUIT")) {
-                        if (line.equals(""))
-                            bodySb.append("\n");
-                        else
-                            bodySb.append(line);
-                        line = inputReader.readLine();
-                    }
+            if (action) actionBody = getActionBody();
 
-                    actionBody = bodySb.toString();
-                } catch (IOException e) {
-                    print("Error with input");
-                }
-            }
-
-            activityCode.addActivityObject(new EditTextActivityObject(name, text, hint, height, width, actionBody));
-            activityCode.setImportFlag(Imports.ImportType.EDITTEXT, true);
-            print("edittext \"" + name + "\" added:");
-        }
-        // shows available commands
-        else if (args[CMD_OFFSET].equals("--help")) {
-//            print("Available commands: \n\t\tbutton\tadds a button object to your current activity");
-            print("\t\tprint: \tprints out the current file contents\n" +
-                    "\t\tmanifest: \tprints out the project's manifest *not exact\n" +
-                    "\t\tcreate: \tcreates a new android project with current name, activity, package\n" +
-                    "\t\tbuild: \tbuilds the project\n" +
-                    "\t\tinstall: \tinstalls the current project onto an attached USB device\n" +
-                    "\t\tpath: \tsets the project path to the first argument\n" +
-                    "\t\tname: \tsets the project name to the first argument\n" +
-                    "\t\tmain: \tsets the project main activity to the first argument\n" +
-                    "\t\tpackage: \tsets the project package name to the first argument\n" +
-                    "\t\taddfile: \tadds the current file to the project\n" +
-                    "\t\tclassname: \tsets the current class name to the first argument\n" +
-                    "\t\tcustomfunction: \topens up console for creating a custom function\n" +
-                    "\t\treset: \treset the activitycode\n" +
-                    "\n" +
-                    "\t\tbutton: \tadd a button\n" +
-                    "\t\ttextview: \tadd a textview" +
-                    "\t\tedittext: \tadd a edittext");
+            activityCode.addActivityObject(new ContactsListActivityObject(name, height, width, actionBody, hasName, hasNumber, divider));
+            activityCode.setImportFlag(Imports.ImportType.CONTACTSLIST, true);
+            permissionManifestObject.setReadContactsFlag(true);
+            print("contactslist \"" + name + "\" added:");
         }
         else {
-            StringBuilder sb = new StringBuilder();
-            sb.append("Error: \'");
-            sb.append(args[CMD_OFFSET]);
-            sb.append("\' is not a valid command. See \'--help\'");
-            sb.append("\nUsage: <command> [<args>]");
-            print(sb.toString());
+            return false;
         }
+        return true;
     }
 
     private static void createProject() {
@@ -425,7 +414,8 @@ public class CommandLine {
 
     private static CustomFunction createCustomFunction() {
         CustomFunction customFunction = new CustomFunction();
-        BufferedReader inputReader = new BufferedReader(new InputStreamReader(System.in));
+
+        BufferedReader inputReader = recoveryMode ? recoveryReader : new BufferedReader(new InputStreamReader(System.in));
         try {
             print("Enter function name: ");
             String line = inputReader.readLine();
@@ -480,6 +470,7 @@ public class CommandLine {
                 activityCode = new ActivityCode();
                 androidManifestGenerator = new AndroidManifestGenerator();
                 permissionManifestObject = new PermissionManifestObject();
+                commandList = new StringBuilder();
                 print("Activity reset was successful");
             }
             else
@@ -519,12 +510,83 @@ public class CommandLine {
         System.out.println(s);
     }
 
+    private static void openProject(String filename) {
+        String pathTemplate = DefaultConstants.DEFAULT_SAVE_DIR_PATH + "\\%s.txt";
+
+        try {
+            FileInputStream fileInputStream = new FileInputStream(String.format(pathTemplate, filename));
+            recoveryReader = new BufferedReader(new InputStreamReader(new DataInputStream(fileInputStream)));
+
+            String line;
+            recoveryMode = true;
+            while ((line = recoveryReader.readLine()) != null) {
+                commandList.append(line);
+                commandList.append('\n');
+                parseLocalCmd(line.split(" "));
+            }
+
+        } catch (Exception e) {
+            print(e.toString());
+            e.printStackTrace();
+        }
+
+        recoveryMode = false;
+    }
+
+    private static void saveProject(String filename) {
+        String pathTemplate = DefaultConstants.DEFAULT_SAVE_DIR_PATH + "\\%s.txt";
+        File dir = new File(DefaultConstants.DEFAULT_SAVE_DIR_PATH);
+        if (dir.mkdirs()) {
+            print("directory created");
+        }
+
+        File f = filename != null ? new File(String.format(pathTemplate, filename)) : new File(String.format(pathTemplate, projectName));
+        print(f.getPath());
+        try {
+            FileWriter fstream = new FileWriter(f.getPath());
+            BufferedWriter out = new BufferedWriter(fstream);
+            out.write(commandList.toString());
+            out.close();
+            fstream.close();
+        } catch (Exception e) {
+            print(e.toString());
+            e.printStackTrace();
+        }
+    }
+
+    private static String getActionBody() {
+        StringBuilder bodySb = new StringBuilder();
+        String actionBody = null;
+
+        if (!recoveryMode) print("Enter body of action. Type QUIT to end");
+        BufferedReader inputReader = recoveryMode ? recoveryReader : new BufferedReader(new InputStreamReader(System.in));
+        try {
+            String line = inputReader.readLine();
+            while (line != null && !line.equals("QUIT")) {
+                if (line.equals(""))
+                    line = "\n";
+                bodySb.append(line);
+                line = inputReader.readLine();
+            }
+
+            actionBody = bodySb.toString();
+        } catch (IOException e) {
+            print("Error with input");
+        }
+
+        actionBodyTemp = actionBody;
+        return actionBody;
+    }
+
     public static void main(String[] args) throws IOException {
         //  open up standard input
         BufferedReader inputReader = new BufferedReader(new InputStreamReader(System.in));
 
         //initialize default activityCode to start
         activityCode = new ActivityCode();
+
+        //initialize command list to keep track
+        commandList = new StringBuilder();
 
         //initialize default androidmanifest to start
         androidManifestGenerator = new AndroidManifestGenerator();
@@ -543,10 +605,8 @@ public class CommandLine {
             // null input typically means user has exited with ctrl+C
             if (input == null) System.exit(0);
 
-            // split input by spaces
-            String[] splitLine = input.split(" ");
             try {
-                parseLine(splitLine);
+                parseCmd(input);
             } catch (ArrayIndexOutOfBoundsException e) {
                 print("Error with arguments");
             }

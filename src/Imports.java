@@ -15,6 +15,7 @@ public class Imports {
     private boolean buttonFlag;
     private boolean textviewFlag;
     private boolean edittextFlag;
+    private boolean contactsListFlag;
     private List<String> customImports;
 
     private static final String ACTIVITY_IMPORT_STRING = "import android.app.Activity;\n";
@@ -27,6 +28,7 @@ public class Imports {
     private static final String BUTTON_IMPORT_STRING = "import android.widget.Button;\n";
     private static final String TEXTVIEW_IMPORT_STRING = "import android.widget.TextView;\n";
     private static final String EDITTEXT_IMPORT_STRING = "import android.widget.EditText;\n";
+    private static final String CONTACTSLIST_IMPORT_STRING = "import android.database.Cursor;\nimport android.content.Context;\nimport android.provider.ContactsContract;\nimport android.widget.*;\n";
 
     public Imports() {
         activityFlag = true;
@@ -45,7 +47,8 @@ public class Imports {
         LINEARLAYOUT,
         BUTTON,
         TEXTVIEW,
-        EDITTEXT
+        EDITTEXT,
+        CONTACTSLIST
     }
 
     @Override
@@ -61,6 +64,7 @@ public class Imports {
         if (buttonFlag) sb.append(BUTTON_IMPORT_STRING);
         if (textviewFlag) sb.append(TEXTVIEW_IMPORT_STRING);
         if (edittextFlag) sb.append(EDITTEXT_IMPORT_STRING);
+        if (contactsListFlag) sb.append(CONTACTSLIST_IMPORT_STRING);
         for (String customImport : customImports) {
             sb.append("import ");
             sb.append(customImport);
@@ -96,41 +100,12 @@ public class Imports {
         else if (type == ImportType.EDITTEXT) {
             edittextFlag = value;
         }
+        else if (type == ImportType.CONTACTSLIST) {
+            contactsListFlag = value;
+        }
     }
 
     public void addCustomImport(String importPackage) {
         customImports.add(importPackage);
-    }
-
-    public void setActivityFlag(boolean activityFlag) {
-        this.activityFlag = activityFlag;
-    }
-
-    public void setBundleFlag(boolean bundleFlag) {
-        this.bundleFlag = bundleFlag;
-    }
-
-    public void setViewFlag(boolean viewFlag) {
-        this.viewFlag = viewFlag;
-    }
-
-    public void setViewgroupFlag(boolean viewgroupFlag) {
-        this.viewgroupFlag = viewgroupFlag;
-    }
-
-    public void setLinearlayoutFlag(boolean linearlayoutFlag) {
-        this.linearlayoutFlag = linearlayoutFlag;
-    }
-
-    public void setButtonFlag(boolean buttonFlag) {
-        this.buttonFlag = buttonFlag;
-    }
-
-    public void setTextviewFlag(boolean textviewFlag) {
-        this.textviewFlag = textviewFlag;
-    }
-
-    public void setEdittextFlag(boolean edittextFlag) {
-        this.edittextFlag = edittextFlag;
     }
 }

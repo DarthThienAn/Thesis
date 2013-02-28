@@ -88,7 +88,11 @@ public class AndroidManifestGenerator {
             manifestTag.setAttribute("android:versionName", versionName);
 
             // permissions tags
-            permissionManifestObject.createListElements(dom);
+            List<Element> permissions = permissionManifestObject.createListElements(dom);
+
+            for (Element permission : permissions) {
+                manifestTag.appendChild(permission);
+            }
 
             // create data elements and place them under root
             Element applicationTag = dom.createElement("application");

@@ -16,6 +16,7 @@ public abstract class ActivityObject {
     protected static final String DEFAULT_HINT = "";
     protected static final String DEFAULT_HEIGHT = WRAP_CONTENT;
     protected static final String DEFAULT_WIDTH = WRAP_CONTENT;
+    protected static final String DEFAULT_DIVIDER = ": ";
 
     public ActivityObject(ActivityObjectType type, String objectName) {
         this.type = type;
