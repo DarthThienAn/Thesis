@@ -13,23 +13,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61634fbf-e237-46de-bcc1-c6f65b6ae12b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/swing/SwingApp.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/src.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/activityobject/ActivityObject.java" afterPath="$PROJECT_DIR$/src/activityobject/ActivityObject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/activityobject/ActivityObjectType.java" afterPath="$PROJECT_DIR$/src/activityobject/ActivityObjectType.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AndroidManifestGenerator.java" afterPath="$PROJECT_DIR$/src/AndroidManifestGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/thesis/BuildConfig.java" afterPath="$PROJECT_DIR$/gen/com/thesis/BuildConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CommandLine.java" afterPath="$PROJECT_DIR$/src/CommandLine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/activityobject/ContactsListActivityObject.java" afterPath="$PROJECT_DIR$/src/activityobject/ContactsListActivityObject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DefaultConstants.java" afterPath="$PROJECT_DIR$/src/DefaultConstants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Imports.java" afterPath="$PROJECT_DIR$/src/Imports.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/thesis/Manifest.java" afterPath="$PROJECT_DIR$/gen/com/thesis/Manifest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gen/com/thesis/R.java" afterPath="$PROJECT_DIR$/gen/com/thesis/R.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/swing/SwingAppFrame.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/android.xml" />
+      <change type="DELETED" beforePath="C:\Users\Mark\Downloads\~school\Thesis\.idea\libraries\src.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Mark\Downloads\~school\Thesis\AndroidManifest.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Mark\Downloads\~school\Thesis\bin\Button.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/thesis/BasicActivity.java" afterPath="$PROJECT_DIR$/src/com/thesis/BasicActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/thesis/MyActivity.java" afterPath="$PROJECT_DIR$/src/com/thesis/MyActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/thesis/NActivity.java" afterPath="$PROJECT_DIR$/src/com/thesis/NActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/swing/SwingApp.java" afterPath="$PROJECT_DIR$/src/swing/SwingApp.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Thesis.iml" afterPath="$PROJECT_DIR$/Thesis.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.properties" afterPath="$PROJECT_DIR$/project.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Thesis.iws" />
@@ -174,7 +168,7 @@
     <file path="$PROJECT_DIR$/../../Sonar/android/sonar/gen-external-apklibs/com.actionbarsherlock_actionbarsherlock_4.2.0/src/com/actionbarsherlock/app/ActionBar.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352920414806" ignored="false" />
     <file path="$PROJECT_DIR$/../../Sonar/android/sonar/gen-external-apklibs/com.actionbarsherlock_actionbarsherlock_4.2.0/AndroidManifest.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352920414806" ignored="false" />
     <file path="$PROJECT_DIR$/../../Sonar/android/sonar/gen-external-apklibs/com.actionbarsherlock_actionbarsherlock_4.2.0/src/com/actionbarsherlock/view/Menu.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352920414806" ignored="false" />
-    <file path="/fragment.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360363777101" ignored="false" />
+    <file path="/fragment.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1362659384666" ignored="false" />
     <file path="/DefaultConstants.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360986448524" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xslt-2_0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365186" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xhtml1-strict.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365186" ignored="false" />
@@ -361,7 +355,7 @@
     <file path="$APPLICATION_HOME_DIR$/plugins/JBoss/lib/jbossIntegration.jar!/descriptors/jboss-deployment-structure-1_0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989366167" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/connector_1_5.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989366167" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/spring-form.tld" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989366167" ignored="false" />
-    <file path="/Dummy.txt" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1362031759168" ignored="false" />
+    <file path="/Dummy.txt" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363621044273" ignored="false" />
     <file path="$PROJECT_DIR$/../../Sonar/android/sonar/target/generated-sources/r/me/sonar/android/R.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352993844163" ignored="false" />
     <file path="/AndroidManifestGenerator.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360364673966" ignored="false" />
     <file path="/Imports.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360362937404" ignored="false" />
@@ -423,7 +417,9 @@
     <file path="C:/easyandroid/helloworld/gen/com/example/BuildConfig.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360365083381" ignored="false" />
     <file path="C:/easyandroid/helloworld/bin/AndroidManifest.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360364461342" ignored="false" />
     <file path="/makestuff.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360554506792" ignored="false" />
-    <file path="/SwingApp.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1362034285267" ignored="false" />
+    <file path="/SwingApp.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1362621558319" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/modules.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1362034955433" ignored="false" />
+    <file path="/SwingAppFrame.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363620792762" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -488,19 +484,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ActivityCode.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ActivityCode.java">
+      <file leaf-file-name="PermissionManifestObject.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PermissionManifestObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="27" selection-start="1153" selection-end="1153" vertical-scroll-proportion="0.0">
+            <state line="0" column="23" selection-start="23" selection-end="23" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PermissionManifestObject.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PermissionManifestObject.java">
+      <file leaf-file-name=".classpath" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.classpath">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="298" column="0" selection-start="10725" selection-end="10725" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".project" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.project">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -510,82 +515,68 @@
         <entry file="file://$PROJECT_DIR$/src/CommandLine.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="52" column="0" selection-start="1909" selection-end="1909" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#buildProject#0;class#CommandLine#0" expanded="false" />
-                <element signature="method#addFile#0;class#CommandLine#0" expanded="false" />
-                <element signature="method#writeManifest#0;class#CommandLine#0" expanded="false" />
-                <element signature="method#installApplication#0;class#CommandLine#0" expanded="false" />
-                <element signature="method#newObject#0;class#CommandLine#0" expanded="false" />
-                <element signature="method#print#0;class#CommandLine#0" expanded="false" />
-                <element signature="method#openProject#0;class#CommandLine#0" expanded="false" />
-                <element signature="method#saveProject#0;class#CommandLine#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SwingApp.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="SwingApp.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/swing/SwingApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="20" selection-start="36" selection-end="36" vertical-scroll-proportion="0.09169055">
+            <state line="13" column="34" selection-start="0" selection-end="8813" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SwingAppFrame.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/swing/SwingAppFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="61" column="38" selection-start="2256" selection-end="2256" vertical-scroll-proportion="0.7708978">
               <folding>
-                <element signature="e#856#964#0" expanded="true" />
-                <element signature="e#953#954#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="method#SwingAppFrame#0;class#SwingAppFrame#0" expanded="false" />
+                <element signature="method#getMenu#0;class#SwingAppFrame#0" expanded="false" />
+                <element signature="method#getOptionsList#0;class#SwingAppFrame#0" expanded="false" />
+                <element signature="e#10635#10647#0" expanded="true" />
+                <element signature="method#getOptionsList3#0;class#SwingAppFrame#0" expanded="false" />
+                <element signature="e#12040#12048#0" expanded="true" />
+                <element signature="e#12205#12488#0" expanded="true" />
+                <element signature="e#12477#12478#0" expanded="true" />
+                <element signature="method#getOptionsList2#0;class#SwingAppFrame#0" expanded="false" />
+                <element signature="e#13443#13451#0" expanded="true" />
+                <element signature="e#13623#13888#0" expanded="true" />
+                <element signature="e#13877#13878#0" expanded="true" />
+                <element signature="e#14346#14358#0" expanded="true" />
+                <element signature="e#15156#15324#0" expanded="true" />
+                <element signature="e#15313#15314#0" expanded="true" />
+                <element signature="method#generateParameterPanel#0;class#SwingAppFrame#0" expanded="false" />
+                <element signature="e#17167#17179#0" expanded="true" />
+                <element signature="e#18635#18643#0" expanded="true" />
+                <element signature="e#18800#19083#0" expanded="true" />
+                <element signature="e#19072#19073#0" expanded="true" />
+                <element signature="e#20119#20127#0" expanded="true" />
+                <element signature="e#20284#20567#0" expanded="true" />
+                <element signature="e#20556#20557#0" expanded="true" />
+                <element signature="e#21124#21136#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DefaultConstants.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DefaultConstants.java">
+      <file leaf-file-name="MyActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thesis/MyActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="35" selection-start="737" selection-end="2258" vertical-scroll-proportion="0.0">
+            <state line="9" column="15" selection-start="2" selection-end="1228" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Imports.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Imports.java">
+      <file leaf-file-name="NActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/thesis/NActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="197" selection-start="1550" selection-end="1550" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Parameter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Parameter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="13" selection-start="13" selection-end="13" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EditTextActivityObject.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/activityobject/EditTextActivityObject.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="0" selection-start="0" selection-end="1148" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ContactsListActivityObject.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/activityobject/ContactsListActivityObject.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="36" selection-start="1880" selection-end="1880" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AndroidManifestGenerator.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AndroidManifestGenerator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="26" selection-start="701" selection-end="701" vertical-scroll-proportion="0.0">
+            <state line="16" column="2" selection-start="486" selection-end="486" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -614,11 +605,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/EditTextActivityObject.java" />
-        <option value="$PROJECT_DIR$/src/ActivityManifestObject.java" />
-        <option value="$PROJECT_DIR$/src/ActivityCode.java" />
-        <option value="$PROJECT_DIR$/src/activityobject/ButtonActivityObject.java" />
-        <option value="$PROJECT_DIR$/src/activityobject/EditTextActivityObject.java" />
         <option value="$PROJECT_DIR$/src/activityobject/TextViewActivityObject.java" />
         <option value="$PROJECT_DIR$/src/activityobject/ActivityObjectType.java" />
         <option value="$PROJECT_DIR$/src/activityobject/ActivityObject.java" />
@@ -629,15 +615,20 @@
         <option value="$PROJECT_DIR$/src/PermissionManifestObject.java" />
         <option value="$PROJECT_DIR$/src/DefaultConstants.java" />
         <option value="$PROJECT_DIR$/src/CommandLine.java" />
+        <option value="$PROJECT_DIR$/src/com/thesis/BasicActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/thesis/MyActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/thesis/NActivity.java" />
         <option value="$PROJECT_DIR$/src/swing/SwingApp.java" />
+        <option value="$PROJECT_DIR$/src/swing/SpringUtilities.java" />
+        <option value="$PROJECT_DIR$/src/swing/SwingAppFrame.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="-18" />
+    <option name="y" value="1" />
+    <option name="width" value="1366" />
+    <option name="height" value="728" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -648,7 +639,7 @@
     <OptionsSetting value="true" id="Edit" />
     <OptionsSetting value="true" id="Undo Check Out" />
     <OptionsSetting value="true" id="Get Latest Version" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
@@ -672,7 +663,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -784,18 +774,18 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="OverrideImplement.combined" value="false" />
-    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.proportion" value="0.0" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="options.lastSelected" value="project.propCompiler" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="C:/Program Files/Java/jdk1.7.0_03/src.zip!/" />
+    <property name="last_opened_file_path" value="$USER_HOME$/android-sdks/platforms/android-17/android.jar!/" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -807,10 +797,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="swing" />
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SwingApp">
+  <component name="RunManager" selected="Application.SwingAppFrame">
     <configuration default="false" name="makestuff" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="makestuff" />
@@ -831,6 +822,23 @@
     <configuration default="false" name="SwingApp" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="swing.SwingApp" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Thesis" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="SwingAppFrame" type="Application" factoryName="Application" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="swing.SwingAppFrame" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -1002,16 +1010,18 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Android Application.USB" />
       <item index="1" class="java.lang.String" itemvalue="Application.CommandLine" />
       <item index="2" class="java.lang.String" itemvalue="Application.makestuff" />
       <item index="3" class="java.lang.String" itemvalue="Application.SwingApp" />
+      <item index="4" class="java.lang.String" itemvalue="Application.SwingAppFrame" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Application.SwingApp" />
-        <item index="1" class="java.lang.String" itemvalue="Application.makestuff" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Application.SwingAppFrame" />
+        <item index="1" class="java.lang.String" itemvalue="Application.SwingApp" />
+        <item index="2" class="java.lang.String" itemvalue="Application.makestuff" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -1057,35 +1067,55 @@
     <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="TodoView" selected-index="5">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <frame x="-18" y="1" width="1366" height="728" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.4969697" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3270869" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.6717949" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.49772727" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3253833" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.4939394" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3253833" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32924694" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24924242" sideWeight="0.21709402" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2621212" sideWeight="0.6746167" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3168654" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="288" y="-8" width="1074" height="714" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26533744" sideWeight="0.67075306" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31523642" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="288" y="-8" width="1074" height="714" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32820514" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.4939394" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Android Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32876712" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1128,7 +1158,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="panels finish (gui template)" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1141,7 +1171,7 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="update" />
+    <MESSAGE value="panels finish (gui template)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1155,53 +1185,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/activityobject/TextViewActivityObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="11" selection-start="98" selection-end="98" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ActivityManifestObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="23" selection-start="23" selection-end="23" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gen/com/thesis/BuildConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/activityobject/ActivityObjectType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="16" selection-start="114" selection-end="114" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/activityobject/ButtonActivityObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="29" selection-start="504" selection-end="533" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/activityobject/ActivityObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="0" selection-start="1318" selection-end="2302" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/activityobject/EditTextActivityObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="0" selection-end="1148" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/activityobject/ContactsListActivityObject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="37" column="36" selection-start="1880" selection-end="1880" vertical-scroll-proportion="0.0">
@@ -1219,13 +1202,6 @@
     <entry file="file://$PROJECT_DIR$/src/Parameter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="13" selection-start="13" selection-end="13" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PermissionManifestObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="298" column="0" selection-start="10725" selection-end="10725" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1254,26 +1230,95 @@
     <entry file="file://$PROJECT_DIR$/src/CommandLine.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="52" column="0" selection-start="1909" selection-end="1909" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#buildProject#0;class#CommandLine#0" expanded="false" />
-            <element signature="method#addFile#0;class#CommandLine#0" expanded="false" />
-            <element signature="method#writeManifest#0;class#CommandLine#0" expanded="false" />
-            <element signature="method#installApplication#0;class#CommandLine#0" expanded="false" />
-            <element signature="method#newObject#0;class#CommandLine#0" expanded="false" />
-            <element signature="method#print#0;class#CommandLine#0" expanded="false" />
-            <element signature="method#openProject#0;class#CommandLine#0" expanded="false" />
-            <element signature="method#saveProject#0;class#CommandLine#0" expanded="false" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thesis/NActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="2" selection-start="486" selection-end="486" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.classpath">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.project">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PermissionManifestObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="23" selection-start="23" selection-end="23" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/swing/SwingApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="20" selection-start="36" selection-end="36" vertical-scroll-proportion="0.09169055">
+        <state line="13" column="34" selection-start="0" selection-end="8813" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thesis/MyActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="15" selection-start="2" selection-end="1228" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/swing/SpringUtilities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="152" column="0" selection-start="6685" selection-end="6685" vertical-scroll-proportion="1.6407408">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/thesis/BasicActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="112" column="15" selection-start="4341" selection-end="4341" vertical-scroll-proportion="0.7770898">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/swing/SwingAppFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="38" selection-start="2256" selection-end="2256" vertical-scroll-proportion="0.7708978">
           <folding>
-            <element signature="e#856#964#0" expanded="true" />
-            <element signature="e#953#954#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#SwingAppFrame#0;class#SwingAppFrame#0" expanded="false" />
+            <element signature="method#getMenu#0;class#SwingAppFrame#0" expanded="false" />
+            <element signature="method#getOptionsList#0;class#SwingAppFrame#0" expanded="false" />
+            <element signature="e#10635#10647#0" expanded="true" />
+            <element signature="method#getOptionsList3#0;class#SwingAppFrame#0" expanded="false" />
+            <element signature="e#12040#12048#0" expanded="true" />
+            <element signature="e#12205#12488#0" expanded="true" />
+            <element signature="e#12477#12478#0" expanded="true" />
+            <element signature="method#getOptionsList2#0;class#SwingAppFrame#0" expanded="false" />
+            <element signature="e#13443#13451#0" expanded="true" />
+            <element signature="e#13623#13888#0" expanded="true" />
+            <element signature="e#13877#13878#0" expanded="true" />
+            <element signature="e#14346#14358#0" expanded="true" />
+            <element signature="e#15156#15324#0" expanded="true" />
+            <element signature="e#15313#15314#0" expanded="true" />
+            <element signature="method#generateParameterPanel#0;class#SwingAppFrame#0" expanded="false" />
+            <element signature="e#17167#17179#0" expanded="true" />
+            <element signature="e#18635#18643#0" expanded="true" />
+            <element signature="e#18800#19083#0" expanded="true" />
+            <element signature="e#19072#19073#0" expanded="true" />
+            <element signature="e#20119#20127#0" expanded="true" />
+            <element signature="e#20284#20567#0" expanded="true" />
+            <element signature="e#20556#20557#0" expanded="true" />
+            <element signature="e#21124#21136#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1295,7 +1340,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>Android</last-edited>
+          <last-edited>No facets are configured</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1342,7 +1387,7 @@
       </state>
       <state key="ProjectJDKs.UI">
         <settings>
-          <last-edited>1.7</last-edited>
+          <last-edited>Android 4.0 Platform</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1354,7 +1399,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>src</last-edited>
+          <last-edited>android</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
