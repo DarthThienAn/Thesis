@@ -370,7 +370,7 @@ public class CommandLine {
 
     private static void addFile() {
         String pathTemplate = "%s\\%s\\src\\%s\\%s.java";
-        File f = new File(String.format(pathTemplate, path,projectName,
+        File f = new File(String.format(pathTemplate, path, projectName,
                 activityCode.getPackageName().replace('.', '\\'),
                 activityCode.getClassName()));
         print(f.getPath());
@@ -609,6 +609,7 @@ public class CommandLine {
                 parseCmd(input);
             } catch (ArrayIndexOutOfBoundsException e) {
                 print("Error with arguments");
+                print("See \'--help\'");
             }
         }
     }

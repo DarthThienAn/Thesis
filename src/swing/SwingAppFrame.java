@@ -11,8 +11,8 @@ import java.util.ArrayList;
 
 public class SwingAppFrame extends JFrame {
 
-    private static final int DEF_WIDTH = 1000;
-    private static final int DEF_HEIGHT = 600;
+    private static final int DEF_WIDTH = 1200;
+    private static final int DEF_HEIGHT = 800;
 
     public SwingAppFrame() {
         //Create and set up the window.
@@ -44,6 +44,7 @@ public class SwingAppFrame extends JFrame {
 //        frame.getContentPane().add(projectName, BorderLayout.PAGE_START);
 //        frame.getContentPane().add(packageName, BorderLayout.PAGE_START);
 
+        addHeader(getContentPane());
         addComponentsToPane(getContentPane());
 //        frame.getContentPane().add(background, BorderLayout.CENTER);
 //        frame.getContentPane().add(label, BorderLayout.CENTER);
@@ -58,11 +59,24 @@ public class SwingAppFrame extends JFrame {
 //        setVisible(true);
     }
 
-    //Create the menu bar
+    public static void main(String[] args) {
+        //Schedule a job for the event-dispatching thread:
+        //creating and showing this application's GUI.
+        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                SwingAppFrame frame = new SwingAppFrame();
+                frame.setVisible(true);
+            }
+        });
+
+
+    }
+
+    /* Create the menu bar */
     private static JMenuBar getMenu() {
-        // gray
         JMenuBar menuBar = new JMenuBar();
         menuBar.setOpaque(true);
+        // gray
         menuBar.setBackground(new Color(196, 196, 196));
         menuBar.setPreferredSize(new Dimension(DEF_WIDTH, 20));
 
@@ -113,22 +127,16 @@ public class SwingAppFrame extends JFrame {
         return menuBar;
     }
 
-    public static void addComponentsToPane(Container pane) {
-//            pane.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
-
+    /* Add Global property items */
+    public static void addHeader(Container pane) {
         pane.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
-//        if (shouldFill) {
-//            //natural height, maximum width
-//            c.fill = GridBagConstraints.HORIZONTAL;
-//        }
 
         JLabel projectName = new JLabel("Project Name:  ");
         projectName.setToolTipText("Your project name here  ");
-//        if (shouldWeightX) {
-//            c.weightx = 0.5;
-//        }
+
         c.fill = GridBagConstraints.HORIZONTAL;
+        c.insets = new Insets(5, 5, 0, 0);
         c.weightx = 0.5;
         c.gridheight = 1;
         c.gridwidth = 1;
@@ -141,6 +149,7 @@ public class SwingAppFrame extends JFrame {
         c.weightx = 0.5;
         c.gridx = 1;
         c.gridy = 0;
+//        projectName.setLabelFor(projectNameField);
         pane.add(projectNameField, c);
 
         JLabel packageName = new JLabel("Package Name: ");
@@ -181,34 +190,47 @@ public class SwingAppFrame extends JFrame {
 
         JTextField mainClassField = new JTextField();
         c.fill = GridBagConstraints.HORIZONTAL;
-        c.weightx = 0.5;
+        c.weightx = 1.0;
         c.gridx = 3;
         c.gridy = 1;
         pane.add(mainClassField, c);
 
-//        JSeparator jSeparator = new JSeparator();
-//        jSeparator.setForeground(new Color(0, 50, 255));
-//        jSeparator.setBackground(new Color(0, 50, 255));
-//        pane.add(jSeparator, c);
-//
-        SpringLayout layout = new SpringLayout();
-//        JPanel optionsPanel = new JPanel();
-//        optionsPanel.setLayout(layout);
-//        JLabel options1 = new JLabel("Options");
-//        layout.putConstraint(SpringLayout.NORTH, options1, 5, SpringLayout.NORTH, pane);
-////        options1.set
-//        optionsPanel.add(options1);
-//        JLabel options2 = new JLabel("Options2");
-//        optionsPanel.add(options2);
-//        layout.putConstraint(SpringLayout.NORTH, options2, 5, SpringLayout.SOUTH, options1);
+        JPanel classPicker = getClassPicker(new SpringLayout());
+        c = new GridBagConstraints(0, 2, 1, 1, 1.0, 1.0, GridBagConstraints.FIRST_LINE_START, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0);
+//        c.ipady = 5;
+//        c.ipadx = 0;
+//        c.gridwidth = 1;
+//        c.weightx = 1.0;   //request any extra vertical space
+//        c.weighty = 1.0;   //request any extra vertical space
+//        c.gridx = 0;
+//        c.gridy = 2;
+        pane.add(classPicker, c);
 
-//        JPanel optionsPanel = generatePanel(layout, getOptionsList());
+        c.fill = GridBagConstraints.BOTH;
+        c.anchor = GridBagConstraints.PAGE_START;
+        c.ipady = 0;
+        c.gridwidth = 4;
+        c.weightx = 1.0;   //request any extra vertical space
+        c.weighty = 1.0;   //request any extra vertical space
+        c.gridx = 0;
+        c.gridy = 3;
+
+        JSeparator jSeparator = new JSeparator(SwingConstants.HORIZONTAL);
+        jSeparator.setForeground(new Color(150, 150, 255));
+        jSeparator.setBackground(new Color(150, 150, 255));
+        pane.add(jSeparator, c);
+    }
+
+    public static void addComponentsToPane(Container pane) {
+        GridBagConstraints c = new GridBagConstraints();
+
+        SpringLayout layout = new SpringLayout();
+
         JPanel optionsPanel = getOptionsList3(layout);
         JPanel parametersPanel = generatePanel(layout, getParametersList());
         JPanel hierarchyPanel = generatePanel(layout, getHierarchyList("MyClass"));
         JPanel previewPanel = generatePanel(layout, getPreviewList("java asdfsadfasdfasdfadfasf\nasdfadsfafasfasf\nadsfadsfasfd"));
 
-        JLabel options = new JLabel("Options");
         c.fill = GridBagConstraints.BOTH;
         c.ipady = 500;
         c.weightx = 1.0;   //request any extra vertical space
@@ -220,7 +242,6 @@ public class SwingAppFrame extends JFrame {
 //        c.gridheight = 6;
         pane.add(optionsPanel, c);
 
-        JLabel define = new JLabel("Define");
         c.fill = GridBagConstraints.BOTH;
         c.ipady = 500;
         c.weightx = 1.0;   //request any extra vertical space
@@ -228,12 +249,8 @@ public class SwingAppFrame extends JFrame {
         c.anchor = GridBagConstraints.PAGE_END; //bottom of space
         c.gridx = 1;       //aligned with button 2
         c.gridy = 3;       //third row
-        define.setVerticalTextPosition(SwingConstants.TOP);
-//        pane.add(define, c);
         pane.add(parametersPanel, c);
 
-        JLabel hierarchy = new JLabel("Hierarchy");
-        hierarchy.setVerticalTextPosition(SwingConstants.TOP);
         c.fill = GridBagConstraints.BOTH;
         c.ipady = 500;
         c.weightx = 1.0;   //request any extra vertical space
@@ -243,8 +260,6 @@ public class SwingAppFrame extends JFrame {
         c.gridy = 3;       //third row
         pane.add(hierarchyPanel, c);
 
-        JLabel preview = new JLabel("Preview");
-        preview.setVerticalTextPosition(SwingConstants.BOTTOM);
         c.fill = GridBagConstraints.BOTH;
         c.ipady = 500;
         c.weightx = 1.0;   //request any extra vertical space
@@ -253,31 +268,38 @@ public class SwingAppFrame extends JFrame {
         c.gridx = 3;       //aligned with button 2
         c.gridy = 3;       //third row
         pane.add(previewPanel, c);
-
-        c.fill = GridBagConstraints.BOTH;
-        c.ipady = 0;
-        c.gridwidth = 4;
-        c.weightx = 1.0;   //request any extra vertical space
-        c.weighty = 1.0;   //request any extra vertical space
-        c.gridx = 0;       //aligned with button 2
-        c.gridy = 2;       //third row
-
-        JSeparator jSeparator = new JSeparator(SwingConstants.HORIZONTAL);
-        jSeparator.setForeground(new Color(0, 50, 255));
-        jSeparator.setBackground(new Color(0, 50, 255));
-        pane.add(jSeparator, c);
     }
 
 
-    public static void main(String[] args) {
-        //Schedule a job for the event-dispatching thread:
-        //creating and showing this application's GUI.
-        javax.swing.SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                SwingAppFrame frame = new SwingAppFrame();
-                frame.setVisible(true);
+    /* ClassPicker as a ComboBox */
+    public static JPanel getClassPicker(SpringLayout layout) {
+        JPanel classPicker = new JPanel();
+        ((FlowLayout)classPicker.getLayout()).setAlignment(FlowLayout.LEFT);
+
+        JLabel title = new JLabel("Class: ");
+        classPicker.add(title);
+
+        JPanel comboPanel = new JPanel();
+
+        String[] labels = {"MyClass1", "MyClass2", "MyClass3"};
+        JComboBox<String> combobox = new JComboBox<String>(labels); // Create the combo box
+//    combobox.setSelectedIndex(selection); // Set initial state
+
+        // Handle changes to the state
+        combobox.addItemListener(new ItemListener() {
+            public void itemStateChanged(ItemEvent e) {
+//                    this.select(combobox.getSelectedIndex());
+                System.out.println(e.toString());
+                System.out.println(e.getSource());
             }
         });
+
+        // Lay out combo box and name label horizontally
+        comboPanel.setLayout(new BoxLayout(comboPanel, BoxLayout.X_AXIS));
+        comboPanel.add(combobox);
+        classPicker.add(comboPanel);
+
+        return classPicker;
     }
 
     public static ArrayList<JComponent> getOptionsList() {
@@ -312,7 +334,7 @@ public class SwingAppFrame extends JFrame {
     }
 
 
-    // Initialization for JList
+    /* Options as a JList */
     public static JPanel getOptionsList3(SpringLayout layout) {
         JPanel optionsPanel = new JPanel();
         optionsPanel.setLayout(layout);
@@ -346,7 +368,7 @@ public class SwingAppFrame extends JFrame {
         return optionsPanel;
     }
 
-    // Initialization for JComboBox
+    /* Options as a ComboBox */
     public static JPanel getOptionsList2(SpringLayout layout) {
         JPanel optionsPanel = new JPanel();
         optionsPanel.setLayout(layout);
@@ -520,7 +542,24 @@ public class SwingAppFrame extends JFrame {
 //        listPanel.setPreferredSize(new Dimension(200, 400));
         componentList.add(listPanel);
 
+        /* button pane */
+
+        JButton upButton = new JButton("Up");
+        JButton downButton = new JButton("Down");
+        JButton removeButton = new JButton("Remove");
+
+        JPanel buttonPane = new JPanel();
+        buttonPane.setLayout(new BoxLayout(buttonPane, BoxLayout.LINE_AXIS));
+//        buttonPane.setBorder(BorderFactory.createEmptyBorder(0, 10, 10, 10));
+//        buttonPane.add(Box.createHorizontalGlue());
+        buttonPane.add(upButton);
+        buttonPane.add(Box.createRigidArea(new Dimension(5, 0)));
+        buttonPane.add(downButton);
+        buttonPane.add(Box.createRigidArea(new Dimension(5, 0)));
+        buttonPane.add(removeButton);
+
 //        layout.putConstraint(SpringLayout.NORTH, listPanel, 5, SpringLayout.SOUTH, title);
+        componentList.add(buttonPane);
 
         return componentList;
     }
@@ -560,8 +599,17 @@ public class SwingAppFrame extends JFrame {
 
     public static ArrayList<JComponent> getPreviewList(String code) {
         ArrayList<JComponent> componentList = new ArrayList<JComponent>();
-        JLabel title = new JLabel("Preview");
+        JLabel title = new JLabel("Java Code");
         componentList.add(title);
+
+        JButton addButton = new JButton("Edit");
+        addButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("sup");
+            }
+        });
+        componentList.add(addButton);
 
         JScrollPane scrollPane = new JScrollPane(new JTextArea(code));
         scrollPane.setBorder(BorderFactory.createLineBorder(new Color(100, 100, 100)));

@@ -1,4 +1,3 @@
-import android.Manifest.permission;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -44,33 +43,33 @@ public class PermissionManifestObject {
     public String toString() {
         final StringBuilder sb = new StringBuilder();
 
-        if (accessCheckinPropertiesFlag) sb.append(createPermission(permission.ACCESS_CHECKIN_PROPERTIES));
-        if (accessCoarseLocationFlag) sb.append(createPermission(permission.ACCESS_COARSE_LOCATION));
-        if (accessFineLocationFlag) sb.append(createPermission(permission.ACCESS_FINE_LOCATION));
-        if (accessLocationExtraCommandsFlag) sb.append(createPermission(permission.ACCESS_LOCATION_EXTRA_COMMANDS));
-        if (accessMockLocationFlag) sb.append(createPermission(permission.ACCESS_MOCK_LOCATION));
-        if (accessNetworkStateFlag) sb.append(createPermission(permission.ACCESS_NETWORK_STATE));
-        if (accessSurfaceFlingerFlag) sb.append(createPermission(permission.ACCESS_SURFACE_FLINGER));
-        if (accessWifiStateFlag) sb.append(createPermission(permission.ACCESS_WIFI_STATE));
-        if (accountManagerFlag) sb.append(createPermission(permission.ACCOUNT_MANAGER));
-        if (addVoicemailFlag) sb.append(createPermission(permission.ADD_VOICEMAIL));
-        if (authenticateAccountsFlag) sb.append(createPermission(permission.AUTHENTICATE_ACCOUNTS));
-        if (batteryStatsFlag) sb.append(createPermission(permission.BATTERY_STATS));
-        if (bindAccessibilityServiceFlag) sb.append(createPermission(permission.BIND_ACCESSIBILITY_SERVICE));
-        if (bindAppWidgetFlag) sb.append(createPermission(permission.BIND_APPWIDGET));
-        if (bindDeviceAdminFlag) sb.append(createPermission(permission.BIND_DEVICE_ADMIN));
+        if (accessCheckinPropertiesFlag) sb.append(createPermission(Permission.ACCESS_CHECKIN_PROPERTIES));
+        if (accessCoarseLocationFlag) sb.append(createPermission(Permission.ACCESS_COARSE_LOCATION));
+        if (accessFineLocationFlag) sb.append(createPermission(Permission.ACCESS_FINE_LOCATION));
+        if (accessLocationExtraCommandsFlag) sb.append(createPermission(Permission.ACCESS_LOCATION_EXTRA_COMMANDS));
+        if (accessMockLocationFlag) sb.append(createPermission(Permission.ACCESS_MOCK_LOCATION));
+        if (accessNetworkStateFlag) sb.append(createPermission(Permission.ACCESS_NETWORK_STATE));
+        if (accessSurfaceFlingerFlag) sb.append(createPermission(Permission.ACCESS_SURFACE_FLINGER));
+        if (accessWifiStateFlag) sb.append(createPermission(Permission.ACCESS_WIFI_STATE));
+        if (accountManagerFlag) sb.append(createPermission(Permission.ACCOUNT_MANAGER));
+        if (addVoicemailFlag) sb.append(createPermission(Permission.ADD_VOICEMAIL));
+        if (authenticateAccountsFlag) sb.append(createPermission(Permission.AUTHENTICATE_ACCOUNTS));
+        if (batteryStatsFlag) sb.append(createPermission(Permission.BATTERY_STATS));
+        if (bindAccessibilityServiceFlag) sb.append(createPermission(Permission.BIND_ACCESSIBILITY_SERVICE));
+        if (bindAppWidgetFlag) sb.append(createPermission(Permission.BIND_APPWIDGET));
+        if (bindDeviceAdminFlag) sb.append(createPermission(Permission.BIND_DEVICE_ADMIN));
 
-        if (callPhoneFlag) sb.append(createPermission(permission.CALL_PHONE));
-        if (callPrivilegedFlag) sb.append(createPermission(permission.CALL_PRIVILEGED));
-        if (cameraFlag) sb.append(createPermission(permission.CAMERA));
+        if (callPhoneFlag) sb.append(createPermission(Permission.CALL_PHONE));
+        if (callPrivilegedFlag) sb.append(createPermission(Permission.CALL_PRIVILEGED));
+        if (cameraFlag) sb.append(createPermission(Permission.CAMERA));
 
-        if (internetFlag) sb.append(createPermission(permission.INTERNET));
+        if (internetFlag) sb.append(createPermission(Permission.INTERNET));
 
-        if (readCalendarFlag) sb.append(createPermission(permission.READ_CALENDAR));
+        if (readCalendarFlag) sb.append(createPermission(Permission.READ_CALENDAR));
 
-        if (readContactsFlag) sb.append(createPermission(permission.READ_CONTACTS));
+        if (readContactsFlag) sb.append(createPermission(Permission.READ_CONTACTS));
 
-        if (sendSmsFlag) sb.append(createPermission(permission.SEND_SMS));
+        if (sendSmsFlag) sb.append(createPermission(Permission.SEND_SMS));
         return sb.toString();
     }
 
@@ -87,33 +86,33 @@ public class PermissionManifestObject {
 
     private List<String> createList() {
         List<String> list = new ArrayList<String>();
-        if (accessCheckinPropertiesFlag) list.add(permission.ACCESS_CHECKIN_PROPERTIES);
-        if (accessCoarseLocationFlag) list.add(permission.ACCESS_COARSE_LOCATION);
-        if (accessFineLocationFlag) list.add(permission.ACCESS_FINE_LOCATION);
-        if (accessLocationExtraCommandsFlag) list.add(permission.ACCESS_LOCATION_EXTRA_COMMANDS);
-        if (accessMockLocationFlag) list.add(permission.ACCESS_MOCK_LOCATION);
-        if (accessNetworkStateFlag) list.add(permission.ACCESS_NETWORK_STATE);
-        if (accessSurfaceFlingerFlag) list.add(permission.ACCESS_SURFACE_FLINGER);
-        if (accessWifiStateFlag) list.add(permission.ACCESS_WIFI_STATE);
-        if (accountManagerFlag) list.add(permission.ACCOUNT_MANAGER);
-        if (addVoicemailFlag) list.add(permission.ADD_VOICEMAIL);
-        if (authenticateAccountsFlag) list.add(permission.AUTHENTICATE_ACCOUNTS);
-        if (batteryStatsFlag) list.add(permission.BATTERY_STATS);
-        if (bindAccessibilityServiceFlag) list.add(permission.BIND_ACCESSIBILITY_SERVICE);
-        if (bindAppWidgetFlag) list.add(permission.BIND_APPWIDGET);
-        if (bindDeviceAdminFlag) list.add(permission.BIND_DEVICE_ADMIN);
+        if (accessCheckinPropertiesFlag) list.add(Permission.ACCESS_CHECKIN_PROPERTIES);
+        if (accessCoarseLocationFlag) list.add(Permission.ACCESS_COARSE_LOCATION);
+        if (accessFineLocationFlag) list.add(Permission.ACCESS_FINE_LOCATION);
+        if (accessLocationExtraCommandsFlag) list.add(Permission.ACCESS_LOCATION_EXTRA_COMMANDS);
+        if (accessMockLocationFlag) list.add(Permission.ACCESS_MOCK_LOCATION);
+        if (accessNetworkStateFlag) list.add(Permission.ACCESS_NETWORK_STATE);
+        if (accessSurfaceFlingerFlag) list.add(Permission.ACCESS_SURFACE_FLINGER);
+        if (accessWifiStateFlag) list.add(Permission.ACCESS_WIFI_STATE);
+        if (accountManagerFlag) list.add(Permission.ACCOUNT_MANAGER);
+        if (addVoicemailFlag) list.add(Permission.ADD_VOICEMAIL);
+        if (authenticateAccountsFlag) list.add(Permission.AUTHENTICATE_ACCOUNTS);
+        if (batteryStatsFlag) list.add(Permission.BATTERY_STATS);
+        if (bindAccessibilityServiceFlag) list.add(Permission.BIND_ACCESSIBILITY_SERVICE);
+        if (bindAppWidgetFlag) list.add(Permission.BIND_APPWIDGET);
+        if (bindDeviceAdminFlag) list.add(Permission.BIND_DEVICE_ADMIN);
 
-        if (callPhoneFlag) list.add(permission.CALL_PHONE);
-        if (callPrivilegedFlag) list.add(permission.CALL_PRIVILEGED);
-        if (cameraFlag) list.add(permission.CAMERA);
+        if (callPhoneFlag) list.add(Permission.CALL_PHONE);
+        if (callPrivilegedFlag) list.add(Permission.CALL_PRIVILEGED);
+        if (cameraFlag) list.add(Permission.CAMERA);
 
-        if (internetFlag) list.add(permission.INTERNET);
+        if (internetFlag) list.add(Permission.INTERNET);
 
-        if (readCalendarFlag) list.add(permission.READ_CALENDAR);
+        if (readCalendarFlag) list.add(Permission.READ_CALENDAR);
 
-        if (readContactsFlag) list.add(permission.READ_CONTACTS);
+        if (readContactsFlag) list.add(Permission.READ_CONTACTS);
 
-        if (sendSmsFlag) list.add(permission.SEND_SMS);
+        if (sendSmsFlag) list.add(Permission.SEND_SMS);
         return list;
     }
 
