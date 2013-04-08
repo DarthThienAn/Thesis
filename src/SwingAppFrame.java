@@ -1,4 +1,5 @@
-package swing;
+import activityobject.*;
+import swing.SpringUtilities;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -6,30 +7,31 @@ import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
-import java.util.UUID;
 
 public class SwingAppFrame extends JFrame {
 
     private static final int DEF_WIDTH = 1200;
     private static final int DEF_HEIGHT = 800;
 
-    static final String[] BUTTON_PARAMETERS = {"Name: ", "Text: ", "Width: ", "Height: "};
-    static final String[] TEXTVIEW_PARAMETERS = {"Name: ", "Text: ", "Width: ", "Height: "};
-    static final String[] EDITTEXT_PARAMETERS = {"Name: ", "Text: ", "Width: ", "Height: ", "Hint: "};
-    static final String[] CONTACTS_PARAMETERS = {"Name: ", "Text: ", "Width: ", "Height: "};
+    static final String[] BUTTON_PARAMETERS = {"Name: ", "Text: ", "Height: ", "Width: "};
+    static final String[] TEXTVIEW_PARAMETERS = {"Name: ", "Text: ", "Height: ", "Width: "};
+    static final String[] EDITTEXT_PARAMETERS = {"Name: ", "Text: ", "Height: ", "Width: ", "Hint: "};
+    static final String[] CONTACTS_PARAMETERS = {"Name: ", "Height: ", "Width: ", "HasName: ", "HasNumber: ", "Divider: "};
 
     private static final int BUTTON_TYPE = 0;
     private static final int TEXTVIEW_TYPE = 1;
     private static final int EDITTEXT_TYPE = 2;
     private static final int CONTACTS_TYPE = 3;
-    private static int currentType = 1;
+    private static int currentType = 0;
 
     private static SwingAppFrame frame;
-    private static JPanel parameterPane, hierarchyPane;
+    private static JPanel parameterPane, hierarchyPane, previewPanel;
+    private static JTextField projectNameField, pathField, packageNameField, mainClassField;
+    private static JTextField classNameField;
     private static Container contentPane;
-    private static ArrayList<String> hierarchyList = new ArrayList<String>();
-    private static String className = "MyClass";
-    private static String javaCode = "java asdfsadfasdfasdfadfasf\nasdfadsfafasfasf\nadsfadsfasfd";
+    private static ArrayList<ActivityObject> hierarchyList = new ArrayList<ActivityObject>();
+
+    private static CommandLineObject cmd;
 
     public SwingAppFrame() {
         //Create and set up the window.
@@ -89,6 +91,7 @@ public class SwingAppFrame extends JFrame {
             }
         });
 
+        cmd = new CommandLineObject();
 
     }
 
@@ -138,7 +141,21 @@ public class SwingAppFrame extends JFrame {
 
         JMenu buildMenu = new JMenu("Build");
         JMenuItem buildItem = new JMenuItem("Build Project", KeyEvent.VK_0);
+        buildItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                updateGlobalProjectProperties();
+                cmd.parseCmd("create");
+                cmd.parseCmd("build");
+            }
+        });
         JMenuItem installItem = new JMenuItem("Install Project", KeyEvent.VK_0);
+        installItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cmd.parseCmd("install");
+            }
+        });
 
         buildMenu.add(buildItem);
         buildMenu.add(installItem);
@@ -164,7 +181,8 @@ public class SwingAppFrame extends JFrame {
         c.gridy = 0;
         pane.add(projectName, c);
 
-        JTextField projectNameField = new JTextField();
+        projectNameField = new JTextField();
+        projectNameField.setText(cmd.getProjectName());
         c.fill = GridBagConstraints.HORIZONTAL;
         c.weightx = 0.5;
         c.gridx = 1;
@@ -179,7 +197,8 @@ public class SwingAppFrame extends JFrame {
         c.gridy = 0;
         pane.add(packageName, c);
 
-        JTextField packageNameField = new JTextField();
+        packageNameField = new JTextField();
+        packageNameField.setText(cmd.getPackageName());
         c.fill = GridBagConstraints.HORIZONTAL;
         c.weightx = 0.5;
         c.gridx = 3;
@@ -193,7 +212,8 @@ public class SwingAppFrame extends JFrame {
         c.gridy = 1;
         pane.add(path, c);
 
-        JTextField pathField = new JTextField();
+        pathField = new JTextField();
+        pathField.setText(cmd.getPath());
         c.fill = GridBagConstraints.HORIZONTAL;
         c.weightx = 0.5;
         c.gridx = 1;
@@ -208,7 +228,8 @@ public class SwingAppFrame extends JFrame {
         c.gridy = 1;
         pane.add(mainClass, c);
 
-        JTextField mainClassField = new JTextField();
+        mainClassField = new JTextField();
+        mainClassField.setText(cmd.getMainActivity());
         c.fill = GridBagConstraints.HORIZONTAL;
         c.weightx = 1.0;
         c.gridx = 3;
@@ -242,12 +263,10 @@ public class SwingAppFrame extends JFrame {
     }
 
     public static void addComponentsToPane(Container pane) {
-        GridBagConstraints c = new GridBagConstraints();
-
-        JPanel optionsPanel = getOptionsList3();
+        JPanel optionsPanel = getOptionsList();
         parameterPane = generatePanel(getParametersList());
         hierarchyPane = generatePanel(getHierarchyList());
-        JPanel previewPanel = generatePanel(getPreviewList());
+        previewPanel = generatePanel(getPreviewList());
 
         pane.add(optionsPanel, new GridBagConstraints(0, 3, 1, 1, 1.0, 1.0, GridBagConstraints.PAGE_END, GridBagConstraints.BOTH, new Insets(10, 10, 0, 0), 0, 500));
         pane.add(parameterPane, new GridBagConstraints(1, 3, 1, 1, 1.0, 1.0, GridBagConstraints.PAGE_END, GridBagConstraints.BOTH, new Insets(10, 10, 0, 0), 0, 500));
@@ -266,7 +285,8 @@ public class SwingAppFrame extends JFrame {
         JPanel comboPanel = new JPanel();
 
         String[] labels = {"MyClass1", "MyClass2", "MyClass3"};
-        JComboBox<String> combobox = new JComboBox<String>(labels); // Create the combo box
+        JComboBox<String> combobox = new JComboBox<String>(labels);
+        // Create the combo box
 //    combobox.setSelectedIndex(selection); // Set initial state
 
         // Handle changes to the state
@@ -286,7 +306,7 @@ public class SwingAppFrame extends JFrame {
         return classPicker;
     }
 
-    public static ArrayList<JComponent> getOptionsList() {
+    public static ArrayList<JComponent> getOptionsList1() {
         ArrayList<JComponent> componentList = new ArrayList<JComponent>();
         componentList.add(new JLabel("Options"));
         JButton button = new JButton("Add a Button");
@@ -319,7 +339,7 @@ public class SwingAppFrame extends JFrame {
 
 
     /* Options as a JList */
-    public static JPanel getOptionsList3() {
+    public static JPanel getOptionsList() {
         SpringLayout layout = new SpringLayout();
         JPanel optionsPanel = new JPanel(layout);
 
@@ -353,6 +373,7 @@ public class SwingAppFrame extends JFrame {
 //                contentPane.revalidate();
             }
         });
+
 
         // Lay out list and name label vertically
         listPanel.setLayout(new BoxLayout(listPanel, BoxLayout.Y_AXIS)); // vertical
@@ -408,16 +429,17 @@ public class SwingAppFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // get the text from all of the text fields
+                ActivityObject object;
+                String name = null;
                 for (int i = 1; i < parameters.getComponentCount(); i += 2) {
                     Component component = parameters.getComponent(i);
                     System.out.println("Text: " + i + " \'" + ((JTextField) component).getText() + "\'");
+                    if (i == 1)
+                        name = ((JTextField) component).getText();
                 }
-
-                hierarchyList.add("dummy item: " + UUID.randomUUID().toString());
-                contentPane.remove(hierarchyPane);
-                hierarchyPane = generatePanel(getHierarchyList());
-                contentPane.add(hierarchyPane, new GridBagConstraints(2, 3, 1, 1, 1.0, 1.0, GridBagConstraints.PAGE_END, GridBagConstraints.BOTH, new Insets(10, 10, 0, 0), 0, 500));
-                hierarchyPane.revalidate();
+                hierarchyList.add(getActivityObject(currentType, parameters));
+                refreshHierarchyPane();
+                refreshPreviewPane();
             }
         });
 
@@ -459,7 +481,7 @@ public class SwingAppFrame extends JFrame {
                 break;
             default:
                 return null;
-        };
+        }
 
         //Create and populate the panel.
         JPanel panel = new JPanel(new SpringLayout());
@@ -480,6 +502,94 @@ public class SwingAppFrame extends JFrame {
         return panel;
     }
 
+    public static ActivityObject getActivityObject(int type, JPanel parameters) {
+//        for (int i = 1; i < parameters.getComponentCount(); i += 2) {
+//            Component component = parameters.getComponent(i);
+//            System.out.println("Text: " + i + " \'" + ((JTextField) component).getText() + "\'");
+//            if (i == 1)
+//                ((JTextField) component).getText();
+//        }
+
+        ActivityObject object;
+        String name, text, height, width, hint;
+        StringBuilder sb;
+        name = ((JTextField) parameters.getComponent(1)).getText();
+        text = ((JTextField) parameters.getComponent(3)).getText();
+        height = ((JTextField) parameters.getComponent(5)).getText();
+        width = ((JTextField) parameters.getComponent(7)).getText();
+        if (StringHelper.isNullorEmpty(name))
+            name = cmd.getNextDefaultObjectName();
+        switch (type) {
+            case BUTTON_TYPE:
+                object = new ButtonActivityObject(name, text, height, width, null);
+                sb = new StringBuilder("button ");
+                if (!StringHelper.isNullorEmpty(name))
+                    sb.append("-name ").append(name).append(" ");
+                if (!StringHelper.isNullorEmpty(text))
+                    sb.append("-text ").append(text).append(" ");
+                if (!StringHelper.isNullorEmpty(height))
+                    sb.append("-height ").append(height).append(" ");
+                if (!StringHelper.isNullorEmpty(width))
+                    sb.append("-width ").append(width).append(" ");
+                cmd.parseCmd(sb.toString());
+                break;
+            case TEXTVIEW_TYPE:
+                object = new TextViewActivityObject(name, text, height, width, null);
+                sb = new StringBuilder("textview ");
+                if (!StringHelper.isNullorEmpty(name))
+                    sb.append("-name ").append(name).append(" ");
+                if (!StringHelper.isNullorEmpty(text))
+                    sb.append("-text ").append(text).append(" ");
+                if (!StringHelper.isNullorEmpty(height))
+                    sb.append("-height ").append(height).append(" ");
+                if (!StringHelper.isNullorEmpty(width))
+                    sb.append("-width ").append(width).append(" ");
+                cmd.parseCmd(sb.toString());
+                break;
+            case EDITTEXT_TYPE:
+                hint = ((JTextField) parameters.getComponent(9)).getText();
+                object = new EditTextActivityObject(name, text, hint, height, width, null);
+                sb = new StringBuilder("edittext ");
+                if (!StringHelper.isNullorEmpty(name))
+                    sb.append("-name ").append(name).append(" ");
+                if (!StringHelper.isNullorEmpty(text))
+                    sb.append("-text ").append(text).append(" ");
+                if (!StringHelper.isNullorEmpty(height))
+                    sb.append("-height ").append(height).append(" ");
+                if (!StringHelper.isNullorEmpty(width))
+                    sb.append("-width ").append(width).append(" ");
+                if (!StringHelper.isNullorEmpty(hint))
+                    sb.append("-hint ").append(hint).append(" ");
+                cmd.parseCmd(sb.toString());
+                break;
+            case CONTACTS_TYPE:
+                height = ((JTextField) parameters.getComponent(3)).getText();
+                width = ((JTextField) parameters.getComponent(5)).getText();
+                String hasName = ((JTextField) parameters.getComponent(7)).getText();
+                String hasNumber = ((JTextField) parameters.getComponent(9)).getText();
+                String divider = ((JTextField) parameters.getComponent(11)).getText();
+                object = new ContactsListActivityObject(name, height, width, null, !StringHelper.isNullorEmpty(hasName), !StringHelper.isNullorEmpty(hasNumber), divider);
+                sb = new StringBuilder("contactslist ");
+                if (!StringHelper.isNullorEmpty(name))
+                    sb.append("-name ").append(name).append(" ");
+                if (!StringHelper.isNullorEmpty(height))
+                    sb.append("-height ").append(height).append(" ");
+                if (!StringHelper.isNullorEmpty(width))
+                    sb.append("-width ").append(width).append(" ");
+                if (!StringHelper.isNullorEmpty(hasName))
+                    sb.append("-hasName ").append("1").append(" ");
+                if (!StringHelper.isNullorEmpty(hasNumber))
+                    sb.append("-hasNumber ").append("1").append(" ");
+                if (!StringHelper.isNullorEmpty(divider))
+                    sb.append("-divider ").append("1").append(" ");
+                cmd.parseCmd(sb.toString());
+                break;
+            default:
+                return null;
+        }
+        return object;
+    }
+
     public static ArrayList<JComponent> getHierarchyList() {
         ArrayList<JComponent> componentList = new ArrayList<JComponent>();
         JLabel title = new JLabel("Hierarchy");
@@ -490,10 +600,10 @@ public class SwingAppFrame extends JFrame {
 
         JLabel titlePanel = new JLabel("Class Name: ", JLabel.TRAILING);
         titlePanelParent.add(titlePanel);
-        JTextField textField = new JTextField(8);
-        titlePanel.setLabelFor(textField);
-        textField.setText(className);
-        titlePanelParent.add(textField);
+        classNameField  = new JTextField(8);
+        titlePanel.setLabelFor(classNameField);
+        classNameField.setText(cmd.getClassName());
+        titlePanelParent.add(classNameField);
 
         SpringUtilities.makeCompactGrid(titlePanelParent,
                 1, 2, //rows, cols
@@ -519,7 +629,11 @@ public class SwingAppFrame extends JFrame {
 
         JPanel listPanel = new JPanel();
 //        String[] labels = {"Add Button", "Add TextView", "Add EditText", "Add Contacts List"};
-        final JList<String> list = new JList<String>(hierarchyList.toArray(new String[hierarchyList.size()])); // Create the list
+        String[] items = new String[hierarchyList.size()];
+        for (int i = 0; i < hierarchyList.size(); i++) {
+            items[i] = hierarchyList.get(i).getObjectName();
+        }
+        final JList<String> list = new JList<String>(items);
 //        list.setSelectedIndex(0); // Set initial state
 
         // Handle state changes
@@ -528,6 +642,7 @@ public class SwingAppFrame extends JFrame {
 //                ItemChooser.this.select(list.getSelectedIndex());
                 System.out.println(e.toString());
                 System.out.println(e.getSource());
+
             }
         });
 
@@ -546,11 +661,10 @@ public class SwingAppFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 repositionInArrayList(hierarchyList, list.getSelectedIndex(), list.getSelectedIndex() - 1);
+                cmd.parseCmd("up " + list.getSelectedIndex());
 
-                contentPane.remove(hierarchyPane);
-                hierarchyPane = generatePanel(getHierarchyList());
-                contentPane.add(hierarchyPane, new GridBagConstraints(2, 3, 1, 1, 1.0, 1.0, GridBagConstraints.PAGE_END, GridBagConstraints.BOTH, new Insets(10, 10, 0, 0), 0, 500));
-                hierarchyPane.revalidate();
+                refreshHierarchyPane();
+                refreshPreviewPane();
             }
         });
         JButton downButton = new JButton("Down");
@@ -559,11 +673,10 @@ public class SwingAppFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 int i = list.getSelectedIndex();
                 repositionInArrayList(hierarchyList, list.getSelectedIndex(), list.getSelectedIndex() + 1);
+                cmd.parseCmd("down " + list.getSelectedIndex());
 
-                contentPane.remove(hierarchyPane);
-                hierarchyPane = generatePanel(getHierarchyList());
-                contentPane.add(hierarchyPane, new GridBagConstraints(2, 3, 1, 1, 1.0, 1.0, GridBagConstraints.PAGE_END, GridBagConstraints.BOTH, new Insets(10, 10, 0, 0), 0, 500));
-                hierarchyPane.revalidate();
+                refreshHierarchyPane();
+                refreshPreviewPane();
             }
         });
         JButton removeButton = new JButton("Remove");
@@ -571,11 +684,10 @@ public class SwingAppFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 hierarchyList.remove(list.getSelectedIndex());
+                cmd.parseCmd("remove " + list.getSelectedIndex());
 
-                contentPane.remove(hierarchyPane);
-                hierarchyPane = generatePanel(getHierarchyList());
-                contentPane.add(hierarchyPane, new GridBagConstraints(2, 3, 1, 1, 1.0, 1.0, GridBagConstraints.PAGE_END, GridBagConstraints.BOTH, new Insets(10, 10, 0, 0), 0, 500));
-                hierarchyPane.revalidate();
+                refreshHierarchyPane();
+                refreshPreviewPane();
             }
         });
 
@@ -598,7 +710,7 @@ public class SwingAppFrame extends JFrame {
     /* Put item at index a at index b instead */
     private static void repositionInArrayList(ArrayList list, int a, int b) {
         if ((a < 0) || (b < 0)) return;
-        if ((a > (list.size() - 2)) || (b > (list.size() - 1))) return;
+        if ((a > (list.size() - 1)) || (b > (list.size() - 1))) return;
         Object item = list.remove(a);
         list.add(b, item);
     }
@@ -641,20 +753,48 @@ public class SwingAppFrame extends JFrame {
         JLabel title = new JLabel("Java Code");
         componentList.add(title);
 
-        JButton addButton = new JButton("Edit");
+        JButton addButton = new JButton("Refresh");
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("sup");
+//                cmd.parseCmd("");
+//                cmd.setPath(pathField.getText());
+//                cmd.setPackageName(packageNameField.getText());
+//                cmd.setMainActivity(mainClassField.getText());
+
+                refreshPreviewPane();
             }
         });
         componentList.add(addButton);
 
-        JScrollPane scrollPane = new JScrollPane(new JTextArea(javaCode));
+        JScrollPane scrollPane = new JScrollPane(new JTextArea(cmd.getString()));
         scrollPane.setBorder(BorderFactory.createLineBorder(new Color(100, 100, 100)));
         scrollPane.setPreferredSize(new Dimension(200, 400));
         componentList.add(scrollPane);
 
         return componentList;
+    }
+
+    private static void refreshHierarchyPane() {
+        contentPane.remove(hierarchyPane);
+        hierarchyPane = generatePanel(getHierarchyList());
+        contentPane.add(hierarchyPane, new GridBagConstraints(2, 3, 1, 1, 1.0, 1.0, GridBagConstraints.PAGE_END, GridBagConstraints.BOTH, new Insets(10, 10, 0, 0), 0, 500));
+        hierarchyPane.revalidate();
+    }
+
+    private static void refreshPreviewPane() {
+        contentPane.remove(previewPanel);
+        previewPanel = generatePanel(getPreviewList());
+        contentPane.add(previewPanel, new GridBagConstraints(3, 3, 1, 1, 1.0, 1.0, GridBagConstraints.PAGE_END, GridBagConstraints.BOTH, new Insets(10, 10, 0, 0), 0, 500));
+        hierarchyPane.revalidate();
+    }
+
+
+    private static void updateGlobalProjectProperties() {
+        cmd.parseCmd("name " + projectNameField.getText());
+        cmd.parseCmd("package " + packageNameField.getText());
+        cmd.parseCmd("path " + pathField.getText());
+        cmd.parseCmd("main " + mainClassField.getText());
+        cmd.parseCmd("classname " + classNameField.getText());
     }
 }

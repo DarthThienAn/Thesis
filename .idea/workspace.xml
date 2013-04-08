@@ -13,7 +13,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61634fbf-e237-46de-bcc1-c6f65b6ae12b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/swing/SwingAppFrame.java" afterPath="$PROJECT_DIR$/src/swing/SwingAppFrame.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/CommandLineObject.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/StringHelper.java" />
+      <change type="MOVED" beforePath="C:\Users\Mark\Downloads\~school\Thesis\src\swing\SwingAppFrame.java" afterPath="$PROJECT_DIR$/src/SwingAppFrame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ActivityCode.java" afterPath="$PROJECT_DIR$/src/ActivityCode.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Thesis.iws" />
@@ -135,7 +138,7 @@
     <file path="/Overridden Method Body.txt.ft" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1350571380709" ignored="false" />
     <file path="/New Method Body.txt.ft" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1350571387353" ignored="false" />
     <file path="/Implemented Method Body.txt.ft" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1350571409966" ignored="false" />
-    <file path="/strings.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360353488234" ignored="false" />
+    <file path="/strings.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1364186300889" ignored="false" />
     <file path="$USER_HOME$/AppData/Local/Temp/android_manifest_copy483243789452130032tmp/AndroidManifest.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1350579977954" ignored="false" />
     <file path="/NActivity.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1350580631853" ignored="false" />
     <file path="/BasicActivity.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1350581161636" ignored="false" />
@@ -145,7 +148,7 @@
     <file path="/ButtonActivityObject.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1354772876745" ignored="false" />
     <file path="/TextViewActivityObject.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1354773440790" ignored="false" />
     <file path="$USER_HOME$/AppData/Local/Temp/android_manifest_copy1023455917462899315tmp/AndroidManifest.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1350588573642" ignored="false" />
-    <file path="/MyActivity.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360361586149" ignored="false" />
+    <file path="/MyActivity.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1365388004051" ignored="false" />
     <file path="$PROJECT_DIR$/../../Sonar/android/sonar/src/me/sonar/android/activity/TemplateActivity.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352920332554" ignored="false" />
     <file path="$PROJECT_DIR$/../../Sonar/android/sonar/target/generated-sources/aidl/me/sonar/android/BuildConfig.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352920391666" ignored="false" />
     <file path="$PROJECT_DIR$/../../Sonar/android/sonar/AndroidManifest.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352920409978" ignored="false" />
@@ -158,7 +161,7 @@
     <file path="$PROJECT_DIR$/../../Sonar/android/sonar/gen-external-apklibs/com.actionbarsherlock_actionbarsherlock_4.2.0/src/com/actionbarsherlock/app/ActionBar.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352920414806" ignored="false" />
     <file path="$PROJECT_DIR$/../../Sonar/android/sonar/gen-external-apklibs/com.actionbarsherlock_actionbarsherlock_4.2.0/AndroidManifest.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352920414806" ignored="false" />
     <file path="$PROJECT_DIR$/../../Sonar/android/sonar/gen-external-apklibs/com.actionbarsherlock_actionbarsherlock_4.2.0/src/com/actionbarsherlock/view/Menu.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352920414806" ignored="false" />
-    <file path="/fragment.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363794604503" ignored="false" />
+    <file path="/fragment.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1364185763390" ignored="false" />
     <file path="/DefaultConstants.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360986448524" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xslt-2_0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365186" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/lib/idea.jar!/standardSchemas/xhtml1-strict.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989365186" ignored="false" />
@@ -345,11 +348,11 @@
     <file path="$APPLICATION_HOME_DIR$/plugins/JBoss/lib/jbossIntegration.jar!/descriptors/jboss-deployment-structure-1_0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989366167" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/connector_1_5.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989366167" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/spring-form.tld" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989366167" ignored="false" />
-    <file path="/Dummy.txt" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363965282643" ignored="false" />
+    <file path="/Dummy.txt" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1365445919106" ignored="false" />
     <file path="$PROJECT_DIR$/../../Sonar/android/sonar/target/generated-sources/r/me/sonar/android/R.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352993844163" ignored="false" />
     <file path="/AndroidManifestGenerator.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360364673966" ignored="false" />
     <file path="/Imports.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360362937404" ignored="false" />
-    <file path="/ActivityCode.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1354665705022" ignored="false" />
+    <file path="/ActivityCode.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1364923080804" ignored="false" />
     <file path="/CommandLine.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363929625620" ignored="false" />
     <file path="/CustomFunction.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1354603984660" ignored="false" />
     <file path="/Parameter.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1354601438566" ignored="false" />
@@ -378,7 +381,7 @@
     <file path="$PROJECT_DIR$/Demos/Contacts/res/values/strings.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1355424976407" ignored="false" />
     <file path="$PROJECT_DIR$/Demos/Contacts/res/layout/main.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1355424976407" ignored="false" />
     <file path="$PROJECT_DIR$/Demos/Contacts/AndroidManifest.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1359926963487" ignored="false" />
-    <file path="$PROJECT_DIR$/Demos/Contacts/src/com/thesis/Contacts/MyActivity.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360361586884" ignored="false" />
+    <file path="$PROJECT_DIR$/Demos/Contacts/src/com/thesis/Contacts/MyActivity.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1365388004384" ignored="false" />
     <file path="$PROJECT_DIR$/Demos/Contacts/build.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1355424976407" ignored="false" />
     <file path="/PermissionManifestObject.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363623983681" ignored="false" />
     <file path="$PROJECT_DIR$/Demos/TipCalc/src/com/thesis/TipCalc/MyActivity.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360176126022" ignored="false" />
@@ -408,7 +411,7 @@
     <file path="/makestuff.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360554506792" ignored="false" />
     <file path="/SwingApp.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1362621558319" ignored="false" />
     <file path="$PROJECT_DIR$/.idea/modules.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1362034955433" ignored="false" />
-    <file path="/SwingAppFrame.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363717566526" ignored="false" />
+    <file path="/SwingAppFrame.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1365010646051" ignored="false" />
     <file path="/Permission.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363623958619" ignored="false" />
     <file path="$USER_HOME$/ibe-android/src/net/ibe/android/superbus/DatabaseHelper.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363790964910" ignored="false" />
     <file path="/DatabaseHelper.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363790810138" ignored="false" />
@@ -424,14 +427,14 @@
     <file path="$USER_HOME$/ibe-android/src/net/ibe/android/superbus/MyDatabaseFactory.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363790016043" ignored="false" />
     <file path="/MyDatabaseFactory.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363790016043" ignored="false" />
     <file path="$USER_HOME$/ibe-android/AndroidManifest.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363794788311" ignored="false" />
-    <file path="$USER_HOME$/ibe-android/gen/net/ibe/android/R.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363791383918" ignored="false" />
+    <file path="$USER_HOME$/ibe-android/gen/net/ibe/android/R.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1364187571054" ignored="false" />
     <file path="$USER_HOME$/ibe-android/src/net/ibe/android/IBEModule.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363792628374" ignored="false" />
     <file path="/IBEModule.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363792425182" ignored="false" />
     <file path="$USER_HOME$/ibe-android/src/net/ibe/android/provider/JsonSqlitePersistenceProviderProvider.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363792694273" ignored="false" />
     <file path="/JsonSqlitePersistenceProviderProvider.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363792614127" ignored="false" />
     <file path="$USER_HOME$/ibe-android/src/net/ibe/android/superbus/TestProvider.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363793442959" ignored="false" />
     <file path="/TestProvider.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363793432133" ignored="false" />
-    <file path="$USER_HOME$/ibe-android/src/main/java/net/ibe/android/activity/TestActivity.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363795252161" ignored="false" />
+    <file path="$USER_HOME$/ibe-android/src/main/java/net/ibe/android/activity/TestActivity.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1364187328386" ignored="false" />
     <file path="$USER_HOME$/ibe-android/src/main/java/net/ibe/android/superbus/JsonSqlitePersistenceProvider.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363795153757" ignored="false" />
     <file path="$USER_HOME$/ibe-android/project.properties" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363794492503" ignored="false" />
     <file path="$USER_HOME$/ibe-android/src/main/java/net/ibe/android/provider/JsonSqlitePersistenceProviderProvider.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363795265163" ignored="false" />
@@ -446,14 +449,14 @@
     <file path="$USER_HOME$/ibe-android/src/main/java/net/ibe/android/asynctask/AsyncDelete.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363794818960" ignored="false" />
     <file path="$USER_HOME$/ibe-android/src/main/java/net/ibe/android/asynctask/AsyncGet.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363794823697" ignored="false" />
     <file path="$USER_HOME$/ibe-android/src/main/java/net/ibe/android/asynctask/BaseAsyncTask.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363795192510" ignored="false" />
-    <file path="$USER_HOME$/ibe-android/src/main/java/net/ibe/android/asynctask/AsyncPut.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363795204268" ignored="false" />
-    <file path="$USER_HOME$/ibe-android/src/main/java/net/ibe/android/asynctask/AsyncPost.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363795218198" ignored="false" />
+    <file path="$USER_HOME$/ibe-android/src/main/java/net/ibe/android/asynctask/AsyncPut.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1364187571054" ignored="false" />
+    <file path="$USER_HOME$/ibe-android/src/main/java/net/ibe/android/asynctask/AsyncPost.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1364187568466" ignored="false" />
     <file path="$USER_HOME$/ibe-android/src/main/java/net/ibe/android/event/RestEvent.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363794851157" ignored="false" />
     <file path="$USER_HOME$/ibe-android/src/main/java/net/ibe/android/model/Reply.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363794884933" ignored="false" />
     <file path="$USER_HOME$/ibe-android/src/main/java/net/ibe/android/provider/RestTemplateProvider.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363794904290" ignored="false" />
-    <file path="$USER_HOME$/ibe-android/src/main/java/net/ibe/android/GlobalConstants.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363794911067" ignored="false" />
-    <file path="$USER_HOME$/ibe-android/src/main/java/net/ibe/android/IBEApplication.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363795071007" ignored="false" />
-    <file path="$USER_HOME$/ibe-android/src/main/java/net/ibe/android/superbus/DatabaseHelper.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363795117032" ignored="false" />
+    <file path="$USER_HOME$/ibe-android/src/main/java/net/ibe/android/GlobalConstants.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1364187571054" ignored="false" />
+    <file path="$USER_HOME$/ibe-android/src/main/java/net/ibe/android/IBEApplication.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1364187571054" ignored="false" />
+    <file path="$USER_HOME$/ibe-android/src/main/java/net/ibe/android/superbus/DatabaseHelper.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1364187571054" ignored="false" />
     <file path="$USER_HOME$/ibe-android/src/main/java/net/ibe/android/superbus/MessageEntry.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363795090048" ignored="false" />
     <file path="/PostMessageCommand.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363795100860" ignored="false" />
     <file path="$USER_HOME$/ibe-android/src/main/java/net/ibe/android/superbus/CommandErrorReceiver.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363795110440" ignored="false" />
@@ -465,6 +468,43 @@
     <file path="$USER_HOME$/ibe-android/src/test/java/net/ibe/android/MyActivityTest.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363795405741" ignored="false" />
     <file path="/MyActivityTest.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363795275698" ignored="false" />
     <file path="$USER_HOME$/ibe-android/src/test/java/net/ibe/android/ExampleTest.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363795286986" ignored="false" />
+    <file path="$USER_HOME$/ibe-android/src/main/java/net/ibe/android/activity/LoginActivity.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1364187550829" ignored="false" />
+    <file path="$USER_HOME$/ibe-android/src/main/java/net/ibe/android/helper/URLHelper.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1364187571054" ignored="false" />
+    <file path="/a.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1364185832475" ignored="false" />
+    <file path="/sample.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1364185403550" ignored="false" />
+    <file path="/LoginActivity.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1364186628983" ignored="false" />
+    <file path="$USER_HOME$/ibe-android/pom.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1364186171222" ignored="false" />
+    <file path="$USER_HOME$/ibe-android/android.iml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1364187556521" ignored="false" />
+    <file path="$USER_HOME$/ibe-android/res/values/strings.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1364187571054" ignored="false" />
+    <file path="$USER_HOME$/ibe-android/src/main/java/net/ibe/android/activity/PasswordResetActivity.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1364187571054" ignored="false" />
+    <file path="/AsyncPost.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1364598121986" ignored="false" />
+    <file path="$USER_HOME$/ibe-android/src/main/java/net/ibe/android/model/Authenticate.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1364187352754" ignored="false" />
+    <file path="$USER_HOME$/ibe-android/.gitignore" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1364187216919" ignored="false" />
+    <file path="/.gitignore" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1364187087417" ignored="false" />
+    <file path="$USER_HOME$/ibe-android/gen/net/ibe/android/BuildConfig.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1364187571054" ignored="false" />
+    <file path="$USER_HOME$/ibe-android/gen/net/ibe/android/Manifest.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1364187571054" ignored="false" />
+    <file path="$USER_HOME$/ibe-android/ibe/src/main/java/net/ibe/android/asynctask/AsyncPost.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1364598124509" ignored="false" />
+    <file path="$USER_HOME$/ibe-android/ibe/src/main/java/net/ibe/android/provider/RestTemplateProvider.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1364597313516" ignored="false" />
+    <file path="$USER_HOME$/ibe-android/ibe/src/main/java/net/ibe/android/provider/InsecureSSLSocketFactory.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1364597228704" ignored="false" />
+    <file path="$USER_HOME$/ibe-android/ibe/src/main/java/net/ibe/android/model/FetchRequest.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1364598213378" ignored="false" />
+    <file path="$USER_HOME$/ibe-android/ibe/src/main/java/net/ibe/android/model/Signature.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1364597971249" ignored="false" />
+    <file path="$USER_HOME$/ibe-android/ibe/src/main/java/net/ibe/android/activity/ListPeople.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1364598035897" ignored="false" />
+    <file path="$USER_HOME$/ibe-android/ibe/src/main/java/net/ibe/android/model/Fetch.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1364597977845" ignored="false" />
+    <file path="/StringHelper.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1364614324373" ignored="false" />
+    <file path="/CommandLineObject.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1364928049383" ignored="false" />
+    <file path="$USER_HOME$/ibe-android/ibe/src/main/java/net/ibe/android/superbus/DatabaseHelper.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1365388127340" ignored="false" />
+    <file path="$USER_HOME$/ibe-android/ibe/src/main/java/net/ibe/android/fragment/PersonFragment.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1365390529022" ignored="false" />
+    <file path="$USER_HOME$/ibe-android/ibe/src/main/java/net/ibe/android/activity/HomeActivity.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1365388127340" ignored="false" />
+    <file path="$USER_HOME$/ibe-android/ibe/src/main/java/net/ibe/android/IBEModule.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1365388127340" ignored="false" />
+    <file path="$USER_HOME$/ibe-android/ibe/src/main/java/net/ibe/android/fragment/PeopleFragment.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1365388127340" ignored="false" />
+    <file path="$USER_HOME$/ibe-android/ibe/src/main/java/net/ibe/android/list/ListAdapter.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1365388127340" ignored="false" />
+    <file path="$USER_HOME$/ibe-android/ibe/src/main/java/net/ibe/android/superbus/commands/EditMessageCommand.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1365390721179" ignored="false" />
+    <file path="/PersonFragment.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1365390168196" ignored="false" />
+    <file path="$USER_HOME$/ibe-android/ibe/src/main/java/net/ibe/android/superbus/commands/IBECommandAdapter.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1365389471430" ignored="false" />
+    <file path="/IBECommandAdapter.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1365389359747" ignored="false" />
+    <file path="$USER_HOME$/ibe-android/ibe/src/main/java/net/ibe/android/superbus/JsonSqlitePersistenceProvider.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1365389159082" ignored="false" />
+    <file path="$USER_HOME$/ibe-android/ibe/src/main/java/net/ibe/android/fragment/AddPersonFragment.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1365389903512" ignored="false" />
+    <file path="/EditMessageCommand.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1365390418111" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -529,10 +569,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Stub.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/stub/Stub.java">
+      <file leaf-file-name="SwingAppFrame.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/SwingAppFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="13" selection-start="33" selection-end="33" vertical-scroll-proportion="0.0">
+            <state line="168" column="40" selection-start="6380" selection-end="6393" vertical-scroll-proportion="0.5147453">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommandLineObject.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CommandLineObject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="471" column="14" selection-start="19538" selection-end="19538" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommandLine.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/CommandLine.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="297" column="0" selection-start="12609" selection-end="12609" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StringHelper.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/StringHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="42" selection-start="123" selection-end="123" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ButtonActivityObject.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/activityobject/ButtonActivityObject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="11" selection-start="96" selection-end="96" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -541,34 +617,16 @@
       <file leaf-file-name="ActivityCode.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ActivityCode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="13" selection-start="161" selection-end="161" vertical-scroll-proportion="0.0">
+            <state line="33" column="0" selection-start="1546" selection-end="1546" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActivityManifestObject.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ActivityManifestObject.java">
+      <file leaf-file-name="ContactsListActivityObject.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/activityobject/ContactsListActivityObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="13" selection-start="13" selection-end="13" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AndroidManifestGenerator.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AndroidManifestGenerator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="13" selection-start="595" selection-end="595" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommandLine.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/CommandLine.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="169" column="45" selection-start="7254" selection-end="7254" vertical-scroll-proportion="0.030360531">
+            <state line="17" column="11" selection-start="0" selection-end="3469" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -578,33 +636,6 @@
         <entry file="file://$PROJECT_DIR$/src/CustomFunction.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="3" column="13" selection-start="65" selection-end="65" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DefaultConstants.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DefaultConstants.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="13" selection-start="13" selection-end="13" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Permission.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Permission.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="13" selection-start="13" selection-end="13" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PermissionManifestObject.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PermissionManifestObject.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="13" selection-start="123" selection-end="123" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -642,11 +673,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/activityobject/ActivityObject.java" />
-        <option value="$PROJECT_DIR$/src/Imports.java" />
-        <option value="$PROJECT_DIR$/src/activityobject/ContactsListActivityObject.java" />
-        <option value="$PROJECT_DIR$/src/AndroidManifestGenerator.java" />
-        <option value="$PROJECT_DIR$/src/makestuff.java" />
         <option value="$PROJECT_DIR$/src/DefaultConstants.java" />
         <option value="$PROJECT_DIR$/src/com/thesis/BasicActivity.java" />
         <option value="$PROJECT_DIR$/src/com/thesis/MyActivity.java" />
@@ -656,15 +682,20 @@
         <option value="$PROJECT_DIR$/src/Permission.java" />
         <option value="$PROJECT_DIR$/src/PermissionManifestObject.java" />
         <option value="C:/easyandroid/abcdef/src/com/example/ABC.java" />
-        <option value="$PROJECT_DIR$/src/swing/SwingAppFrame.java" />
         <option value="$PROJECT_DIR$/src/CommandLine.java" />
+        <option value="$PROJECT_DIR$/src/swing/SwingAppFrame.java" />
+        <option value="$PROJECT_DIR$/src/StringHerlper.java" />
+        <option value="$PROJECT_DIR$/src/StringHelper.java" />
+        <option value="$PROJECT_DIR$/src/ActivityCode.java" />
+        <option value="$PROJECT_DIR$/src/CommandLineObject.java" />
+        <option value="$PROJECT_DIR$/src/SwingAppFrame.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1378" />
+    <option name="width" value="1382" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -700,6 +731,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -810,7 +842,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -842,7 +873,7 @@
   <component name="RunManager" selected="Application.SwingAppFrame">
     <configuration default="false" name="SwingAppFrame" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="swing.SwingAppFrame" />
+      <option name="MAIN_CLASS_NAME" value="SwingAppFrame" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -853,7 +884,13 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="Thesis" />
       <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -1100,23 +1137,24 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.4969697" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.6717949" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39863715" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.49772727" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3253833" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24924242" sideWeight="0.21709402" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26139817" sideWeight="0.6848382" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31516185" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="288" y="-8" width="1074" height="714" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24015151" sideWeight="0.7376491" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26235095" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="288" y="-8" width="1074" height="714" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1126,7 +1164,6 @@
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3270869" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3253833" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.4939394" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Android Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32876712" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1199,69 +1236,9 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/thesis/NActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/thesis/MyActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/swing/SpringUtilities.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="13" selection-start="1914" selection-end="1914" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/swing/SwingAppFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="559" column="32" selection-start="21672" selection-end="21721" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1183#1191#0" expanded="true" />
-            <element signature="method#getMenu#0;class#SwingAppFrame#0" expanded="false" />
-            <element signature="method#addHeader#0;class#SwingAppFrame#0" expanded="false" />
-            <element signature="e#10161#10169#0" expanded="true" />
-            <element signature="method#getOptionsList#0;class#SwingAppFrame#0" expanded="false" />
-            <element signature="e#10967#10979#0" expanded="true" />
-            <element signature="e#12366#12374#0" expanded="true" />
-            <element signature="e#14492#14500#0" expanded="true" />
-            <element signature="e#15395#15407#0" expanded="true" />
-            <element signature="e#18516#18528#0" expanded="true" />
-            <element signature="e#19892#19900#0" expanded="true" />
-            <element signature="e#24306#24314#0" expanded="true" />
-            <element signature="e#25300#25312#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/swing/SwingApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="34" selection-start="0" selection-end="8813" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/stub/Cmd.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="13" selection-start="52" selection-end="52" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/stub/Stub.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="13" selection-start="33" selection-end="33" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ActivityCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="161" selection-end="161" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1315,9 +1292,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/StringHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="42" selection-start="123" selection-end="123" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/activityobject/ButtonActivityObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="11" selection-start="96" selection-end="96" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/CommandLine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="169" column="45" selection-start="7254" selection-end="7254" vertical-scroll-proportion="0.030360531">
+        <state line="297" column="0" selection-start="12609" selection-end="12609" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_03/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="409" column="19" selection-start="14919" selection-end="14919" vertical-scroll-proportion="0.3316062" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ActivityCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="0" selection-start="1546" selection-end="1546" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/activityobject/ContactsListActivityObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="11" selection-start="0" selection-end="3469" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CommandLineObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="471" column="14" selection-start="19538" selection-end="19538" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SwingAppFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="168" column="40" selection-start="6380" selection-end="6393" vertical-scroll-proportion="0.5147453">
           <folding />
         </state>
       </provider>

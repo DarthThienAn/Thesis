@@ -38,6 +38,33 @@ public class ActivityCode {
         customFunctions.add(customFunction);
     }
 
+    public boolean moveUp(int index) {
+        if (activityObjects == null) throw new RuntimeException("ActivityObjects was null");
+        if (index < 0) throw new IndexOutOfBoundsException("Index out of bounds");
+        if (index > (activityObjects.size() - 1)) throw new IndexOutOfBoundsException("Index out of bounds");
+        if (index == 0) return false;
+        ActivityObject o = activityObjects.remove(index);
+        activityObjects.add(index - 1, o);
+        return true;
+    }
+
+    public boolean moveDown(int index) {
+        if (activityObjects == null) throw new RuntimeException("ActivityObjects was null");
+        if (index < 0) throw new IndexOutOfBoundsException("Index out of bounds");
+        if (index > (activityObjects.size() - 1)) throw new IndexOutOfBoundsException("Index out of bounds");
+        if (index == (activityObjects.size() - 1)) return false;
+        ActivityObject o = activityObjects.remove(index);
+        activityObjects.add(index + 1, o);
+        return true;
+    }
+
+    public ActivityObject remove(int index) {
+        if (activityObjects == null) throw new RuntimeException("ActivityObjects was null");
+        if (index < 0) throw new IndexOutOfBoundsException("Index out of bounds");
+        if (index > (activityObjects.size() - 1)) throw new IndexOutOfBoundsException("Index out of bounds");
+        return activityObjects.remove(index);
+    }
+
     public void setPackageName(String packageName) {
         this.packageName = packageName;
     }
