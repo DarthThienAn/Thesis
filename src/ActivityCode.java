@@ -38,6 +38,15 @@ public class ActivityCode {
         customFunctions.add(customFunction);
     }
 
+    public CustomFunction removeCustomFunction(int index) {
+        if (customFunctions == null) throw new RuntimeException("CustomFunctions was null");
+        return customFunctions.remove(index);
+    }
+
+    public List<CustomFunction> getCustomFunctions() {
+        return customFunctions;
+    }
+
     public boolean moveUp(int index) {
         if (activityObjects == null) throw new RuntimeException("ActivityObjects was null");
         if (index < 0) throw new IndexOutOfBoundsException("Index out of bounds");

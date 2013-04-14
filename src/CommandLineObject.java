@@ -1,6 +1,8 @@
 import activityobject.*;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CommandLineObject {
 
@@ -34,6 +36,8 @@ public class CommandLineObject {
         mainActivity = DefaultConstants.DEFAULT_MAIN_ACTIVITY;
         packageName = DefaultConstants.DEFAULT_PACKAGE_NAME;
         permissionManifestObject = new PermissionManifestObject();
+
+        addDefaultFunctions();
     }
 
     public void parseCmd(String input) {
@@ -142,6 +146,19 @@ public class CommandLineObject {
     }
 
     public static boolean parseLocalCmd(String[] args) throws ArrayIndexOutOfBoundsException {
+        for (String argument : args)
+            System.out.println("~" + argument);
+
+        String[] arguments = StringHelper.reconstructWithoutFirst(args);
+        for (String argument : arguments)
+            System.out.println("!" + argument);
+
+        for (String items : arguments) {
+            String[] list = items.split(" ", 2);
+            for (String argument : list)
+                System.out.println("." + argument);
+            System.out.println();
+        }
         // sets the project path to the first argument
         if (args[CMD_OFFSET].equals("path")) {
             path = args[CMD_OFFSET + 1];
@@ -180,7 +197,28 @@ public class CommandLineObject {
         }
         // opens up console for creating a custom function
         else if (args[CMD_OFFSET].equals("customfunction")) {
-            CustomFunction customFunction = createCustomFunction();
+//            CustomFunction customFunction = createCustomFunction();
+            String name = null;
+            String body = null;
+            String returnType = null;
+            List<Parameter> params = new ArrayList<Parameter>();
+            for (int i = (CMD_OFFSET + 1); i < arguments.length; i++) {
+                String[] items = arguments[i].split(" ", 2);
+
+                if (items[0].equals("name"))
+                    name = items[1];
+                else if (items[0].equals("body"))
+                    body = items[1];
+                else if (items[0].equals("returnType"))
+                    returnType = items[1];
+                else if (items[0].equals("params")) {
+                    String[] paramArgs = arguments[i].split(" ");
+                    for (int j = 1; j < paramArgs.length; j += 2) {
+                        params.add(new Parameter(paramArgs[j], paramArgs[j+1]));
+                    }
+                }
+            }
+            CustomFunction customFunction = new CustomFunction(name, body, returnType, params);
             activityCode.addCustomFunction(customFunction);
             print("Custom function " + customFunction.getName() + "() successfully created");
             print(customFunction.toString());
@@ -210,52 +248,38 @@ public class CommandLineObject {
             ActivityObject o = activityCode.remove(index);
             print("Object " + o.getObjectName() + " removed.");
         }
+        else if (args[CMD_OFFSET].equals("removefunction")) {
+            int index = Integer.parseInt(args[CMD_OFFSET + 1]);
+            CustomFunction o = activityCode.removeCustomFunction(index);
+            print("Object " + o.getName() + " removed.");
+        }
 
         //TODO: generalize this to be read from data file
         // add a button
         else if (args[CMD_OFFSET].equals("button")) {
             // set default object name in case it's not specified
             String name = activityCode.getDefaultObjectName();
-            // initialize these to null, ButtonActivityObject should take care of null inputs
-            StringBuilder textSb = new StringBuilder();
             String text = null;
             String height = null;
             String width = null;
-            boolean action = false;
-            String actionBody = null;
+            String action = null;
+            for (int i = (CMD_OFFSET + 1); i < arguments.length; i++) {
+                String[] items = arguments[i].split(" ", 2);
 
-            for (int i = (CMD_OFFSET + 1); i < args.length; i++) {
-                if (args[i].equals("-name")) {
-                    name = args[++i];
-                }
-                else if (args[i].equals("-text")) {
-                    if (args[i+1].charAt(0) == ('\"')) {
-                        textSb.append(args[i+1].substring(1)).append(' ');
-                        i++;
-
-                        while (!args[i+1].endsWith("\"")) {
-                            textSb.append(args[i+1]).append(' ');
-                            i++;
-                        }
-
-                        textSb.append(args[i+1].substring(0, args[i+1].length() - 1));
-                    }
-                    else
-                        textSb.append(args[i+1]);
-                }
-                else if (args[i].equals("-height"))
-                    height = args[i+1];
-                else if (args[i].equals("-width"))
-                    width = args[i+1];
-                else if (args[i].equals("-action")) {
-                    if (args[i+1].equals("1"))
-                        action = true;
+                if (items[0].equals("name"))
+                    name = items[1];
+                else if (items[0].equals("text"))
+                    text = items[1];
+                else if (items[0].equals("height"))
+                    height = items[1];
+                else if (items[0].equals("width"))
+                    width = items[1];
+                else if (items[0].equals("action")) {
+                    action = items[1];
                 }
             }
 
-            if (action) actionBody = getActionBody();
-
-            activityCode.addActivityObject(new ButtonActivityObject(name, textSb.toString(), height, width, actionBody));
+            activityCode.addActivityObject(new ButtonActivityObject(name, text, height, width, action));
             activityCode.setImportFlag(Imports.ImportType.BUTTON, true);
             print("button \"" + name + "\" added: ");
         }
@@ -263,33 +287,27 @@ public class CommandLineObject {
         else if (args[CMD_OFFSET].equals("textview")) {
             // set default object name in case it's not specified
             String name = activityCode.getDefaultObjectName();
-            // initialize these to null, ButtonActivityObject should take care of null inputs
             String text = null;
             String height = null;
             String width = null;
-            boolean action = false;
-            String actionBody = null;
+            String action = null;
+            for (int i = (CMD_OFFSET + 1); i < arguments.length; i++) {
+                String[] items = arguments[i].split(" ", 2);
 
-            for (int i = (CMD_OFFSET + 1); i < args.length; i++) {
-                if (args[i].equals("-name")) {
-                    name = args[i+1];
-                }
-                else if (args[i].equals("-text")) {
-                    text = args[i+1];
-                }
-                else if (args[i].equals("-height"))
-                    height = args[i+1];
-                else if (args[i].equals("-width"))
-                    width = args[i+1];
-                else if (args[i].equals("-action")) {
-                    if (args[i+1].equals("1"))
-                        action = true;
+                if (items[0].equals("name"))
+                    name = items[1];
+                else if (items[0].equals("text"))
+                    text = items[1];
+                else if (items[0].equals("height"))
+                    height = items[1];
+                else if (items[0].equals("width"))
+                    width = items[1];
+                else if (items[0].equals("action")) {
+                    action = items[1];
                 }
             }
 
-            if (action) actionBody = getActionBody();
-
-            activityCode.addActivityObject(new TextViewActivityObject(name, text, height, width, actionBody));
+            activityCode.addActivityObject(new TextViewActivityObject(name, text, height, width, action));
             activityCode.setImportFlag(Imports.ImportType.TEXTVIEW, true);
             print("textview \"" + name + "\" added:");
         }
@@ -297,34 +315,30 @@ public class CommandLineObject {
         else if (args[CMD_OFFSET].equals("edittext")) {
             // set default object name in case it's not specified
             String name = activityCode.getDefaultObjectName();
-            // initialize these to null, ButtonActivityObject should take care of null inputs
             String text = null;
-            String hint = null;
             String height = null;
             String width = null;
-            boolean action = false;
-            String actionBody = null;
+            String hint = null;
+            String action = null;
+            for (int i = (CMD_OFFSET + 1); i < arguments.length; i++) {
+                String[] items = arguments[i].split(" ", 2);
 
-            for (int i = (CMD_OFFSET + 1); i < args.length; i++) {
-                if (args[i].equals("-name"))
-                    name = args[i+1];
-                else if (args[i].equals("-text"))
-                    text = args[i+1];
-                else if (args[i].equals("-hint"))
-                    hint = args[i+1];
-                else if (args[i].equals("-height"))
-                    height = args[i+1];
-                else if (args[i].equals("-width"))
-                    width = args[i+1];
-                else if (args[i].equals("-action")) {
-                    if (args[i+1].equals("1"))
-                        action = true;
+                if (items[0].equals("name"))
+                    name = items[1];
+                else if (items[0].equals("text"))
+                    text = items[1];
+                else if (items[0].equals("height"))
+                    height = items[1];
+                else if (items[0].equals("width"))
+                    width = items[1];
+                else if (items[0].equals("hint"))
+                    hint = items[1];
+                else if (items[0].equals("action")) {
+                    action = items[1];
                 }
             }
 
-            if (action) actionBody = getActionBody();
-
-            activityCode.addActivityObject(new EditTextActivityObject(name, text, hint, height, width, actionBody));
+            activityCode.addActivityObject(new EditTextActivityObject(name, text, hint, height, width, action));
             activityCode.setImportFlag(Imports.ImportType.EDITTEXT, true);
             print("edittext \"" + name + "\" added:");
         }
@@ -332,36 +346,33 @@ public class CommandLineObject {
         else if (args[CMD_OFFSET].equals("contactslist")) {
             // set default object name in case it's not specified
             String name = activityCode.getDefaultObjectName();
-            // initialize these to null, ButtonActivityObject should take care of null inputs
             String height = null;
             String width = null;
-            boolean action = false;
+            String divider = null;
+            String action = null;
             boolean hasName = true;
             boolean hasNumber = true;
-            String divider = null;
-            String actionBody = null;
 
-            for (int i = (CMD_OFFSET + 1); i < args.length; i++) {
-                if (args[i].equals("-name"))
-                    name = args[i+1];
-                else if (args[i].equals("-hasName"))
-                    hasName = args[i+1].equals("1");
-                else if (args[i].equals("-hasNumber"))
-                    hasNumber = args[i+1].equals("1");
-                else if (args[i].equals("-height"))
-                    height = args[i+1];
-                else if (args[i].equals("-width"))
-                    width = args[i+1];
-                else if (args[i].equals("-divider"))
-                    divider = args[i+1];
-                else if (args[i].equals("-action")) {
-                    action = args[i+1].equals("1");
-                }
+            for (int i = (CMD_OFFSET + 1); i < arguments.length; i++) {
+                String[] items = arguments[i].split(" ", 2);
+
+                if (items[0].equals("name"))
+                    name = items[1];
+                else if (items[0].equals("height"))
+                    height = items[1];
+                else if (items[0].equals("width"))
+                    width = items[1];
+                else if (items[0].equals("divider"))
+                    divider = items[1];
+                else if (items[0].equals("action"))
+                    action = items[1];
+                else if (items[0].equals("hasName"))
+                    hasName = items[1].equals("1");
+                else if (items[0].equals("hasNumber"))
+                    hasNumber = items[1].equals("1");
             }
 
-            if (action) actionBody = getActionBody();
-
-            activityCode.addActivityObject(new ContactsListActivityObject(name, height, width, actionBody, hasName, hasNumber, divider));
+            activityCode.addActivityObject(new ContactsListActivityObject(name, height, width, action, hasName, hasNumber, divider));
             activityCode.setImportFlag(Imports.ImportType.CONTACTSLIST, true);
             permissionManifestObject.setReadContactsFlag(true);
             print("contactslist \"" + name + "\" added:");
@@ -653,5 +664,37 @@ public class CommandLineObject {
 
     public String getClassName() {
         return activityCode.getClassName();
+    }
+
+    public List<CustomFunction> getFunctions() {
+        return activityCode.getCustomFunctions();
+    }
+
+    public void addDefaultFunctions() {
+        List<Parameter> params = new ArrayList<Parameter>();
+        params.add(new Parameter("int", "a"));
+        params.add(new Parameter("int", "b"));
+
+        activityCode.addCustomFunction(new CustomFunction("addition", "return a + b;", "int", params));
+        activityCode.addCustomFunction(new CustomFunction("subtraction", "return a - b;", "int", params));
+        activityCode.addCustomFunction(new CustomFunction("multiplication", "return a * b;", "int", params));
+
+        params = new ArrayList<Parameter>();
+        params.add(new Parameter("double", "a"));
+        params.add(new Parameter("double", "b"));
+        activityCode.addCustomFunction(new CustomFunction("division", "return a / b;", "double", params));
+        addSmsFunction();
+    }
+
+    public void addSmsFunction() {
+        List<Parameter> params = new ArrayList<Parameter>();
+        params.add(new Parameter("String", "number"));
+        params.add(new Parameter("String", "text"));
+
+        String body = "SmsManager sms = SmsManager.getDefault();\n" +
+                "sms.sendTextMessage(number, null, text, null, null);\n";
+
+        permissionManifestObject.setSendSmsFlag(true);
+        activityCode.addCustomFunction(new CustomFunction("sendsms", body, "void", params));
     }
 }

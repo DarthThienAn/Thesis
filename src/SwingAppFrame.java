@@ -6,28 +6,46 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.ArrayList;
+import java.util.*;
+import java.util.List;
 
 public class SwingAppFrame extends JFrame {
 
-    private static final int DEF_WIDTH = 1200;
-    private static final int DEF_HEIGHT = 800;
+    private static final int DEF_WIDTH = 1300;
+    private static final int DEF_HEIGHT = 700;
+    private static final int OPTIONS_WIDTH = 200;
+    private static final int OPTIONS_HEIGHT = 600;
+    private static final int FUNCTIONS_WIDTH = 200;
+    private static final int FUNCTIONS_HEIGHT = 600;
+    private static final int PARAMETERS_WIDTH = 220;
+    private static final int PARAMETERS_HEIGHT = 600;
+    private static final int HIERARCHY_WIDTH = 220;
+    private static final int HIERARCHY_HEIGHT = 600;
+    private static final int PREVIEW_WIDTH = 350;
+    private static final int PREVIEW_HEIGHT = 400;
+    private static final int WINDOW_WIDTH = 200;
+    private static final int WINDOW_HEIGHT = 400;
 
-    static final String[] BUTTON_PARAMETERS = {"Name: ", "Text: ", "Height: ", "Width: "};
+    private static final int BORDER_COLOR = 150;
+
+    static final String[] BUTTON_PARAMETERS = {"Name: ", "Text: ", "Height: ", "Width: ", "Action: "};
     static final String[] TEXTVIEW_PARAMETERS = {"Name: ", "Text: ", "Height: ", "Width: "};
-    static final String[] EDITTEXT_PARAMETERS = {"Name: ", "Text: ", "Height: ", "Width: ", "Hint: "};
-    static final String[] CONTACTS_PARAMETERS = {"Name: ", "Height: ", "Width: ", "HasName: ", "HasNumber: ", "Divider: "};
+    static final String[] EDITTEXT_PARAMETERS = {"Name: ", "Text: ", "Height: ", "Width: ", "Hint: ", "Action: "};
+    static final String[] CONTACTS_PARAMETERS = {"Name: ", "Height: ", "Width: ", "HasName: ", "HasNumber: ", "Divider: ", "Action: "};
+    static final String[] CUSTOMFUNCTION_PARAMETERS = {"Name: ", "ReturnType: ", "Parameters: ", "Body: "};
 
     private static final int BUTTON_TYPE = 0;
     private static final int TEXTVIEW_TYPE = 1;
     private static final int EDITTEXT_TYPE = 2;
     private static final int CONTACTS_TYPE = 3;
+    private static final int CUSTOMFUNCTION_TYPE = 4;
     private static int currentType = 0;
 
     private static SwingAppFrame frame;
-    private static JPanel parameterPane, hierarchyPane, previewPanel;
+    private static JPanel optionsPane, functionPane, parameterPane, hierarchyPane, previewPanel, componentsPane;
     private static JTextField projectNameField, pathField, packageNameField, mainClassField;
     private static JTextField classNameField;
+    private static JSeparator jSeparator;
     private static Container contentPane;
     private static ArrayList<ActivityObject> hierarchyList = new ArrayList<ActivityObject>();
 
@@ -36,19 +54,11 @@ public class SwingAppFrame extends JFrame {
     public SwingAppFrame() {
         //Create and set up the window.
         setTitle("Easy Android");
+        setLayout(new SpringLayout());
+        setPreferredSize(new Dimension(DEF_WIDTH, DEF_HEIGHT));
         setSize(DEF_WIDTH, DEF_HEIGHT);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         contentPane = getContentPane();
-
-
-
-//        JLabel header = new JLabel();
-//        header.setPreferredSize(new Dimension(DEF_WIDTH, 100));
-//        JLabel projectName = new JLabel("Project Name");
-//        projectName.setPreferredSize(new Dimension(200, 40));
-//        JLabel packageName = new JLabel("Package Name");
-//        packageName.setPreferredSize(new Dimension(200, 40));
-//        header.add(projectName);
 
         //Create a background to put in the content pane.
 //        JLabel background = new JLabel();
@@ -56,18 +66,13 @@ public class SwingAppFrame extends JFrame {
 //        background.setBackground(new Color(130, 130, 130));
 //        background.setPreferredSize(new Dimension(DEF_WIDTH, DEF_HEIGHT));
 
-        //Add the ubiquitous "Hello World" label.
-//        JLabel label = new JLabel("Hello World");
-//        label.setPreferredSize(new Dimension(200, 40));
-//        background.add(label);
-
         //Set the menu bar and add the label to the content pane.
         setJMenuBar(getMenu());
 //        frame.getContentPane().add(projectName, BorderLayout.PAGE_START);
 //        frame.getContentPane().add(packageName, BorderLayout.PAGE_START);
 
-        addHeader(getContentPane());
-        addComponentsToPane(getContentPane());
+        addHeader(contentPane);
+        addComponentsToPane(contentPane);
 //        frame.getContentPane().add(background, BorderLayout.CENTER);
 //        frame.getContentPane().add(label, BorderLayout.CENTER);
 
@@ -134,7 +139,7 @@ public class SwingAppFrame extends JFrame {
             }
         });
 
-        fileMenu.add(openItem);
+//        fileMenu.add(openItem);
         fileMenu.add(saveItem);
         fileMenu.add(exitItem);
         menuBar.add(fileMenu);
@@ -165,113 +170,84 @@ public class SwingAppFrame extends JFrame {
     }
 
     /* Add Global property items */
-    public static void addHeader(Container pane) {
-        pane.setLayout(new GridBagLayout());
-        GridBagConstraints c = new GridBagConstraints();
+    public static void addHeader(Container parent) {
+        SpringLayout mainLayout = new SpringLayout();
+        JPanel headerPane = new JPanel(mainLayout);
+        parent.add(headerPane);
 
-        JLabel projectName = new JLabel("Project Name:  ");
-        projectName.setToolTipText("Your project name here  ");
+        String[] labels = { "Project Name: ", "Package Name: ", "Path: ", "Main Class: "};
+        String[] texts = { cmd.getProjectName(), cmd.getPackageName(), cmd.getPath(), cmd.getMainActivity()};
+        ArrayList<JLabel> labelsList = new ArrayList<JLabel>(4);
+        ArrayList<JTextField> textFieldsList = new ArrayList<JTextField>(4);
 
-        c.fill = GridBagConstraints.HORIZONTAL;
-        c.insets = new Insets(5, 5, 0, 0);
-        c.weightx = 0.5;
-        c.gridheight = 1;
-        c.gridwidth = 1;
-        c.gridx = 0;
-        c.gridy = 0;
-        pane.add(projectName, c);
+        for (int i = 0; i < labels.length; i++) {
+            JLabel l = new JLabel(labels[i], JLabel.TRAILING);
+            headerPane.add(l);
+//        projectName.setToolTipText("Your project name here  ");
+            labelsList.add(l);
+            JTextField textField = new JTextField(20);
+            textField.setText(texts[i]);
+            l.setLabelFor(textField);
+            headerPane.add(textField);
+            textFieldsList.add(textField);
+        }
 
-        projectNameField = new JTextField();
-        projectNameField.setText(cmd.getProjectName());
-        c.fill = GridBagConstraints.HORIZONTAL;
-        c.weightx = 0.5;
-        c.gridx = 1;
-        c.gridy = 0;
-//        projectName.setLabelFor(projectNameField);
-        pane.add(projectNameField, c);
 
-        JLabel packageName = new JLabel("Package Name: ");
-        c.fill = GridBagConstraints.HORIZONTAL;
-        c.weightx = 0.5;
-        c.gridx = 2;
-        c.gridy = 0;
-        pane.add(packageName, c);
-
-        packageNameField = new JTextField();
-        packageNameField.setText(cmd.getPackageName());
-        c.fill = GridBagConstraints.HORIZONTAL;
-        c.weightx = 0.5;
-        c.gridx = 3;
-        c.gridy = 0;
-        pane.add(packageNameField, c);
-
-        JLabel path = new JLabel("Path: ");
-        c.fill = GridBagConstraints.HORIZONTAL;
-        c.weightx = 0.5;
-        c.gridx = 0;
-        c.gridy = 1;
-        pane.add(path, c);
-
-        pathField = new JTextField();
-        pathField.setText(cmd.getPath());
-        c.fill = GridBagConstraints.HORIZONTAL;
-        c.weightx = 0.5;
-        c.gridx = 1;
-        c.gridy = 1;
-        pane.add(pathField, c);
-
-        JLabel mainClass = new JLabel("Main Class: ");
-        c.fill = GridBagConstraints.HORIZONTAL;
-        c.weightx = 0.5;
-//        c.gridwidth = 3;
-        c.gridx = 2;
-        c.gridy = 1;
-        pane.add(mainClass, c);
-
-        mainClassField = new JTextField();
-        mainClassField.setText(cmd.getMainActivity());
-        c.fill = GridBagConstraints.HORIZONTAL;
-        c.weightx = 1.0;
-        c.gridx = 3;
-        c.gridy = 1;
-        pane.add(mainClassField, c);
+        // Global Headers in a block
+        SpringUtilities.makeCompactGrid(headerPane,
+                2, labels.length, //rows, cols
+                1, 1,        //initX, initY
+                10, 10);       //xPad, yPad
 
         JPanel classPicker = getClassPicker();
-        c = new GridBagConstraints(0, 2, 1, 1, 1.0, 1.0, GridBagConstraints.FIRST_LINE_START, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0);
-//        c.ipady = 5;
-//        c.ipadx = 0;
-//        c.gridwidth = 1;
-//        c.weightx = 1.0;   //request any extra vertical space
-//        c.weighty = 1.0;   //request any extra vertical space
-//        c.gridx = 0;
-//        c.gridy = 2;
-        pane.add(classPicker, c);
+        parent.add(classPicker);
 
-        c.fill = GridBagConstraints.BOTH;
-        c.anchor = GridBagConstraints.PAGE_START;
-        c.ipady = 0;
-        c.gridwidth = 4;
-        c.weightx = 1.0;   //request any extra vertical space
-        c.weighty = 1.0;   //request any extra vertical space
-        c.gridx = 0;
-        c.gridy = 3;
-
-        JSeparator jSeparator = new JSeparator(SwingConstants.HORIZONTAL);
+        jSeparator = new JSeparator(SwingConstants.HORIZONTAL);
         jSeparator.setForeground(new Color(150, 150, 255));
         jSeparator.setBackground(new Color(150, 150, 255));
-        pane.add(jSeparator, c);
+        jSeparator.setPreferredSize(new Dimension(2000, 3));
+        parent.add(jSeparator);
+
+        SpringLayout parentLayout = (SpringLayout) parent.getLayout();
+        parentLayout.putConstraint(SpringLayout.NORTH, headerPane, 5, SpringLayout.NORTH, parent);
+        parentLayout.putConstraint(SpringLayout.NORTH, classPicker, 5, SpringLayout.SOUTH, headerPane);
+        parentLayout.putConstraint(SpringLayout.NORTH, jSeparator, 5, SpringLayout.SOUTH, classPicker);
     }
 
     public static void addComponentsToPane(Container pane) {
-        JPanel optionsPanel = getOptionsList();
+        componentsPane = new JPanel();
+        BoxLayout componentsLayout = new BoxLayout(componentsPane, BoxLayout.X_AXIS);
+        componentsPane.setLayout(componentsLayout);
+        pane.add(componentsPane);
+
+        optionsPane = getOptionsList();
+        functionPane = getFunctionsList();
         parameterPane = generatePanel(getParametersList());
         hierarchyPane = generatePanel(getHierarchyList());
         previewPanel = generatePanel(getPreviewList());
 
-        pane.add(optionsPanel, new GridBagConstraints(0, 3, 1, 1, 1.0, 1.0, GridBagConstraints.PAGE_END, GridBagConstraints.BOTH, new Insets(10, 10, 0, 0), 0, 500));
-        pane.add(parameterPane, new GridBagConstraints(1, 3, 1, 1, 1.0, 1.0, GridBagConstraints.PAGE_END, GridBagConstraints.BOTH, new Insets(10, 10, 0, 0), 0, 500));
-        pane.add(hierarchyPane, new GridBagConstraints(2, 3, 1, 1, 1.0, 1.0, GridBagConstraints.PAGE_END, GridBagConstraints.BOTH, new Insets(10, 10, 0, 0), 0, 500));
-        pane.add(previewPanel, new GridBagConstraints(3, 3, 1, 1, 1.0, 1.0, GridBagConstraints.PAGE_END, GridBagConstraints.BOTH, new Insets(10, 10, 0, 0), 0, 500));
+//        optionsPane.setAlignmentY(Component.TOP_ALIGNMENT);
+        optionsPane.setPreferredSize(new Dimension(OPTIONS_WIDTH, OPTIONS_HEIGHT));
+        functionPane.setPreferredSize(new Dimension(FUNCTIONS_WIDTH, FUNCTIONS_HEIGHT));
+        parameterPane.setPreferredSize(new Dimension(PARAMETERS_WIDTH, PARAMETERS_HEIGHT));
+        hierarchyPane.setPreferredSize(new Dimension(HIERARCHY_WIDTH, HIERARCHY_HEIGHT));
+        previewPanel.setPreferredSize(new Dimension(PREVIEW_WIDTH, PREVIEW_HEIGHT));
+
+        SpringLayout parentLayout = (SpringLayout) pane.getLayout();
+
+        componentsPane.add(optionsPane);
+        componentsPane.add(Box.createRigidArea(new Dimension(10, 0)));
+        componentsPane.add(functionPane);
+        componentsPane.add(Box.createRigidArea(new Dimension(10, 0)));
+        componentsPane.add(parameterPane);
+        componentsPane.add(Box.createRigidArea(new Dimension(10, 0)));
+        componentsPane.add(hierarchyPane);
+        componentsPane.add(Box.createRigidArea(new Dimension(10, 0)));
+        componentsPane.add(previewPanel);
+        componentsPane.add(Box.createRigidArea(new Dimension(10, 0)));
+
+        parentLayout.putConstraint(SpringLayout.NORTH, componentsPane, 5, SpringLayout.SOUTH, jSeparator);
+        parentLayout.putConstraint(SpringLayout.WEST, componentsPane, 5, SpringLayout.WEST, pane);
     }
 
     /* ClassPicker as a ComboBox */
@@ -349,36 +325,27 @@ public class SwingAppFrame extends JFrame {
         optionsPanel.add(title);
 
         JPanel listPanel = new JPanel();
-        String[] labels = {"Add Button", "Add TextView", "Add EditText", "Add Contacts List"};
-        JList<String> list = new JList<String>(labels); // Create the list
+        String[] labels = {"Add Button", "Add TextView", "Add EditText", "Add Contacts List", "Create a Custom Function"};
+        final JList<String> list = new JList<String>(labels); // Create the list
 //        list.setSelectedIndex(0); // Set initial state
 
         // Handle state changes
         list.addListSelectionListener(new ListSelectionListener() {
             public void valueChanged(ListSelectionEvent e) {
+                if (!e.getValueIsAdjusting()) {
 //                ItemChooser.this.select(list.getSelectedIndex());
-                System.out.println(e.toString());
-                System.out.println(e.getSource());
-                currentType = e.getLastIndex();
-//                frame.setVisible(false);
-//                frame = new SwingAppFrame();
-//                frame.setVisible(true);
-                contentPane.remove(parameterPane);
-                parameterPane = generatePanel(getParametersList());
-                contentPane.add(parameterPane, new GridBagConstraints(1, 3, 1, 1, 1.0, 1.0, GridBagConstraints.PAGE_END, GridBagConstraints.BOTH, new Insets(10, 10, 0, 0), 0, 500));
-                parameterPane.revalidate();
-//                parameters = generateParameterPanel(currentType);
-//                contentPane.add(parameters);
-//                parameters.revalidate();
-//                contentPane.revalidate();
+                    System.out.println("?" + list.getSelectedIndex());
+                    currentType = list.getSelectedIndex();
+                    refreshParameterPane();
+                }
             }
         });
-
+        list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
         // Lay out list and name label vertically
         listPanel.setLayout(new BoxLayout(listPanel, BoxLayout.Y_AXIS)); // vertical
         listPanel.add(new JScrollPane(list)); // Add the JList
-        listPanel.setPreferredSize(new Dimension(200, 400));
+        listPanel.setPreferredSize(new Dimension(WINDOW_WIDTH, WINDOW_HEIGHT));
         optionsPanel.add(listPanel);
 
         layout.putConstraint(SpringLayout.NORTH, listPanel, 5, SpringLayout.SOUTH, title);
@@ -428,18 +395,13 @@ public class SwingAppFrame extends JFrame {
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // get the text from all of the text fields
-                ActivityObject object;
-                String name = null;
-                for (int i = 1; i < parameters.getComponentCount(); i += 2) {
-                    Component component = parameters.getComponent(i);
-                    System.out.println("Text: " + i + " \'" + ((JTextField) component).getText() + "\'");
-                    if (i == 1)
-                        name = ((JTextField) component).getText();
+                ActivityObject o = getActivityObject(currentType, parameters);
+                if (o != null) {
+                    hierarchyList.add(o);
+                    refreshHierarchyPane();
+                    refreshPreviewPane();
+                    refreshParameterPane();
                 }
-                hierarchyList.add(getActivityObject(currentType, parameters));
-                refreshHierarchyPane();
-                refreshPreviewPane();
             }
         });
 
@@ -462,6 +424,14 @@ public class SwingAppFrame extends JFrame {
         }
 
         return panel;
+//        JPanel panel = new JPanel();
+//        BoxLayout layout = new BoxLayout(panel, BoxLayout.Y_AXIS);
+//        panel.setLayout(layout);
+//
+//        for (JComponent component : componentList)
+//            panel.add(component);
+//
+//        return panel;
     }
 
     public static JPanel generateParameterPanel(int type) {
@@ -479,6 +449,9 @@ public class SwingAppFrame extends JFrame {
             case CONTACTS_TYPE:
                 labels = CONTACTS_PARAMETERS;
                 break;
+            case CUSTOMFUNCTION_TYPE:
+                labels = CUSTOMFUNCTION_PARAMETERS;
+                break;
             default:
                 return null;
         }
@@ -488,7 +461,13 @@ public class SwingAppFrame extends JFrame {
         for (String label : labels) {
             JLabel l = new JLabel(label, JLabel.TRAILING);
             panel.add(l);
-            JTextField textField = new JTextField(8);
+            JComponent textField = new JTextField(8);
+            if (label.equals("Action: ") || label.equals("Body: ") || label.equals("Parameters: ")) {
+                textField = new JScrollPane(new JTextArea(10, 10));
+                textField.setBorder(BorderFactory.createLineBorder(new Color(BORDER_COLOR, BORDER_COLOR, BORDER_COLOR)));
+//                textField.setPreferredSize(new Dimension(400, 400));
+
+            }
             l.setLabelFor(textField);
             panel.add(textField);
         }
@@ -511,17 +490,29 @@ public class SwingAppFrame extends JFrame {
 //        }
 
         ActivityObject object;
-        String name, text, height, width, hint;
+        String name = null;
+        String text = null;
+        String height = null;
+        String width = null;
+        String hint = null;
+        String action = null;
         StringBuilder sb;
+
+        try {
         name = ((JTextField) parameters.getComponent(1)).getText();
         text = ((JTextField) parameters.getComponent(3)).getText();
         height = ((JTextField) parameters.getComponent(5)).getText();
         width = ((JTextField) parameters.getComponent(7)).getText();
+        } catch (ClassCastException ignored) {}
+
+        // auto-generate name if not specified
         if (StringHelper.isNullorEmpty(name))
             name = cmd.getNextDefaultObjectName();
+
         switch (type) {
             case BUTTON_TYPE:
-                object = new ButtonActivityObject(name, text, height, width, null);
+                action = ((JTextArea) ((JViewport) ((JScrollPane) parameters.getComponent(9)).getComponent(0)).getComponent(0)).getText();
+                object = new ButtonActivityObject(name, text, height, width, action);
                 sb = new StringBuilder("button ");
                 if (!StringHelper.isNullorEmpty(name))
                     sb.append("-name ").append(name).append(" ");
@@ -531,6 +522,8 @@ public class SwingAppFrame extends JFrame {
                     sb.append("-height ").append(height).append(" ");
                 if (!StringHelper.isNullorEmpty(width))
                     sb.append("-width ").append(width).append(" ");
+                if (!StringHelper.isNullorEmpty(action))
+                    sb.append("-action ").append("1").append(" ").append("\n").append(action);
                 cmd.parseCmd(sb.toString());
                 break;
             case TEXTVIEW_TYPE:
@@ -548,7 +541,8 @@ public class SwingAppFrame extends JFrame {
                 break;
             case EDITTEXT_TYPE:
                 hint = ((JTextField) parameters.getComponent(9)).getText();
-                object = new EditTextActivityObject(name, text, hint, height, width, null);
+                action = ((JTextArea) ((JViewport) ((JScrollPane) parameters.getComponent(11)).getComponent(0)).getComponent(0)).getText();
+                object = new EditTextActivityObject(name, text, hint, height, width, action);
                 sb = new StringBuilder("edittext ");
                 if (!StringHelper.isNullorEmpty(name))
                     sb.append("-name ").append(name).append(" ");
@@ -568,7 +562,8 @@ public class SwingAppFrame extends JFrame {
                 String hasName = ((JTextField) parameters.getComponent(7)).getText();
                 String hasNumber = ((JTextField) parameters.getComponent(9)).getText();
                 String divider = ((JTextField) parameters.getComponent(11)).getText();
-                object = new ContactsListActivityObject(name, height, width, null, !StringHelper.isNullorEmpty(hasName), !StringHelper.isNullorEmpty(hasNumber), divider);
+                action = ((JTextArea) ((JViewport) ((JScrollPane) parameters.getComponent(13)).getComponent(0)).getComponent(0)).getText();
+                object = new ContactsListActivityObject(name, height, width, action, !StringHelper.isNullorEmpty(hasName), !StringHelper.isNullorEmpty(hasNumber), divider);
                 sb = new StringBuilder("contactslist ");
                 if (!StringHelper.isNullorEmpty(name))
                     sb.append("-name ").append(name).append(" ");
@@ -583,6 +578,29 @@ public class SwingAppFrame extends JFrame {
                 if (!StringHelper.isNullorEmpty(divider))
                     sb.append("-divider ").append("1").append(" ");
                 cmd.parseCmd(sb.toString());
+                break;
+            case CUSTOMFUNCTION_TYPE:
+                String returnType = ((JTextField) parameters.getComponent(3)).getText();
+                String params = ((JTextArea) ((JViewport) ((JScrollPane) parameters.getComponent(5)).getComponent(0)).getComponent(0)).getText();
+                String body = ((JTextArea) ((JViewport) ((JScrollPane) parameters.getComponent(7)).getComponent(0)).getComponent(0)).getText();
+//                CustomFunction customFunction = new CustomFunction(name, body, returnType, StringHelper.stringToParams(params));
+                object = null;
+                sb = new StringBuilder("customfunction ");
+                if (!StringHelper.isNullorEmpty(name))
+                    sb.append("-name ").append(name).append(" ");
+                else return null;
+                if (!StringHelper.isNullorEmpty(returnType))
+                    sb.append("-returnType ").append(returnType).append(" ");
+                else return null;
+                if (!StringHelper.isNullorEmpty(body))
+                    sb.append("-body ").append(body).append(" ");
+                else return null;
+                if (!StringHelper.isNullorEmpty(params))
+                    sb.append("-params ").append(params).append(" ");
+                cmd.parseCmd(sb.toString());
+                refreshFunctionPane();
+                refreshPreviewPane();
+                refreshParameterPane();
                 break;
             default:
                 return null;
@@ -649,7 +667,7 @@ public class SwingAppFrame extends JFrame {
         // Lay out list and name label vertically
         listPanel.setLayout(new BoxLayout(listPanel, BoxLayout.Y_AXIS)); // vertical
         JScrollPane listPane = new JScrollPane(list);
-        listPane.setPreferredSize(new Dimension(200, 400));
+        listPane.setPreferredSize(new Dimension(WINDOW_WIDTH, WINDOW_HEIGHT));
         listPanel.add(listPane); // Add the JList
 //        listPanel.setPreferredSize(new Dimension(200, 400));
         componentList.add(listPanel);
@@ -741,7 +759,7 @@ public class SwingAppFrame extends JFrame {
         // Lay out list and name label vertically
         listPanel.setLayout(new BoxLayout(listPanel, BoxLayout.Y_AXIS)); // vertical
         listPanel.add(new JScrollPane(list)); // Add the JList
-        listPanel.setPreferredSize(new Dimension(200, 400));
+        listPanel.setPreferredSize(new Dimension(WINDOW_WIDTH, WINDOW_HEIGHT));
         optionsPanel.add(listPanel);
 
         layout.putConstraint(SpringLayout.NORTH, listPanel, 5, SpringLayout.SOUTH, title);
@@ -768,25 +786,96 @@ public class SwingAppFrame extends JFrame {
         componentList.add(addButton);
 
         JScrollPane scrollPane = new JScrollPane(new JTextArea(cmd.getString()));
-        scrollPane.setBorder(BorderFactory.createLineBorder(new Color(100, 100, 100)));
-        scrollPane.setPreferredSize(new Dimension(200, 400));
+        scrollPane.setBorder(BorderFactory.createLineBorder(new Color(BORDER_COLOR, BORDER_COLOR, BORDER_COLOR)));
+        scrollPane.setPreferredSize(new Dimension(PREVIEW_WIDTH, PREVIEW_HEIGHT));
         componentList.add(scrollPane);
 
         return componentList;
     }
 
+    public static JPanel getFunctionsList() {
+        SpringLayout layout = new SpringLayout();
+        JPanel functionsPanel = new JPanel(layout);
+
+        JLabel title = new JLabel("Functions");
+
+        layout.putConstraint(SpringLayout.NORTH, title, 5, SpringLayout.NORTH, functionsPanel);
+        functionsPanel.add(title);
+
+        List<CustomFunction> functions = cmd.getFunctions();
+        String[] items = new String [functions.size()];
+        for (int i = 0; i < functions.size(); i++)
+            items[i] = functions.get(i).getName();
+
+        JPanel listPanel = new JPanel();
+        final JList<String> list = new JList<String>(items); // Create the list
+//        list.setSelectedIndex(0); // Set initial state
+
+        // Handle state changes
+        list.addListSelectionListener(new ListSelectionListener() {
+            public void valueChanged(ListSelectionEvent e) {
+//                ItemChooser.this.select(list.getSelectedIndex());
+                System.out.println(e.toString());
+                System.out.println(e.getSource());
+            }
+        });
+
+
+        // Lay out list and name label vertically
+        listPanel.setLayout(new BoxLayout(listPanel, BoxLayout.Y_AXIS)); // vertical
+        listPanel.add(new JScrollPane(list)); // Add the JList
+        listPanel.setPreferredSize(new Dimension(WINDOW_WIDTH, WINDOW_HEIGHT));
+        functionsPanel.add(listPanel);
+
+        layout.putConstraint(SpringLayout.NORTH, listPanel, 5, SpringLayout.SOUTH, title);
+
+        JButton removeButton = new JButton("Remove");
+        removeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cmd.parseCmd("removefunction " + list.getSelectedIndex());
+
+                refreshFunctionPane();
+                refreshPreviewPane();
+            }
+        });
+        functionsPanel.add(removeButton);
+
+        layout.putConstraint(SpringLayout.NORTH, removeButton, 5, SpringLayout.SOUTH, listPanel);
+
+        return functionsPanel;
+    }
+
+    private static void refreshFunctionPane() {
+        componentsPane.remove(functionPane);
+        functionPane = getFunctionsList();
+        functionPane.setPreferredSize(new Dimension(FUNCTIONS_WIDTH, FUNCTIONS_HEIGHT));
+        componentsPane.add(functionPane, 2);
+        componentsPane.revalidate();
+    }
+
+    private static void refreshParameterPane() {
+        componentsPane.remove(parameterPane);
+        parameterPane = generatePanel(getParametersList());
+        parameterPane.setPreferredSize(new Dimension(PARAMETERS_WIDTH, PARAMETERS_HEIGHT));
+        componentsPane.add(parameterPane, 4);
+        componentsPane.revalidate();
+    }
+
     private static void refreshHierarchyPane() {
-        contentPane.remove(hierarchyPane);
+        componentsPane.remove(hierarchyPane);
         hierarchyPane = generatePanel(getHierarchyList());
-        contentPane.add(hierarchyPane, new GridBagConstraints(2, 3, 1, 1, 1.0, 1.0, GridBagConstraints.PAGE_END, GridBagConstraints.BOTH, new Insets(10, 10, 0, 0), 0, 500));
-        hierarchyPane.revalidate();
+        hierarchyPane.setPreferredSize(new Dimension(HIERARCHY_WIDTH, HIERARCHY_HEIGHT));
+        componentsPane.add(hierarchyPane, 6);
+        componentsPane.revalidate();
     }
 
     private static void refreshPreviewPane() {
-        contentPane.remove(previewPanel);
+        componentsPane.remove(previewPanel);
         previewPanel = generatePanel(getPreviewList());
-        contentPane.add(previewPanel, new GridBagConstraints(3, 3, 1, 1, 1.0, 1.0, GridBagConstraints.PAGE_END, GridBagConstraints.BOTH, new Insets(10, 10, 0, 0), 0, 500));
-        hierarchyPane.revalidate();
+        previewPanel.setPreferredSize(new Dimension(PREVIEW_WIDTH, PREVIEW_HEIGHT));
+        componentsPane.add(previewPanel, 8);
+        componentsPane.revalidate();
     }
 
 
