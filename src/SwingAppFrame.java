@@ -28,11 +28,13 @@ public class SwingAppFrame extends JFrame {
 
     private static final int BORDER_COLOR = 150;
 
-    static final String[] BUTTON_PARAMETERS = {"Name: ", "Text: ", "Height: ", "Width: ", "Action: "};
-    static final String[] TEXTVIEW_PARAMETERS = {"Name: ", "Text: ", "Height: ", "Width: "};
-    static final String[] EDITTEXT_PARAMETERS = {"Name: ", "Text: ", "Height: ", "Width: ", "Hint: ", "Action: "};
-    static final String[] CONTACTS_PARAMETERS = {"Name: ", "Height: ", "Width: ", "HasName: ", "HasNumber: ", "Divider: ", "Action: "};
-    static final String[] CUSTOMFUNCTION_PARAMETERS = {"Name: ", "ReturnType: ", "Parameters: ", "Body: "};
+    private static final String[] FUNCTION_HELP = { "addition(100, 20)", "subtraction(100, 20)", "multiplication(2.5, 1.0)", "division(10.0, 4.0)" };
+
+    private static final String[] BUTTON_PARAMETERS = {"Name: ", "Text: ", "Height: ", "Width: ", "Action: "};
+    private static final String[] TEXTVIEW_PARAMETERS = {"Name: ", "Text: ", "Height: ", "Width: "};
+    private static final String[] EDITTEXT_PARAMETERS = {"Name: ", "Text: ", "Height: ", "Width: ", "Hint: "};
+    private static final String[] CONTACTS_PARAMETERS = {"Name: ", "Height: ", "Width: ", "HasName: ", "HasNumber: ", "Divider: ", "Action: "};
+    private static final String[] CUSTOMFUNCTION_PARAMETERS = {"Name: ", "ReturnType: ", "Parameters: ", "Body: "};
 
     private static final int BUTTON_TYPE = 0;
     private static final int TEXTVIEW_TYPE = 1;
@@ -45,6 +47,7 @@ public class SwingAppFrame extends JFrame {
     private static JPanel optionsPane, functionPane, parameterPane, hierarchyPane, previewPanel, componentsPane;
     private static JTextField projectNameField, pathField, packageNameField, mainClassField;
     private static JTextField classNameField;
+    private static ArrayList<JTextField> headerFields;
     private static JSeparator jSeparator;
     private static Container contentPane;
     private static ArrayList<ActivityObject> hierarchyList = new ArrayList<ActivityObject>();
@@ -178,7 +181,7 @@ public class SwingAppFrame extends JFrame {
         String[] labels = { "Project Name: ", "Package Name: ", "Path: ", "Main Class: "};
         String[] texts = { cmd.getProjectName(), cmd.getPackageName(), cmd.getPath(), cmd.getMainActivity()};
         ArrayList<JLabel> labelsList = new ArrayList<JLabel>(4);
-        ArrayList<JTextField> textFieldsList = new ArrayList<JTextField>(4);
+        headerFields = new ArrayList<JTextField>(4);
 
         for (int i = 0; i < labels.length; i++) {
             JLabel l = new JLabel(labels[i], JLabel.TRAILING);
@@ -189,7 +192,7 @@ public class SwingAppFrame extends JFrame {
             textField.setText(texts[i]);
             l.setLabelFor(textField);
             headerPane.add(textField);
-            textFieldsList.add(textField);
+            headerFields.add(textField);
         }
 
 
@@ -501,9 +504,12 @@ public class SwingAppFrame extends JFrame {
         try {
         name = ((JTextField) parameters.getComponent(1)).getText();
         text = ((JTextField) parameters.getComponent(3)).getText();
-        height = ((JTextField) parameters.getComponent(5)).getText();
-        width = ((JTextField) parameters.getComponent(7)).getText();
+        height = ((JTextField) parameters.getComponent(5)).getText().trim();
+        width = ((JTextField) parameters.getComponent(7)).getText().trim();
         } catch (ClassCastException ignored) {}
+
+        System.out.println(height + ".");
+        System.out.println(width);
 
         // auto-generate name if not specified
         if (StringHelper.isNullorEmpty(name))
@@ -523,7 +529,7 @@ public class SwingAppFrame extends JFrame {
                 if (!StringHelper.isNullorEmpty(width))
                     sb.append("-width ").append(width).append(" ");
                 if (!StringHelper.isNullorEmpty(action))
-                    sb.append("-action ").append("1").append(" ").append("\n").append(action);
+                    sb.append("-action ").append(action);
                 cmd.parseCmd(sb.toString());
                 break;
             case TEXTVIEW_TYPE:
@@ -541,8 +547,7 @@ public class SwingAppFrame extends JFrame {
                 break;
             case EDITTEXT_TYPE:
                 hint = ((JTextField) parameters.getComponent(9)).getText();
-                action = ((JTextArea) ((JViewport) ((JScrollPane) parameters.getComponent(11)).getComponent(0)).getComponent(0)).getText();
-                object = new EditTextActivityObject(name, text, hint, height, width, action);
+                object = new EditTextActivityObject(name, text, hint, height, width, null);
                 sb = new StringBuilder("edittext ");
                 if (!StringHelper.isNullorEmpty(name))
                     sb.append("-name ").append(name).append(" ");
@@ -572,11 +577,11 @@ public class SwingAppFrame extends JFrame {
                 if (!StringHelper.isNullorEmpty(width))
                     sb.append("-width ").append(width).append(" ");
                 if (!StringHelper.isNullorEmpty(hasName))
-                    sb.append("-hasName ").append("1").append(" ");
+                    sb.append("-hasName ").append("1 ");
                 if (!StringHelper.isNullorEmpty(hasNumber))
-                    sb.append("-hasNumber ").append("1").append(" ");
+                    sb.append("-hasNumber ").append("1 ");
                 if (!StringHelper.isNullorEmpty(divider))
-                    sb.append("-divider ").append("1").append(" ");
+                    sb.append("-divider ").append(divider);
                 cmd.parseCmd(sb.toString());
                 break;
             case CUSTOMFUNCTION_TYPE:
@@ -824,10 +829,13 @@ public class SwingAppFrame extends JFrame {
         // Lay out list and name label vertically
         listPanel.setLayout(new BoxLayout(listPanel, BoxLayout.Y_AXIS)); // vertical
         listPanel.add(new JScrollPane(list)); // Add the JList
-        listPanel.setPreferredSize(new Dimension(WINDOW_WIDTH, WINDOW_HEIGHT));
+        listPanel.setPreferredSize(new Dimension(WINDOW_WIDTH, WINDOW_HEIGHT - 100));
         functionsPanel.add(listPanel);
 
         layout.putConstraint(SpringLayout.NORTH, listPanel, 5, SpringLayout.SOUTH, title);
+
+        JLabel label = new JLabel("");
+        label.setPreferredSize(new Dimension(WINDOW_WIDTH, 100));
 
         JButton removeButton = new JButton("Remove");
         removeButton.addActionListener(new ActionListener() {
@@ -880,10 +888,10 @@ public class SwingAppFrame extends JFrame {
 
 
     private static void updateGlobalProjectProperties() {
-        cmd.parseCmd("name " + projectNameField.getText());
-        cmd.parseCmd("package " + packageNameField.getText());
-        cmd.parseCmd("path " + pathField.getText());
-        cmd.parseCmd("main " + mainClassField.getText());
+        cmd.parseCmd("name " + headerFields.get(0).getText());
+        cmd.parseCmd("package " + headerFields.get(1).getText());
+        cmd.parseCmd("path " + headerFields.get(2).getText());
+        cmd.parseCmd("main " + headerFields.get(3).getText());
         cmd.parseCmd("classname " + classNameField.getText());
     }
 }

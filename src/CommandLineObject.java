@@ -146,20 +146,9 @@ public class CommandLineObject {
     }
 
     public static boolean parseLocalCmd(String[] args) throws ArrayIndexOutOfBoundsException {
-        for (String argument : args)
-            System.out.println("~" + argument);
-
         String[] arguments = StringHelper.reconstructWithoutFirst(args);
-        for (String argument : arguments)
-            System.out.println("!" + argument);
 
-        for (String items : arguments) {
-            String[] list = items.split(" ", 2);
-            for (String argument : list)
-                System.out.println("." + argument);
-            System.out.println();
-        }
-        // sets the project path to the first argument
+            // sets the project path to the first argument
         if (args[CMD_OFFSET].equals("path")) {
             path = args[CMD_OFFSET + 1];
             print("Home directory updated to " + path);
@@ -267,13 +256,13 @@ public class CommandLineObject {
                 String[] items = arguments[i].split(" ", 2);
 
                 if (items[0].equals("name"))
-                    name = items[1];
+                    name = items[1].trim();
                 else if (items[0].equals("text"))
-                    text = items[1];
+                    text = items[1].trim();
                 else if (items[0].equals("height"))
-                    height = items[1];
+                    height = items[1].trim();
                 else if (items[0].equals("width"))
-                    width = items[1];
+                    width = items[1].trim();
                 else if (items[0].equals("action")) {
                     action = items[1];
                 }
@@ -295,13 +284,13 @@ public class CommandLineObject {
                 String[] items = arguments[i].split(" ", 2);
 
                 if (items[0].equals("name"))
-                    name = items[1];
+                    name = items[1].trim();
                 else if (items[0].equals("text"))
-                    text = items[1];
+                    text = items[1].trim();
                 else if (items[0].equals("height"))
-                    height = items[1];
+                    height = items[1].trim();
                 else if (items[0].equals("width"))
-                    width = items[1];
+                    width = items[1].trim();
                 else if (items[0].equals("action")) {
                     action = items[1];
                 }
@@ -319,26 +308,22 @@ public class CommandLineObject {
             String height = null;
             String width = null;
             String hint = null;
-            String action = null;
             for (int i = (CMD_OFFSET + 1); i < arguments.length; i++) {
                 String[] items = arguments[i].split(" ", 2);
 
                 if (items[0].equals("name"))
-                    name = items[1];
+                    name = items[1].trim();
                 else if (items[0].equals("text"))
-                    text = items[1];
+                    text = items[1].trim();
                 else if (items[0].equals("height"))
-                    height = items[1];
+                    height = items[1].trim();
                 else if (items[0].equals("width"))
-                    width = items[1];
+                    width = items[1].trim();
                 else if (items[0].equals("hint"))
-                    hint = items[1];
-                else if (items[0].equals("action")) {
-                    action = items[1];
-                }
+                    hint = items[1].trim();
             }
 
-            activityCode.addActivityObject(new EditTextActivityObject(name, text, hint, height, width, action));
+            activityCode.addActivityObject(new EditTextActivityObject(name, text, hint, height, width, null));
             activityCode.setImportFlag(Imports.ImportType.EDITTEXT, true);
             print("edittext \"" + name + "\" added:");
         }
@@ -357,19 +342,19 @@ public class CommandLineObject {
                 String[] items = arguments[i].split(" ", 2);
 
                 if (items[0].equals("name"))
-                    name = items[1];
+                    name = items[1].trim();
                 else if (items[0].equals("height"))
-                    height = items[1];
+                    height = items[1].trim();
                 else if (items[0].equals("width"))
-                    width = items[1];
+                    width = items[1].trim();
                 else if (items[0].equals("divider"))
-                    divider = items[1];
+                    divider = items[1].trim();
                 else if (items[0].equals("action"))
                     action = items[1];
                 else if (items[0].equals("hasName"))
-                    hasName = items[1].equals("1");
+                    hasName = items[1].trim().equals("1");
                 else if (items[0].equals("hasNumber"))
-                    hasNumber = items[1].equals("1");
+                    hasNumber = items[1].trim().equals("1");
             }
 
             activityCode.addActivityObject(new ContactsListActivityObject(name, height, width, action, hasName, hasNumber, divider));
@@ -677,11 +662,11 @@ public class CommandLineObject {
 
         activityCode.addCustomFunction(new CustomFunction("addition", "return a + b;", "int", params));
         activityCode.addCustomFunction(new CustomFunction("subtraction", "return a - b;", "int", params));
-        activityCode.addCustomFunction(new CustomFunction("multiplication", "return a * b;", "int", params));
 
         params = new ArrayList<Parameter>();
         params.add(new Parameter("double", "a"));
         params.add(new Parameter("double", "b"));
+        activityCode.addCustomFunction(new CustomFunction("multiplication", "return a * b;", "double", params));
         activityCode.addCustomFunction(new CustomFunction("division", "return a / b;", "double", params));
         addSmsFunction();
     }
@@ -695,6 +680,7 @@ public class CommandLineObject {
                 "sms.sendTextMessage(number, null, text, null, null);\n";
 
         permissionManifestObject.setSendSmsFlag(true);
+        activityCode.addCustomImport("android.telephony.SmsManager");
         activityCode.addCustomFunction(new CustomFunction("sendsms", body, "void", params));
     }
 }

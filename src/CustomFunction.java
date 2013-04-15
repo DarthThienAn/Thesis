@@ -54,7 +54,7 @@ public class CustomFunction {
         StringBuilder sb = new StringBuilder();
 
         // function header
-        sb.append("\tprivate static ").append(returnType).append(" ").append(name).append("(");
+        sb.append("\tprivate ").append(returnType).append(" ").append(name).append("(");
 
         // parameters
         for (int i = 0; i < parameters.size() - 1; i++) {
