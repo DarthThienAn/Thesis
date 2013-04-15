@@ -121,7 +121,11 @@ public class CommandLineObject {
         }
         // reset the activitycode
         else if (args[CMD_OFFSET].equals("reset")) {
-            resetProject();
+//            resetProject();
+            activityCode = new ActivityCode();
+            androidManifestGenerator = new AndroidManifestGenerator();
+            permissionManifestObject = new PermissionManifestObject();
+            commandList = new StringBuilder();
         }
         else if (args[CMD_OFFSET].equals("help")) {
             if (args[CMD_OFFSET + 1].equals("path"))
@@ -216,10 +220,6 @@ public class CommandLineObject {
         else if (args[CMD_OFFSET].equals("customimport")) {
             activityCode.addCustomImport(args[CMD_OFFSET + 1]);
             print("Custom import " + args[CMD_OFFSET + 1] + " successfully added");
-        }
-        // reset the activitycode
-        else if (args[CMD_OFFSET].equals("reset")) {
-            resetProject();
         }
         //
         else if (args[CMD_OFFSET].equals("up")) {

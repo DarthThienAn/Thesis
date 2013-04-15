@@ -13,6 +13,9 @@ public class SwingAppFrame extends JFrame {
 
     private static final int DEF_WIDTH = 1300;
     private static final int DEF_HEIGHT = 700;
+
+    private static final int MENU_HEIGHT = 20;
+
     private static final int OPTIONS_WIDTH = 200;
     private static final int OPTIONS_HEIGHT = 600;
     private static final int FUNCTIONS_WIDTH = 200;
@@ -27,6 +30,7 @@ public class SwingAppFrame extends JFrame {
     private static final int WINDOW_HEIGHT = 400;
 
     private static final int BORDER_COLOR = 150;
+    private static final int MENUBAR_COLOR = 196;
 
     private static final String[] FUNCTION_HELP = { "addition(100, 20)", "subtraction(100, 20)", "multiplication(2.5, 1.0)", "division(10.0, 4.0)" };
 
@@ -44,24 +48,27 @@ public class SwingAppFrame extends JFrame {
     private static int currentType = 0;
 
     private static SwingAppFrame frame;
-    private static JPanel optionsPane, functionPane, parameterPane, hierarchyPane, previewPanel, componentsPane;
+    private static JPanel optionsPane, functionPane, parameterPane, hierarchyPane, previewPane, componentsPane;
     private static JTextField projectNameField, pathField, packageNameField, mainClassField;
     private static JTextField classNameField;
     private static ArrayList<JTextField> headerFields;
     private static JSeparator jSeparator;
-    private static Container contentPane;
+    private static Container mainContentPane;
     private static ArrayList<ActivityObject> hierarchyList = new ArrayList<ActivityObject>();
+    private static SpringLayout mainSpringLayout;
 
     private static CommandLineObject cmd;
 
+    /* Constructor */
     public SwingAppFrame() {
         //Create and set up the window.
-        setTitle("Easy Android");
-        setLayout(new SpringLayout());
+        setTitle("EasyAndroid");
+        mainSpringLayout = new SpringLayout();
+        setLayout(mainSpringLayout);
         setPreferredSize(new Dimension(DEF_WIDTH, DEF_HEIGHT));
         setSize(DEF_WIDTH, DEF_HEIGHT);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        contentPane = getContentPane();
+        mainContentPane = getContentPane();
 
         //Create a background to put in the content pane.
 //        JLabel background = new JLabel();
@@ -71,22 +78,20 @@ public class SwingAppFrame extends JFrame {
 
         //Set the menu bar and add the label to the content pane.
         setJMenuBar(getMenu());
+
+        //add the header project properties
+        addHeader();
+
+        //add the main content panes (components)
+        addComponents();
+
 //        frame.getContentPane().add(projectName, BorderLayout.PAGE_START);
 //        frame.getContentPane().add(packageName, BorderLayout.PAGE_START);
-
-        addHeader(contentPane);
-        addComponentsToPane(contentPane);
 //        frame.getContentPane().add(background, BorderLayout.CENTER);
 //        frame.getContentPane().add(label, BorderLayout.CENTER);
 
-//        JSeparator jSeparator = new JSeparator(SwingConstants.HORIZONTAL);
-//        jSeparator.setForeground(new Color(0, 50, 255));
-//        jSeparator.setBackground(new Color(0, 50, 255));
-//        getContentPane().add(jSeparator);
-
         //Display the window.
         pack();
-//        setVisible(true);
     }
 
     public static void main(String[] args) {
@@ -105,14 +110,16 @@ public class SwingAppFrame extends JFrame {
 
     /* Create the menu bar */
     private static JMenuBar getMenu() {
+        /* define the general properties of the menu bar */
         JMenuBar menuBar = new JMenuBar();
         menuBar.setOpaque(true);
-        // gray
-        menuBar.setBackground(new Color(196, 196, 196));
-        menuBar.setPreferredSize(new Dimension(DEF_WIDTH, 20));
+        menuBar.setBackground(new Color(MENUBAR_COLOR, MENUBAR_COLOR, MENUBAR_COLOR));
+        menuBar.setPreferredSize(new Dimension(DEF_WIDTH, MENU_HEIGHT));
 
+        /* create the file submenu */
         JMenu fileMenu = new JMenu("File");
 
+        // open menu item
         JMenuItem openItem = new JMenuItem("Open", KeyEvent.VK_0);
         openItem.addActionListener(new ActionListener() {
             @Override
@@ -121,6 +128,7 @@ public class SwingAppFrame extends JFrame {
             }
         });
 
+        // save menu item
         JMenuItem saveItem = new JMenuItem("Save", KeyEvent.VK_0);
 //        menuItem.setAccelerator(KeyStroke.getKeyStroke(
 //                KeyEvent.VK_0, ActionEvent.ALT_MASK));
@@ -133,6 +141,16 @@ public class SwingAppFrame extends JFrame {
             }
         });
 
+        // reset menu item
+        JMenuItem resetItem = new JMenuItem("Reset", KeyEvent.VK_0);
+        resetItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cmd.parseCmd("reset");
+            }
+        });
+
+        // exit menu item
         JMenuItem exitItem = new JMenuItem("Exit", KeyEvent.VK_0);
         exitItem.addActionListener(new ActionListener() {
             @Override
@@ -142,12 +160,16 @@ public class SwingAppFrame extends JFrame {
             }
         });
 
+
 //        fileMenu.add(openItem);
-        fileMenu.add(saveItem);
+//        fileMenu.add(saveItem);
+        fileMenu.add(resetItem);
         fileMenu.add(exitItem);
         menuBar.add(fileMenu);
 
+        /* create the build submenu */
         JMenu buildMenu = new JMenu("Build");
+        // build menu item
         JMenuItem buildItem = new JMenuItem("Build Project", KeyEvent.VK_0);
         buildItem.addActionListener(new ActionListener() {
             @Override
@@ -157,6 +179,8 @@ public class SwingAppFrame extends JFrame {
                 cmd.parseCmd("build");
             }
         });
+
+        // install menu item
         JMenuItem installItem = new JMenuItem("Install Project", KeyEvent.VK_0);
         installItem.addActionListener(new ActionListener() {
             @Override
@@ -172,11 +196,11 @@ public class SwingAppFrame extends JFrame {
         return menuBar;
     }
 
-    /* Add Global property items */
-    public static void addHeader(Container parent) {
+    /* Add global property items */
+    public static void addHeader() {
         SpringLayout mainLayout = new SpringLayout();
         JPanel headerPane = new JPanel(mainLayout);
-        parent.add(headerPane);
+        mainContentPane.add(headerPane);
 
         String[] labels = { "Project Name: ", "Package Name: ", "Path: ", "Main Class: "};
         String[] texts = { cmd.getProjectName(), cmd.getPackageName(), cmd.getPath(), cmd.getMainActivity()};
@@ -202,41 +226,40 @@ public class SwingAppFrame extends JFrame {
                 1, 1,        //initX, initY
                 10, 10);       //xPad, yPad
 
-        JPanel classPicker = getClassPicker();
-        parent.add(classPicker);
+//        JPanel classPicker = getClassPicker();
+//        parent.add(classPicker);
 
         jSeparator = new JSeparator(SwingConstants.HORIZONTAL);
         jSeparator.setForeground(new Color(150, 150, 255));
         jSeparator.setBackground(new Color(150, 150, 255));
         jSeparator.setPreferredSize(new Dimension(2000, 3));
-        parent.add(jSeparator);
+        mainContentPane.add(jSeparator);
 
-        SpringLayout parentLayout = (SpringLayout) parent.getLayout();
-        parentLayout.putConstraint(SpringLayout.NORTH, headerPane, 5, SpringLayout.NORTH, parent);
-        parentLayout.putConstraint(SpringLayout.NORTH, classPicker, 5, SpringLayout.SOUTH, headerPane);
-        parentLayout.putConstraint(SpringLayout.NORTH, jSeparator, 5, SpringLayout.SOUTH, classPicker);
+        mainSpringLayout.putConstraint(SpringLayout.NORTH, headerPane, 5, SpringLayout.NORTH, mainContentPane);
+        mainSpringLayout.putConstraint(SpringLayout.NORTH, jSeparator, 5, SpringLayout.SOUTH, headerPane);
+//        parentLayout.putConstraint(SpringLayout.NORTH, classPicker, 5, SpringLayout.SOUTH, headerPane);
+//        parentLayout.putConstraint(SpringLayout.NORTH, jSeparator, 5, SpringLayout.SOUTH, classPicker);
     }
 
-    public static void addComponentsToPane(Container pane) {
+    /* Add the content panes */
+    public static void addComponents() {
         componentsPane = new JPanel();
         BoxLayout componentsLayout = new BoxLayout(componentsPane, BoxLayout.X_AXIS);
         componentsPane.setLayout(componentsLayout);
-        pane.add(componentsPane);
+        mainContentPane.add(componentsPane);
 
         optionsPane = getOptionsList();
         functionPane = getFunctionsList();
         parameterPane = generatePanel(getParametersList());
         hierarchyPane = generatePanel(getHierarchyList());
-        previewPanel = generatePanel(getPreviewList());
+        previewPane = generatePanel(getPreviewList());
 
 //        optionsPane.setAlignmentY(Component.TOP_ALIGNMENT);
         optionsPane.setPreferredSize(new Dimension(OPTIONS_WIDTH, OPTIONS_HEIGHT));
         functionPane.setPreferredSize(new Dimension(FUNCTIONS_WIDTH, FUNCTIONS_HEIGHT));
         parameterPane.setPreferredSize(new Dimension(PARAMETERS_WIDTH, PARAMETERS_HEIGHT));
         hierarchyPane.setPreferredSize(new Dimension(HIERARCHY_WIDTH, HIERARCHY_HEIGHT));
-        previewPanel.setPreferredSize(new Dimension(PREVIEW_WIDTH, PREVIEW_HEIGHT));
-
-        SpringLayout parentLayout = (SpringLayout) pane.getLayout();
+        previewPane.setPreferredSize(new Dimension(PREVIEW_WIDTH, PREVIEW_HEIGHT));
 
         componentsPane.add(optionsPane);
         componentsPane.add(Box.createRigidArea(new Dimension(10, 0)));
@@ -246,11 +269,11 @@ public class SwingAppFrame extends JFrame {
         componentsPane.add(Box.createRigidArea(new Dimension(10, 0)));
         componentsPane.add(hierarchyPane);
         componentsPane.add(Box.createRigidArea(new Dimension(10, 0)));
-        componentsPane.add(previewPanel);
+        componentsPane.add(previewPane);
         componentsPane.add(Box.createRigidArea(new Dimension(10, 0)));
 
-        parentLayout.putConstraint(SpringLayout.NORTH, componentsPane, 5, SpringLayout.SOUTH, jSeparator);
-        parentLayout.putConstraint(SpringLayout.WEST, componentsPane, 5, SpringLayout.WEST, pane);
+        mainSpringLayout.putConstraint(SpringLayout.NORTH, componentsPane, 5, SpringLayout.SOUTH, jSeparator);
+        mainSpringLayout.putConstraint(SpringLayout.WEST, componentsPane, 5, SpringLayout.WEST, mainContentPane);
     }
 
     /* ClassPicker as a ComboBox */
@@ -879,13 +902,19 @@ public class SwingAppFrame extends JFrame {
     }
 
     private static void refreshPreviewPane() {
-        componentsPane.remove(previewPanel);
-        previewPanel = generatePanel(getPreviewList());
-        previewPanel.setPreferredSize(new Dimension(PREVIEW_WIDTH, PREVIEW_HEIGHT));
-        componentsPane.add(previewPanel, 8);
+        componentsPane.remove(previewPane);
+        previewPane = generatePanel(getPreviewList());
+        previewPane.setPreferredSize(new Dimension(PREVIEW_WIDTH, PREVIEW_HEIGHT));
+        componentsPane.add(previewPane, 8);
         componentsPane.revalidate();
     }
 
+    private static void refreshAll() {
+        refreshFunctionPane();
+        refreshParameterPane();
+        refreshHierarchyPane();
+        refreshPreviewPane();
+    }
 
     private static void updateGlobalProjectProperties() {
         cmd.parseCmd("name " + headerFields.get(0).getText());

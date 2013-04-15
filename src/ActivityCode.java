@@ -113,7 +113,7 @@ public class ActivityCode {
         // get the rootView
         sb.append("\t\tLinearLayout rootView = new LinearLayout(this);\n");
         sb.append("\t\taddContentView(rootView, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.FILL_PARENT));\n\n");
-        sb.append("\t\trootView.setOrientation(LinearLayout.VERTICAL);\n");
+        sb.append("\t\trootView.setOrientation(LinearLayout.VERTICAL);\n\n");
 //        sb.append("\t\tViewGroup rootView = (ViewGroup) getWindow().getDecorView().findViewById(android.R.id.content);\n\n");
         // parse through activityObjects and add them to the code
         for (ActivityObject activityObject : activityObjects) {
