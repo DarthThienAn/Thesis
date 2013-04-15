@@ -47,17 +47,17 @@ public class SwingAppFrame extends JFrame {
     private static final int CUSTOMFUNCTION_TYPE = 4;
     private static int currentType = 0;
 
-    private static SwingAppFrame frame;
-    private static JPanel optionsPane, functionPane, parameterPane, hierarchyPane, previewPane, componentsPane;
-    private static JTextField projectNameField, pathField, packageNameField, mainClassField;
-    private static JTextField classNameField;
-    private static ArrayList<JTextField> headerFields;
-    private static JSeparator jSeparator;
-    private static Container mainContentPane;
-    private static ArrayList<ActivityObject> hierarchyList = new ArrayList<ActivityObject>();
-    private static SpringLayout mainSpringLayout;
+    private SwingAppFrame frame;
+    private JPanel optionsPane, functionPane, parameterPane, hierarchyPane, previewPane, componentsPane;
+    private JTextField projectNameField, pathField, packageNameField, mainClassField;
+    private JTextField classNameField;
+    private ArrayList<JTextField> headerFields;
+    private JSeparator jSeparator;
+    private Container mainContentPane;
+    private ArrayList<ActivityObject> hierarchyList = new ArrayList<ActivityObject>();
+    private SpringLayout mainSpringLayout;
 
-    private static CommandLineObject cmd;
+    private CommandLineObject cmd;
 
     /* Constructor */
     public SwingAppFrame() {
@@ -69,6 +69,8 @@ public class SwingAppFrame extends JFrame {
         setSize(DEF_WIDTH, DEF_HEIGHT);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         mainContentPane = getContentPane();
+
+        cmd = new CommandLineObject();
 
         //Create a background to put in the content pane.
 //        JLabel background = new JLabel();
@@ -99,17 +101,16 @@ public class SwingAppFrame extends JFrame {
         //creating and showing this application's GUI.
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                frame = new SwingAppFrame();
+                SwingAppFrame frame = new SwingAppFrame();
                 frame.setVisible(true);
             }
         });
 
-        cmd = new CommandLineObject();
 
     }
 
     /* Create the menu bar */
-    private static JMenuBar getMenu() {
+    private JMenuBar getMenu() {
         /* define the general properties of the menu bar */
         JMenuBar menuBar = new JMenuBar();
         menuBar.setOpaque(true);
@@ -197,7 +198,7 @@ public class SwingAppFrame extends JFrame {
     }
 
     /* Add global property items */
-    public static void addHeader() {
+    public void addHeader() {
         SpringLayout mainLayout = new SpringLayout();
         JPanel headerPane = new JPanel(mainLayout);
         mainContentPane.add(headerPane);
@@ -242,7 +243,7 @@ public class SwingAppFrame extends JFrame {
     }
 
     /* Add the content panes */
-    public static void addComponents() {
+    public void addComponents() {
         componentsPane = new JPanel();
         BoxLayout componentsLayout = new BoxLayout(componentsPane, BoxLayout.X_AXIS);
         componentsPane.setLayout(componentsLayout);
@@ -277,7 +278,7 @@ public class SwingAppFrame extends JFrame {
     }
 
     /* ClassPicker as a ComboBox */
-    public static JPanel getClassPicker() {
+    public JPanel getClassPicker() {
         JPanel classPicker = new JPanel();
         ((FlowLayout)classPicker.getLayout()).setAlignment(FlowLayout.LEFT);
 
@@ -341,7 +342,7 @@ public class SwingAppFrame extends JFrame {
 
 
     /* Options as a JList */
-    public static JPanel getOptionsList() {
+    public JPanel getOptionsList() {
         SpringLayout layout = new SpringLayout();
         JPanel optionsPanel = new JPanel(layout);
 
@@ -412,7 +413,7 @@ public class SwingAppFrame extends JFrame {
         return optionsPanel;
     }
 
-    public static ArrayList<JComponent> getParametersList() {
+    public ArrayList<JComponent> getParametersList() {
         ArrayList<JComponent> componentList = new ArrayList<JComponent>();
         JLabel title = new JLabel("Parameters");
         final JPanel parameters = generateParameterPanel(currentType);
@@ -507,7 +508,7 @@ public class SwingAppFrame extends JFrame {
         return panel;
     }
 
-    public static ActivityObject getActivityObject(int type, JPanel parameters) {
+    public ActivityObject getActivityObject(int type, JPanel parameters) {
 //        for (int i = 1; i < parameters.getComponentCount(); i += 2) {
 //            Component component = parameters.getComponent(i);
 //            System.out.println("Text: " + i + " \'" + ((JTextField) component).getText() + "\'");
@@ -636,7 +637,7 @@ public class SwingAppFrame extends JFrame {
         return object;
     }
 
-    public static ArrayList<JComponent> getHierarchyList() {
+    public ArrayList<JComponent> getHierarchyList() {
         ArrayList<JComponent> componentList = new ArrayList<JComponent>();
         JLabel title = new JLabel("Hierarchy");
         componentList.add(title);
@@ -794,7 +795,7 @@ public class SwingAppFrame extends JFrame {
         return optionsPanel;
     }
 
-    public static ArrayList<JComponent> getPreviewList() {
+    public ArrayList<JComponent> getPreviewList() {
         ArrayList<JComponent> componentList = new ArrayList<JComponent>();
         JLabel title = new JLabel("Java Code");
         componentList.add(title);
@@ -821,7 +822,7 @@ public class SwingAppFrame extends JFrame {
         return componentList;
     }
 
-    public static JPanel getFunctionsList() {
+    public JPanel getFunctionsList() {
         SpringLayout layout = new SpringLayout();
         JPanel functionsPanel = new JPanel(layout);
 
@@ -877,7 +878,7 @@ public class SwingAppFrame extends JFrame {
         return functionsPanel;
     }
 
-    private static void refreshFunctionPane() {
+    private void refreshFunctionPane() {
         componentsPane.remove(functionPane);
         functionPane = getFunctionsList();
         functionPane.setPreferredSize(new Dimension(FUNCTIONS_WIDTH, FUNCTIONS_HEIGHT));
@@ -885,7 +886,7 @@ public class SwingAppFrame extends JFrame {
         componentsPane.revalidate();
     }
 
-    private static void refreshParameterPane() {
+    private void refreshParameterPane() {
         componentsPane.remove(parameterPane);
         parameterPane = generatePanel(getParametersList());
         parameterPane.setPreferredSize(new Dimension(PARAMETERS_WIDTH, PARAMETERS_HEIGHT));
@@ -893,7 +894,7 @@ public class SwingAppFrame extends JFrame {
         componentsPane.revalidate();
     }
 
-    private static void refreshHierarchyPane() {
+    private void refreshHierarchyPane() {
         componentsPane.remove(hierarchyPane);
         hierarchyPane = generatePanel(getHierarchyList());
         hierarchyPane.setPreferredSize(new Dimension(HIERARCHY_WIDTH, HIERARCHY_HEIGHT));
@@ -901,7 +902,7 @@ public class SwingAppFrame extends JFrame {
         componentsPane.revalidate();
     }
 
-    private static void refreshPreviewPane() {
+    private void refreshPreviewPane() {
         componentsPane.remove(previewPane);
         previewPane = generatePanel(getPreviewList());
         previewPane.setPreferredSize(new Dimension(PREVIEW_WIDTH, PREVIEW_HEIGHT));
@@ -909,14 +910,14 @@ public class SwingAppFrame extends JFrame {
         componentsPane.revalidate();
     }
 
-    private static void refreshAll() {
+    private void refreshAll() {
         refreshFunctionPane();
         refreshParameterPane();
         refreshHierarchyPane();
         refreshPreviewPane();
     }
 
-    private static void updateGlobalProjectProperties() {
+    private void updateGlobalProjectProperties() {
         cmd.parseCmd("name " + headerFields.get(0).getText());
         cmd.parseCmd("package " + headerFields.get(1).getText());
         cmd.parseCmd("path " + headerFields.get(2).getText());

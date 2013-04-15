@@ -13,8 +13,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61634fbf-e237-46de-bcc1-c6f65b6ae12b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CommandLineObject.java" afterPath="$PROJECT_DIR$/src/CommandLineObject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CustomFunction.java" afterPath="$PROJECT_DIR$/src/CustomFunction.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SwingAppFrame.java" afterPath="$PROJECT_DIR$/src/SwingAppFrame.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -347,7 +345,7 @@
     <file path="$APPLICATION_HOME_DIR$/plugins/JBoss/lib/jbossIntegration.jar!/descriptors/jboss-deployment-structure-1_0.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989366167" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/connector_1_5.xsd" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989366167" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/spring-form.tld" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352989366167" ignored="false" />
-    <file path="/Dummy.txt" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1365990367179" ignored="false" />
+    <file path="/Dummy.txt" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1366011588008" ignored="false" />
     <file path="$PROJECT_DIR$/../../Sonar/android/sonar/target/generated-sources/r/me/sonar/android/R.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1352993844163" ignored="false" />
     <file path="/AndroidManifestGenerator.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360364673966" ignored="false" />
     <file path="/Imports.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360362937404" ignored="false" />
@@ -409,13 +407,13 @@
     <file path="/makestuff.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1360554506792" ignored="false" />
     <file path="/SwingApp.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1362621558319" ignored="false" />
     <file path="$PROJECT_DIR$/.idea/modules.xml" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1362034955433" ignored="false" />
-    <file path="/SwingAppFrame.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1365916026992" ignored="false" />
+    <file path="/SwingAppFrame.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1366011756685" ignored="false" />
     <file path="/Permission.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363623958619" ignored="false" />
     <file path="$USER_HOME$/ibe-android/src/net/ibe/android/superbus/DatabaseHelper.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363790964910" ignored="false" />
     <file path="/DatabaseHelper.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363790810138" ignored="false" />
     <file path="/TestActivity.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363795246753" ignored="false" />
     <file path="$USER_HOME$/ibe-android/src/net/ibe/android/activity/TestActivity.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363792963366" ignored="false" />
-    <file path="/a.dummy" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1365452948043" ignored="false" />
+    <file path="/a.dummy" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1366011565479" ignored="false" />
     <file path="$USER_HOME$/ibe-android/src/net/ibe/android/IBEApplication.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363793005337" ignored="false" />
     <file path="/IBEApplication.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363791664040" ignored="false" />
     <file path="$USER_HOME$/ibe-android/src/net/ibe/android/superbus/JsonSqlitePersistenceProvider.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1363794006338" ignored="false" />
@@ -489,7 +487,7 @@
     <file path="$USER_HOME$/ibe-android/ibe/src/main/java/net/ibe/android/activity/ListPeople.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1365971134717" ignored="false" />
     <file path="$USER_HOME$/ibe-android/ibe/src/main/java/net/ibe/android/model/Fetch.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1364597977845" ignored="false" />
     <file path="/StringHelper.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1365906171532" ignored="false" />
-    <file path="/CommandLineObject.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1365913923006" ignored="false" />
+    <file path="/CommandLineObject.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1365997046042" ignored="false" />
     <file path="$USER_HOME$/ibe-android/ibe/src/main/java/net/ibe/android/superbus/DatabaseHelper.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1365448398548" ignored="false" />
     <file path="$USER_HOME$/ibe-android/ibe/src/main/java/net/ibe/android/fragment/PersonFragment.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1365971134717" ignored="false" />
     <file path="$USER_HOME$/ibe-android/ibe/src/main/java/net/ibe/android/activity/HomeActivity.java" changelist="61634fbf-e237-46de-bcc1-c6f65b6ae12b" time="1365971134717" ignored="false" />
@@ -608,7 +606,7 @@
       <file leaf-file-name="CommandLineObject.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CommandLineObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="668" column="100" selection-start="26587" selection-end="26587" vertical-scroll-proportion="0.0">
+            <state line="128" column="0" selection-start="5027" selection-end="5027" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -635,7 +633,7 @@
       <file leaf-file-name="ActivityCode.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ActivityCode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="149" column="29" selection-start="6069" selection-end="6069" vertical-scroll-proportion="0.0">
+            <state line="115" column="74" selection-start="4924" selection-end="4924" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -659,11 +657,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SwingAppFrame.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="SwingAppFrame.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SwingAppFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="91" selection-start="1158" selection-end="1158" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="73" column="8" selection-start="3207" selection-end="3207" vertical-scroll-proportion="0.87068963">
+              <folding>
+                <element signature="e#4279#4450#0" expanded="true" />
+                <element signature="e#4439#4440#0" expanded="true" />
+                <element signature="e#5033#5235#0" expanded="true" />
+                <element signature="e#5224#5225#0" expanded="true" />
+                <element signature="e#5604#5806#0" expanded="true" />
+                <element signature="e#5795#5796#0" expanded="true" />
+                <element signature="e#5942#6106#0" expanded="true" />
+                <element signature="e#6095#6096#0" expanded="true" />
+                <element signature="e#6238#6472#0" expanded="true" />
+                <element signature="e#6461#6462#0" expanded="true" />
+                <element signature="e#6867#7120#0" expanded="true" />
+                <element signature="e#7109#7110#0" expanded="true" />
+                <element signature="e#7272#7438#0" expanded="true" />
+                <element signature="e#7427#7428#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -677,10 +690,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomFunction.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="CustomFunction.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/CustomFunction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="27" selection-start="1660" selection-end="1660" vertical-scroll-proportion="0.35446686">
+            <state line="61" column="27" selection-start="1660" selection-end="1660" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -721,10 +734,10 @@
         <option value="$PROJECT_DIR$/src/swing/SwingAppFrame.java" />
         <option value="$PROJECT_DIR$/src/StringHerlper.java" />
         <option value="$PROJECT_DIR$/src/StringHelper.java" />
-        <option value="$PROJECT_DIR$/src/ActivityCode.java" />
         <option value="$PROJECT_DIR$/src/CustomFunction.java" />
-        <option value="$PROJECT_DIR$/src/SwingAppFrame.java" />
+        <option value="$PROJECT_DIR$/src/ActivityCode.java" />
         <option value="$PROJECT_DIR$/src/CommandLineObject.java" />
+        <option value="$PROJECT_DIR$/src/SwingAppFrame.java" />
       </list>
     </option>
   </component>
@@ -886,6 +899,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Thesis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Thesis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1171,7 +1202,15 @@
       <created>1365912543323</created>
       <updated>1365912543323</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="misc clean up">
+      <created>1365990469936</created>
+      <updated>1365990469936</updated>
+    </task>
+    <task id="LOCAL-00008" summary="misc clean up 2">
+      <created>1366011595175</created>
+      <updated>1366011595175</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -1198,9 +1237,10 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32879046" sideWeight="0.4969697" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.4969697" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3270869" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.6717949" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39863715" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26235095" sideWeight="0.22878788" order="8" side_tool="true" content_ui="tabs" />
@@ -1211,8 +1251,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24924242" sideWeight="0.21709402" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24015151" sideWeight="0.6712095" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26235095" sideWeight="0.7659091" order="2" side_tool="false" content_ui="tabs" x="288" y="-8" width="1074" height="714" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24015151" sideWeight="0.7376491" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26235095" sideWeight="0.7659091" order="2" side_tool="false" content_ui="tabs" x="288" y="-8" width="1074" height="714" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1221,7 +1261,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3270869" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.4939394" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Android Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32876712" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1265,7 +1304,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished refactoring string parser" />
+    <option name="LAST_COMMIT_MESSAGE" value="misc clean up 2" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1283,6 +1322,8 @@
     <MESSAGE value="class picker&#10;permissions local&#10;" />
     <MESSAGE value="before layout refactor" />
     <MESSAGE value="finished refactoring string parser" />
+    <MESSAGE value="misc clean up" />
+    <MESSAGE value="misc clean up 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1296,18 +1337,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/CommandLine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="297" column="0" selection-start="12609" selection-end="12609" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_03/src.zip!/javax/swing/event/ListSelectionEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="15" selection-start="2851" selection-end="2851" vertical-scroll-proportion="0.3316062" />
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_03/src.zip!/javax/swing/AbstractButton.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1928" column="27" selection-start="68309" selection-end="68313" vertical-scroll-proportion="0.6345178" />
@@ -1344,13 +1373,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ActivityCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="149" column="29" selection-start="6069" selection-end="6069" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_03/src.zip!/java/util/List.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="234" column="12" selection-start="9674" selection-end="9674" vertical-scroll-proportion="0.3316062">
@@ -1365,13 +1387,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/activityobject/ActivityObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="29" selection-start="1451" selection-end="1451" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/activityobject/ButtonActivityObject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="51" selection-start="76" selection-end="76" vertical-scroll-proportion="0.0">
@@ -1379,24 +1394,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SwingAppFrame.java">
+    <entry file="file://$PROJECT_DIR$/src/CustomFunction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="91" selection-start="1158" selection-end="1158" vertical-scroll-proportion="0.0">
+        <state line="61" column="27" selection-start="1660" selection-end="1660" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/activityobject/ActivityObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="29" selection-start="1451" selection-end="1451" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="29" selection-start="68" selection-end="68" vertical-scroll-proportion="0.04404145">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ActivityCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="74" selection-start="4924" selection-end="4924" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CommandLineObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="668" column="100" selection-start="26587" selection-end="26587" vertical-scroll-proportion="0.0">
+        <state line="128" column="0" selection-start="5027" selection-end="5027" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CustomFunction.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_03/src.zip!/javax/swing/JFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="27" selection-start="1660" selection-end="1660" vertical-scroll-proportion="0.35446686">
+        <state line="487" column="16" selection-start="17929" selection-end="17929" vertical-scroll-proportion="0.33206832">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SwingAppFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="8" selection-start="3207" selection-end="3207" vertical-scroll-proportion="0.87068963">
+          <folding>
+            <element signature="e#4279#4450#0" expanded="true" />
+            <element signature="e#4439#4440#0" expanded="true" />
+            <element signature="e#5033#5235#0" expanded="true" />
+            <element signature="e#5224#5225#0" expanded="true" />
+            <element signature="e#5604#5806#0" expanded="true" />
+            <element signature="e#5795#5796#0" expanded="true" />
+            <element signature="e#5942#6106#0" expanded="true" />
+            <element signature="e#6095#6096#0" expanded="true" />
+            <element signature="e#6238#6472#0" expanded="true" />
+            <element signature="e#6461#6462#0" expanded="true" />
+            <element signature="e#6867#7120#0" expanded="true" />
+            <element signature="e#7109#7110#0" expanded="true" />
+            <element signature="e#7272#7438#0" expanded="true" />
+            <element signature="e#7427#7428#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
