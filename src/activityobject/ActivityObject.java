@@ -37,6 +37,8 @@ public abstract class ActivityObject {
 
     public abstract String print();
 
+    public abstract String printDeclaration();
+
     protected String addBasics() {
         StringBuilder sb = new StringBuilder();
 //        sb.append("\t\tfinal TextView ").append(getObjectName()).append(" = new TextView(this);\n");

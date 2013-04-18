@@ -205,7 +205,9 @@ public class CommandLineObject {
                 else if (items[0].equals("returnType"))
                     returnType = items[1];
                 else if (items[0].equals("params")) {
-                    String[] paramArgs = arguments[i].split(" ");
+                    String s = arguments[i].replaceAll("\n|\t", " ");
+                    System.out.println(s);
+                    String[] paramArgs = s.split(" ");
                     for (int j = 1; j < paramArgs.length; j += 2) {
                         params.add(new Parameter(paramArgs[j], paramArgs[j+1]));
                     }
@@ -653,6 +655,10 @@ public class CommandLineObject {
 
     public List<CustomFunction> getFunctions() {
         return activityCode.getCustomFunctions();
+    }
+
+    public List<ActivityObject> getActivityObjects() {
+        return activityCode.getActivityObjects();
     }
 
     public void addDefaultFunctions() {

@@ -20,9 +20,16 @@ public class EditTextActivityObject extends ActivityObject {
     @Override
     public String print() {
         StringBuilder sb = new StringBuilder();
-        sb.append("\t\tfinal EditText ").append(getObjectName()).append(" = new EditText(this);\n");
+        sb.append("\t\t").append(getObjectName()).append(" = new EditText(this);\n");
         sb.append(addBasics());
         sb.append("\t\t").append(getObjectName()).append(".setHint(\"").append(hint).append("\");\n");
+        return sb.toString();
+    }
+
+    @Override
+    public String printDeclaration() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\tEditText ").append(getObjectName()).append(";\n");
         return sb.toString();
     }
 }

@@ -45,7 +45,7 @@ public class ContactsListActivityObject extends ActivityObject {
                 .append("\t\t\t}\n")
                 .append("\t\t};\n");
 
-        sb.append("\t\tfinal ListView ").append(getObjectName()).append(" = new ListView(this);\n");
+        sb.append("\t\t").append(getObjectName()).append(" = new ListView(this);\n");
 
         if (width.equals("fill")) width = FILL_PARENT;
         else if (width.equals("wrap")) width = WRAP_CONTENT;
@@ -58,6 +58,13 @@ public class ContactsListActivityObject extends ActivityObject {
             sb.append("\t\t").append(getObjectName()).append(".setOnItemClickListener(new AdapterView.OnItemClickListener() {\n\t\t\t@Override\n\t\t\tpublic void onItemClick(AdapterView<?> parent, View view, int position, long id) {\n")
                     .append(action).append("\n\t\t\t}\n\t\t});\n");
 
+        return sb.toString();
+    }
+
+    @Override
+    public String printDeclaration() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\tListView ").append(getObjectName()).append(";\n");
         return sb.toString();
     }
 }

@@ -32,6 +32,10 @@ public class ActivityCode {
         activityObjects.add(activityObject);
     }
 
+    public List<ActivityObject> getActivityObjects() {
+        return activityObjects;
+    }
+
     public void addCustomFunction(CustomFunction customFunction) {
         if (customFunctions == null) throw new RuntimeException("CustomFunctions was null");
         if (customFunction == null) throw new IllegalArgumentException("CustomFunction cannot be null");
@@ -105,6 +109,14 @@ public class ActivityCode {
         sb.append(imports.toString());
         // class header line
         sb.append("public class ").append(className).append(" extends Activity {\n");
+
+        sb.append("\n");
+        // declare the activityObjects as instance variables
+        for (ActivityObject activityObject : activityObjects) {
+            sb.append(activityObject.printDeclaration());
+        }
+        sb.append("\n");
+
         // onCreate header
         sb.append("\t@Override\n");
         sb.append("\tprotected void onCreate(Bundle savedInstanceState) {\n");
@@ -115,6 +127,7 @@ public class ActivityCode {
         sb.append("\t\taddContentView(rootView, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.FILL_PARENT));\n\n");
         sb.append("\t\trootView.setOrientation(LinearLayout.VERTICAL);\n\n");
 //        sb.append("\t\tViewGroup rootView = (ViewGroup) getWindow().getDecorView().findViewById(android.R.id.content);\n\n");
+
         // parse through activityObjects and add them to the code
         for (ActivityObject activityObject : activityObjects) {
             // create the object

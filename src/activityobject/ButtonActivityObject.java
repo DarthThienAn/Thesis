@@ -17,8 +17,17 @@ public class ButtonActivityObject extends ActivityObject {
     @Override
     public String print() {
         StringBuilder sb = new StringBuilder();
-        sb.append("\t\tfinal Button ").append(getObjectName()).append(" = new Button(this);\n");
+        sb.append("\t\t").append(getObjectName()).append(" = new Button(this);\n");
         sb.append(addBasics());
         return sb.toString();
     }
+
+    @Override
+    public String printDeclaration() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\tButton ").append(getObjectName()).append(";\n");
+        return sb.toString();
+    }
+
+
 }

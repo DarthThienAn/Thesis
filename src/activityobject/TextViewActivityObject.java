@@ -17,8 +17,15 @@ public class TextViewActivityObject extends ActivityObject {
     @Override
     public String print() {
         StringBuilder sb = new StringBuilder();
-        sb.append("\t\tfinal TextView ").append(getObjectName()).append(" = new TextView(this);\n");
+        sb.append("\t\t").append(getObjectName()).append(" = new TextView(this);\n");
         sb.append(addBasics());
+        return sb.toString();
+    }
+
+    @Override
+    public String printDeclaration() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\tTextView ").append(getObjectName()).append(";\n");
         return sb.toString();
     }
 }

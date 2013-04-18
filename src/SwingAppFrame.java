@@ -45,19 +45,18 @@ public class SwingAppFrame extends JFrame {
     private static final int EDITTEXT_TYPE = 2;
     private static final int CONTACTS_TYPE = 3;
     private static final int CUSTOMFUNCTION_TYPE = 4;
-    private static int currentType = 0;
 
-    private SwingAppFrame frame;
-    private JPanel optionsPane, functionPane, parameterPane, hierarchyPane, previewPane, componentsPane;
+    private JPanel optionsPane, functionsPane, parametersPane, hierarchyPane, previewPane, componentsPane;
+    private ArrayList<JTextField> headerFields;
     private JTextField projectNameField, pathField, packageNameField, mainClassField;
     private JTextField classNameField;
-    private ArrayList<JTextField> headerFields;
     private JSeparator jSeparator;
     private Container mainContentPane;
-    private ArrayList<ActivityObject> hierarchyList = new ArrayList<ActivityObject>();
     private SpringLayout mainSpringLayout;
 
     private CommandLineObject cmd;
+
+    private int currentType = 0;
 
     /* Constructor */
     public SwingAppFrame() {
@@ -92,7 +91,6 @@ public class SwingAppFrame extends JFrame {
 //        frame.getContentPane().add(background, BorderLayout.CENTER);
 //        frame.getContentPane().add(label, BorderLayout.CENTER);
 
-        //Display the window.
         pack();
     }
 
@@ -198,7 +196,7 @@ public class SwingAppFrame extends JFrame {
     }
 
     /* Add global property items */
-    public void addHeader() {
+    private void addHeader() {
         SpringLayout mainLayout = new SpringLayout();
         JPanel headerPane = new JPanel(mainLayout);
         mainContentPane.add(headerPane);
@@ -243,42 +241,41 @@ public class SwingAppFrame extends JFrame {
     }
 
     /* Add the content panes */
-    public void addComponents() {
+    private void addComponents() {
         componentsPane = new JPanel();
         BoxLayout componentsLayout = new BoxLayout(componentsPane, BoxLayout.X_AXIS);
         componentsPane.setLayout(componentsLayout);
         mainContentPane.add(componentsPane);
+        mainSpringLayout.putConstraint(SpringLayout.NORTH, componentsPane, 5, SpringLayout.SOUTH, jSeparator);
+        mainSpringLayout.putConstraint(SpringLayout.WEST, componentsPane, 5, SpringLayout.WEST, mainContentPane);
 
-        optionsPane = getOptionsList();
-        functionPane = getFunctionsList();
-        parameterPane = generatePanel(getParametersList());
+        optionsPane = generatePanel(getOptionsList());
+        functionsPane = generatePanel(getFunctionsList());
+        parametersPane = generatePanel(getParametersList());
         hierarchyPane = generatePanel(getHierarchyList());
         previewPane = generatePanel(getPreviewList());
 
 //        optionsPane.setAlignmentY(Component.TOP_ALIGNMENT);
         optionsPane.setPreferredSize(new Dimension(OPTIONS_WIDTH, OPTIONS_HEIGHT));
-        functionPane.setPreferredSize(new Dimension(FUNCTIONS_WIDTH, FUNCTIONS_HEIGHT));
-        parameterPane.setPreferredSize(new Dimension(PARAMETERS_WIDTH, PARAMETERS_HEIGHT));
+        functionsPane.setPreferredSize(new Dimension(FUNCTIONS_WIDTH, FUNCTIONS_HEIGHT));
+        parametersPane.setPreferredSize(new Dimension(PARAMETERS_WIDTH, PARAMETERS_HEIGHT));
         hierarchyPane.setPreferredSize(new Dimension(HIERARCHY_WIDTH, HIERARCHY_HEIGHT));
         previewPane.setPreferredSize(new Dimension(PREVIEW_WIDTH, PREVIEW_HEIGHT));
 
         componentsPane.add(optionsPane);
         componentsPane.add(Box.createRigidArea(new Dimension(10, 0)));
-        componentsPane.add(functionPane);
+        componentsPane.add(functionsPane);
         componentsPane.add(Box.createRigidArea(new Dimension(10, 0)));
-        componentsPane.add(parameterPane);
+        componentsPane.add(parametersPane);
         componentsPane.add(Box.createRigidArea(new Dimension(10, 0)));
         componentsPane.add(hierarchyPane);
         componentsPane.add(Box.createRigidArea(new Dimension(10, 0)));
         componentsPane.add(previewPane);
         componentsPane.add(Box.createRigidArea(new Dimension(10, 0)));
-
-        mainSpringLayout.putConstraint(SpringLayout.NORTH, componentsPane, 5, SpringLayout.SOUTH, jSeparator);
-        mainSpringLayout.putConstraint(SpringLayout.WEST, componentsPane, 5, SpringLayout.WEST, mainContentPane);
     }
 
     /* ClassPicker as a ComboBox */
-    public JPanel getClassPicker() {
+    private JPanel getClassPicker() {
         JPanel classPicker = new JPanel();
         ((FlowLayout)classPicker.getLayout()).setAlignment(FlowLayout.LEFT);
 
@@ -309,49 +306,12 @@ public class SwingAppFrame extends JFrame {
         return classPicker;
     }
 
-    public static ArrayList<JComponent> getOptionsList1() {
+    /* get optionsPane as a JList */
+    private ArrayList<JComponent> getOptionsList() {
         ArrayList<JComponent> componentList = new ArrayList<JComponent>();
-        componentList.add(new JLabel("Options"));
-        JButton button = new JButton("Add a Button");
-        button.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-        componentList.add(button);
-        JButton textview = new JButton("Add a TextView");
-        textview.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-        componentList.add(textview);
-        JButton edittext = new JButton("Add an EditText");
-        edittext.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-            }
-        });
-        componentList.add(edittext);
-
-        return componentList;
-    }
-
-
-    /* Options as a JList */
-    public JPanel getOptionsList() {
-        SpringLayout layout = new SpringLayout();
-        JPanel optionsPanel = new JPanel(layout);
 
         JLabel title = new JLabel("Options");
 
-        layout.putConstraint(SpringLayout.NORTH, title, 5, SpringLayout.NORTH, optionsPanel);
-        optionsPanel.add(title);
-
-        JPanel listPanel = new JPanel();
         String[] labels = {"Add Button", "Add TextView", "Add EditText", "Add Contacts List", "Create a Custom Function"};
         final JList<String> list = new JList<String>(labels); // Create the list
 //        list.setSelectedIndex(0); // Set initial state
@@ -361,26 +321,24 @@ public class SwingAppFrame extends JFrame {
             public void valueChanged(ListSelectionEvent e) {
                 if (!e.getValueIsAdjusting()) {
 //                ItemChooser.this.select(list.getSelectedIndex());
-                    System.out.println("?" + list.getSelectedIndex());
                     currentType = list.getSelectedIndex();
-                    refreshParameterPane();
+                    refreshParametersPane();
                 }
             }
         });
         list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
         // Lay out list and name label vertically
-        listPanel.setLayout(new BoxLayout(listPanel, BoxLayout.Y_AXIS)); // vertical
-        listPanel.add(new JScrollPane(list)); // Add the JList
-        listPanel.setPreferredSize(new Dimension(WINDOW_WIDTH, WINDOW_HEIGHT));
-        optionsPanel.add(listPanel);
+        JScrollPane listPane = new JScrollPane(list);
+        listPane.setPreferredSize(new Dimension(WINDOW_WIDTH, WINDOW_HEIGHT));
 
-        layout.putConstraint(SpringLayout.NORTH, listPanel, 5, SpringLayout.SOUTH, title);
-        return optionsPanel;
+        componentList.add(title);
+        componentList.add(listPane);
+        return componentList;
     }
 
     /* Options as a ComboBox */
-    public static JPanel getOptionsList2(SpringLayout layout) {
+    private static JPanel getOptionsComboBox(SpringLayout layout) {
         JPanel optionsPanel = new JPanel();
         optionsPanel.setLayout(layout);
 
@@ -413,7 +371,51 @@ public class SwingAppFrame extends JFrame {
         return optionsPanel;
     }
 
-    public ArrayList<JComponent> getParametersList() {
+    /* get the list of function pane components */
+    private ArrayList<JComponent> getFunctionsList() {
+        ArrayList<JComponent> componentList = new ArrayList<JComponent>();
+
+        JLabel title = new JLabel("Functions");
+
+        List<CustomFunction> functions = cmd.getFunctions();
+        String[] items = new String [functions.size()];
+        for (int i = 0; i < functions.size(); i++)
+            items[i] = functions.get(i).getName();
+
+        final JList<String> list = new JList<String>(items); // Create the list
+
+        // Handle state changes
+        list.addListSelectionListener(new ListSelectionListener() {
+            public void valueChanged(ListSelectionEvent e) {
+
+            }
+        });
+
+        // Lay out list and name label vertically
+        JScrollPane listPane = new JScrollPane(list);
+        listPane.setPreferredSize(new Dimension(WINDOW_WIDTH, WINDOW_HEIGHT));
+
+//        JLabel label = new JLabel("");
+//        label.setPreferredSize(new Dimension(WINDOW_WIDTH, 100));
+
+        JButton removeButton = new JButton("Remove");
+        removeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cmd.parseCmd("removefunction " + list.getSelectedIndex());
+
+                refreshFunctionsPane();
+                refreshPreviewPane();
+            }
+        });
+
+        componentList.add(title);
+        componentList.add(listPane);
+        componentList.add(removeButton);
+        return componentList;
+    }
+
+    private ArrayList<JComponent> getParametersList() {
         ArrayList<JComponent> componentList = new ArrayList<JComponent>();
         JLabel title = new JLabel("Parameters");
         final JPanel parameters = generateParameterPanel(currentType);
@@ -424,10 +426,9 @@ public class SwingAppFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 ActivityObject o = getActivityObject(currentType, parameters);
                 if (o != null) {
-                    hierarchyList.add(o);
+                    refreshParametersPane();
                     refreshHierarchyPane();
                     refreshPreviewPane();
-                    refreshParameterPane();
                 }
             }
         });
@@ -435,22 +436,156 @@ public class SwingAppFrame extends JFrame {
         componentList.add(title);
         componentList.add(addButton);
         componentList.add(parameters);
+        return componentList;
+    }
+
+    private ArrayList<JComponent> getHierarchyList() {
+        ArrayList<JComponent> componentList = new ArrayList<JComponent>();
+        JLabel title = new JLabel("Hierarchy");
+
+        //Create and populate the panel.
+        JPanel titlePanelParent = new JPanel(new SpringLayout());
+
+        JLabel titlePanel = new JLabel("Class Name: ", JLabel.TRAILING);
+        titlePanelParent.add(titlePanel);
+        classNameField  = new JTextField(8);
+        titlePanel.setLabelFor(classNameField);
+        classNameField.setText(cmd.getClassName());
+        titlePanelParent.add(classNameField);
+
+        SpringUtilities.makeCompactGrid(titlePanelParent,
+                1, 2, //rows, cols
+                1, 1,        //initX, initY
+                6, 6);       //xPad, yPad
+
+//        SpringLayout layout = new SpringLayout();
+//        JPanel itemsPanel = new JPanel(layout);
+
+//        for (String label : labels) {
+//            JButton l = new JButton(label);
+//            itemsPanel.add(l);
+//        }
+//
+//        SpringUtilities.makeCompactGrid(itemsPanel,
+//                labels.length, 1, //rows, cols
+//                1, 1,        //initX, initY
+//                6, 6);       //xPad, yPad
+
+//        componentList.add(itemsPanel);
+
+        List<ActivityObject> objects = cmd.getActivityObjects();
+        String[] items = new String [objects.size()];
+        for (int i = 0; i < objects.size(); i++)
+            items[i] = objects.get(i).getObjectName();
+
+        final JList<String> list = new JList<String>(items); // Create the list
+
+//        list.setSelectedIndex(0); // Set initial state
+
+        // Handle state changes
+        list.addListSelectionListener(new ListSelectionListener() {
+            public void valueChanged(ListSelectionEvent e) {
+            }
+        });
+
+        // Lay out list and name label vertically
+        JScrollPane listPane = new JScrollPane(list);
+        listPane.setPreferredSize(new Dimension(WINDOW_WIDTH, WINDOW_HEIGHT));
+
+        /* button pane */
+
+        JButton upButton = new JButton("Up");
+        upButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+//                repositionInArrayList(hierarchyList, list.getSelectedIndex(), list.getSelectedIndex() - 1);
+                cmd.parseCmd("up " + list.getSelectedIndex());
+
+                refreshHierarchyPane();
+                refreshPreviewPane();
+            }
+        });
+        JButton downButton = new JButton("Down");
+        downButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+//                int i = list.getSelectedIndex();
+                cmd.parseCmd("down " + list.getSelectedIndex());
+
+                refreshHierarchyPane();
+                refreshPreviewPane();
+            }
+        });
+        JButton removeButton = new JButton("Remove");
+        removeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cmd.parseCmd("remove " + list.getSelectedIndex());
+
+                refreshHierarchyPane();
+                refreshPreviewPane();
+            }
+        });
+
+        JPanel buttonPane = new JPanel();
+        buttonPane.setLayout(new BoxLayout(buttonPane, BoxLayout.LINE_AXIS));
+//        buttonPane.setBorder(BorderFactory.createEmptyBorder(0, 10, 10, 10));
+//        buttonPane.add(Box.createHorizontalGlue());
+        buttonPane.add(upButton);
+        buttonPane.add(Box.createRigidArea(new Dimension(5, 0)));
+        buttonPane.add(downButton);
+        buttonPane.add(Box.createRigidArea(new Dimension(5, 0)));
+        buttonPane.add(removeButton);
+
+//        layout.putConstraint(SpringLayout.NORTH, listPanel, 5, SpringLayout.SOUTH, title);
+
+        componentList.add(title);
+        componentList.add(titlePanelParent);
+        componentList.add(listPane);
+        componentList.add(buttonPane);
 
         return componentList;
     }
 
-    public static JPanel generatePanel(ArrayList<JComponent> componentList) {
-        SpringLayout layout = new SpringLayout();
-        JPanel panel = new JPanel(layout);
+    private ArrayList<JComponent> getPreviewList() {
+        ArrayList<JComponent> componentList = new ArrayList<JComponent>();
+        JLabel title = new JLabel("Java Code");
 
-        layout.putConstraint(SpringLayout.NORTH, componentList.get(0), 5, SpringLayout.NORTH, panel);
-        panel.add(componentList.get(0));
+        JButton refreshButton = new JButton("Refresh");
+        refreshButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+//                cmd.parseCmd("");
+//                cmd.setPath(pathField.getText());
+//                cmd.setPackageName(packageNameField.getText());
+//                cmd.setMainActivity(mainClassField.getText());
+
+                refreshPreviewPane();
+            }
+        });
+
+        JScrollPane scrollPane = new JScrollPane(new JTextArea(cmd.getString()));
+        scrollPane.setBorder(BorderFactory.createLineBorder(new Color(BORDER_COLOR, BORDER_COLOR, BORDER_COLOR)));
+        scrollPane.setPreferredSize(new Dimension(PREVIEW_WIDTH, PREVIEW_HEIGHT));
+
+        componentList.add(title);
+        componentList.add(refreshButton);
+        componentList.add(scrollPane);
+        return componentList;
+    }
+
+    private static JPanel generatePanel(ArrayList<JComponent> componentList) {
+        SpringLayout layout = new SpringLayout();
+        JPanel parentPane = new JPanel(layout);
+
+        parentPane.add(componentList.get(0));
+        layout.putConstraint(SpringLayout.NORTH, componentList.get(0), 5, SpringLayout.NORTH, parentPane);
         for (int i = 1; i < componentList.size(); i++) {
-            panel.add(componentList.get(i));
+            parentPane.add(componentList.get(i));
             layout.putConstraint(SpringLayout.NORTH, componentList.get(i), 5, SpringLayout.SOUTH, componentList.get(i - 1));
         }
 
-        return panel;
+        return parentPane;
 //        JPanel panel = new JPanel();
 //        BoxLayout layout = new BoxLayout(panel, BoxLayout.Y_AXIS);
 //        panel.setLayout(layout);
@@ -461,7 +596,7 @@ public class SwingAppFrame extends JFrame {
 //        return panel;
     }
 
-    public static JPanel generateParameterPanel(int type) {
+    private static JPanel generateParameterPanel(int type) {
         String[] labels;
         switch (type) {
             case BUTTON_TYPE:
@@ -508,14 +643,7 @@ public class SwingAppFrame extends JFrame {
         return panel;
     }
 
-    public ActivityObject getActivityObject(int type, JPanel parameters) {
-//        for (int i = 1; i < parameters.getComponentCount(); i += 2) {
-//            Component component = parameters.getComponent(i);
-//            System.out.println("Text: " + i + " \'" + ((JTextField) component).getText() + "\'");
-//            if (i == 1)
-//                ((JTextField) component).getText();
-//        }
-
+    private ActivityObject getActivityObject(int type, JPanel parameters) {
         ActivityObject object;
         String name = null;
         String text = null;
@@ -526,14 +654,11 @@ public class SwingAppFrame extends JFrame {
         StringBuilder sb;
 
         try {
-        name = ((JTextField) parameters.getComponent(1)).getText();
-        text = ((JTextField) parameters.getComponent(3)).getText();
-        height = ((JTextField) parameters.getComponent(5)).getText().trim();
-        width = ((JTextField) parameters.getComponent(7)).getText().trim();
+            name = ((JTextField) parameters.getComponent(1)).getText();
+            text = ((JTextField) parameters.getComponent(3)).getText();
+            height = ((JTextField) parameters.getComponent(5)).getText().trim();
+            width = ((JTextField) parameters.getComponent(7)).getText().trim();
         } catch (ClassCastException ignored) {}
-
-        System.out.println(height + ".");
-        System.out.println(width);
 
         // auto-generate name if not specified
         if (StringHelper.isNullorEmpty(name))
@@ -627,9 +752,9 @@ public class SwingAppFrame extends JFrame {
                 if (!StringHelper.isNullorEmpty(params))
                     sb.append("-params ").append(params).append(" ");
                 cmd.parseCmd(sb.toString());
-                refreshFunctionPane();
+                refreshFunctionsPane();
                 refreshPreviewPane();
-                refreshParameterPane();
+                refreshParametersPane();
                 break;
             default:
                 return null;
@@ -637,260 +762,23 @@ public class SwingAppFrame extends JFrame {
         return object;
     }
 
-    public ArrayList<JComponent> getHierarchyList() {
-        ArrayList<JComponent> componentList = new ArrayList<JComponent>();
-        JLabel title = new JLabel("Hierarchy");
-        componentList.add(title);
+    /* helper methods to remove, re-generate, and then re-add the panes */
 
-        //Create and populate the panel.
-        JPanel titlePanelParent = new JPanel(new SpringLayout());
+    // refreshOptionsPane not necessarily since it never changes
 
-        JLabel titlePanel = new JLabel("Class Name: ", JLabel.TRAILING);
-        titlePanelParent.add(titlePanel);
-        classNameField  = new JTextField(8);
-        titlePanel.setLabelFor(classNameField);
-        classNameField.setText(cmd.getClassName());
-        titlePanelParent.add(classNameField);
-
-        SpringUtilities.makeCompactGrid(titlePanelParent,
-                1, 2, //rows, cols
-                1, 1,        //initX, initY
-                6, 6);       //xPad, yPad
-
-//        SpringLayout layout = new SpringLayout();
-//        JPanel itemsPanel = new JPanel(layout);
-
-//        for (String label : labels) {
-//            JButton l = new JButton(label);
-//            itemsPanel.add(l);
-//        }
-//
-//        SpringUtilities.makeCompactGrid(itemsPanel,
-//                labels.length, 1, //rows, cols
-//                1, 1,        //initX, initY
-//                6, 6);       //xPad, yPad
-
-        componentList.add(titlePanelParent);
-//        componentList.add(itemsPanel);
-
-
-        JPanel listPanel = new JPanel();
-//        String[] labels = {"Add Button", "Add TextView", "Add EditText", "Add Contacts List"};
-        String[] items = new String[hierarchyList.size()];
-        for (int i = 0; i < hierarchyList.size(); i++) {
-            items[i] = hierarchyList.get(i).getObjectName();
-        }
-        final JList<String> list = new JList<String>(items);
-//        list.setSelectedIndex(0); // Set initial state
-
-        // Handle state changes
-        list.addListSelectionListener(new ListSelectionListener() {
-            public void valueChanged(ListSelectionEvent e) {
-//                ItemChooser.this.select(list.getSelectedIndex());
-                System.out.println(e.toString());
-                System.out.println(e.getSource());
-
-            }
-        });
-
-        // Lay out list and name label vertically
-        listPanel.setLayout(new BoxLayout(listPanel, BoxLayout.Y_AXIS)); // vertical
-        JScrollPane listPane = new JScrollPane(list);
-        listPane.setPreferredSize(new Dimension(WINDOW_WIDTH, WINDOW_HEIGHT));
-        listPanel.add(listPane); // Add the JList
-//        listPanel.setPreferredSize(new Dimension(200, 400));
-        componentList.add(listPanel);
-
-        /* button pane */
-
-        JButton upButton = new JButton("Up");
-        upButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                repositionInArrayList(hierarchyList, list.getSelectedIndex(), list.getSelectedIndex() - 1);
-                cmd.parseCmd("up " + list.getSelectedIndex());
-
-                refreshHierarchyPane();
-                refreshPreviewPane();
-            }
-        });
-        JButton downButton = new JButton("Down");
-        downButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int i = list.getSelectedIndex();
-                repositionInArrayList(hierarchyList, list.getSelectedIndex(), list.getSelectedIndex() + 1);
-                cmd.parseCmd("down " + list.getSelectedIndex());
-
-                refreshHierarchyPane();
-                refreshPreviewPane();
-            }
-        });
-        JButton removeButton = new JButton("Remove");
-        removeButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                hierarchyList.remove(list.getSelectedIndex());
-                cmd.parseCmd("remove " + list.getSelectedIndex());
-
-                refreshHierarchyPane();
-                refreshPreviewPane();
-            }
-        });
-
-        JPanel buttonPane = new JPanel();
-        buttonPane.setLayout(new BoxLayout(buttonPane, BoxLayout.LINE_AXIS));
-//        buttonPane.setBorder(BorderFactory.createEmptyBorder(0, 10, 10, 10));
-//        buttonPane.add(Box.createHorizontalGlue());
-        buttonPane.add(upButton);
-        buttonPane.add(Box.createRigidArea(new Dimension(5, 0)));
-        buttonPane.add(downButton);
-        buttonPane.add(Box.createRigidArea(new Dimension(5, 0)));
-        buttonPane.add(removeButton);
-
-//        layout.putConstraint(SpringLayout.NORTH, listPanel, 5, SpringLayout.SOUTH, title);
-        componentList.add(buttonPane);
-
-        return componentList;
-    }
-
-    /* Put item at index a at index b instead */
-    private static void repositionInArrayList(ArrayList list, int a, int b) {
-        if ((a < 0) || (b < 0)) return;
-        if ((a > (list.size() - 1)) || (b > (list.size() - 1))) return;
-        Object item = list.remove(a);
-        list.add(b, item);
-    }
-
-    public static JPanel getHierarchyList1(SpringLayout layout) {
-        JPanel optionsPanel = new JPanel();
-        optionsPanel.setLayout(layout);
-
-        JLabel title = new JLabel("Options");
-
-        layout.putConstraint(SpringLayout.NORTH, title, 5, SpringLayout.NORTH, optionsPanel);
-        optionsPanel.add(title);
-
-        JPanel listPanel = new JPanel();
-        String[] labels = {"Add Button", "Add TextView", "Add EditText", "Add Contacts List"};
-        JList<String> list = new JList<String>(labels); // Create the list
-//        list.setSelectedIndex(0); // Set initial state
-
-        // Handle state changes
-        list.addListSelectionListener(new ListSelectionListener() {
-            public void valueChanged(ListSelectionEvent e) {
-//                ItemChooser.this.select(list.getSelectedIndex());
-                System.out.println(e.toString());
-                System.out.println(e.getSource());
-            }
-        });
-
-        // Lay out list and name label vertically
-        listPanel.setLayout(new BoxLayout(listPanel, BoxLayout.Y_AXIS)); // vertical
-        listPanel.add(new JScrollPane(list)); // Add the JList
-        listPanel.setPreferredSize(new Dimension(WINDOW_WIDTH, WINDOW_HEIGHT));
-        optionsPanel.add(listPanel);
-
-        layout.putConstraint(SpringLayout.NORTH, listPanel, 5, SpringLayout.SOUTH, title);
-        return optionsPanel;
-    }
-
-    public ArrayList<JComponent> getPreviewList() {
-        ArrayList<JComponent> componentList = new ArrayList<JComponent>();
-        JLabel title = new JLabel("Java Code");
-        componentList.add(title);
-
-        JButton addButton = new JButton("Refresh");
-        addButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-//                cmd.parseCmd("");
-//                cmd.setPath(pathField.getText());
-//                cmd.setPackageName(packageNameField.getText());
-//                cmd.setMainActivity(mainClassField.getText());
-
-                refreshPreviewPane();
-            }
-        });
-        componentList.add(addButton);
-
-        JScrollPane scrollPane = new JScrollPane(new JTextArea(cmd.getString()));
-        scrollPane.setBorder(BorderFactory.createLineBorder(new Color(BORDER_COLOR, BORDER_COLOR, BORDER_COLOR)));
-        scrollPane.setPreferredSize(new Dimension(PREVIEW_WIDTH, PREVIEW_HEIGHT));
-        componentList.add(scrollPane);
-
-        return componentList;
-    }
-
-    public JPanel getFunctionsList() {
-        SpringLayout layout = new SpringLayout();
-        JPanel functionsPanel = new JPanel(layout);
-
-        JLabel title = new JLabel("Functions");
-
-        layout.putConstraint(SpringLayout.NORTH, title, 5, SpringLayout.NORTH, functionsPanel);
-        functionsPanel.add(title);
-
-        List<CustomFunction> functions = cmd.getFunctions();
-        String[] items = new String [functions.size()];
-        for (int i = 0; i < functions.size(); i++)
-            items[i] = functions.get(i).getName();
-
-        JPanel listPanel = new JPanel();
-        final JList<String> list = new JList<String>(items); // Create the list
-//        list.setSelectedIndex(0); // Set initial state
-
-        // Handle state changes
-        list.addListSelectionListener(new ListSelectionListener() {
-            public void valueChanged(ListSelectionEvent e) {
-//                ItemChooser.this.select(list.getSelectedIndex());
-                System.out.println(e.toString());
-                System.out.println(e.getSource());
-            }
-        });
-
-
-        // Lay out list and name label vertically
-        listPanel.setLayout(new BoxLayout(listPanel, BoxLayout.Y_AXIS)); // vertical
-        listPanel.add(new JScrollPane(list)); // Add the JList
-        listPanel.setPreferredSize(new Dimension(WINDOW_WIDTH, WINDOW_HEIGHT - 100));
-        functionsPanel.add(listPanel);
-
-        layout.putConstraint(SpringLayout.NORTH, listPanel, 5, SpringLayout.SOUTH, title);
-
-        JLabel label = new JLabel("");
-        label.setPreferredSize(new Dimension(WINDOW_WIDTH, 100));
-
-        JButton removeButton = new JButton("Remove");
-        removeButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                cmd.parseCmd("removefunction " + list.getSelectedIndex());
-
-                refreshFunctionPane();
-                refreshPreviewPane();
-            }
-        });
-        functionsPanel.add(removeButton);
-
-        layout.putConstraint(SpringLayout.NORTH, removeButton, 5, SpringLayout.SOUTH, listPanel);
-
-        return functionsPanel;
-    }
-
-    private void refreshFunctionPane() {
-        componentsPane.remove(functionPane);
-        functionPane = getFunctionsList();
-        functionPane.setPreferredSize(new Dimension(FUNCTIONS_WIDTH, FUNCTIONS_HEIGHT));
-        componentsPane.add(functionPane, 2);
+    private void refreshFunctionsPane() {
+        componentsPane.remove(functionsPane);
+        functionsPane = generatePanel(getFunctionsList());
+        functionsPane.setPreferredSize(new Dimension(FUNCTIONS_WIDTH, FUNCTIONS_HEIGHT));
+        componentsPane.add(functionsPane, 2);
         componentsPane.revalidate();
     }
 
-    private void refreshParameterPane() {
-        componentsPane.remove(parameterPane);
-        parameterPane = generatePanel(getParametersList());
-        parameterPane.setPreferredSize(new Dimension(PARAMETERS_WIDTH, PARAMETERS_HEIGHT));
-        componentsPane.add(parameterPane, 4);
+    private void refreshParametersPane() {
+        componentsPane.remove(parametersPane);
+        parametersPane = generatePanel(getParametersList());
+        parametersPane.setPreferredSize(new Dimension(PARAMETERS_WIDTH, PARAMETERS_HEIGHT));
+        componentsPane.add(parametersPane, 4);
         componentsPane.revalidate();
     }
 
@@ -911,8 +799,8 @@ public class SwingAppFrame extends JFrame {
     }
 
     private void refreshAll() {
-        refreshFunctionPane();
-        refreshParameterPane();
+        refreshFunctionsPane();
+        refreshParametersPane();
         refreshHierarchyPane();
         refreshPreviewPane();
     }
@@ -923,5 +811,13 @@ public class SwingAppFrame extends JFrame {
         cmd.parseCmd("path " + headerFields.get(2).getText());
         cmd.parseCmd("main " + headerFields.get(3).getText());
         cmd.parseCmd("classname " + classNameField.getText());
+    }
+
+    /* Put item at index a at index b instead */
+    private static void repositionInArrayList(ArrayList list, int a, int b) {
+        if ((a < 0) || (b < 0)) return;
+        if ((a > (list.size() - 1)) || (b > (list.size() - 1))) return;
+        Object item = list.remove(a);
+        list.add(b, item);
     }
 }
