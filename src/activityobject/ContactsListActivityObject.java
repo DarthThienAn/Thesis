@@ -22,16 +22,18 @@ public class ContactsListActivityObject extends ActivityObject {
     @Override
     public String print() {
         StringBuilder sb = new StringBuilder();
+        String cursorName = getObjectName() + "Cursor";
+        String adapterName = getObjectName() + "Adapter";
 
-        sb.append("\t\tCursor c = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, new String[] {\n")
+        sb.append("\t\tCursor ").append(cursorName).append(" = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, new String[] {\n")
                 .append("\t\t\tContactsContract.CommonDataKinds.Phone._ID,\n");
         if (hasName) sb.append("\t\t\tContactsContract.CommonDataKinds.Phone.DISPLAY_NAME,\n");
         if (hasNumber) sb.append("\t\t\tContactsContract.CommonDataKinds.Phone.NUMBER,\n");
         if (hasName) sb.append("\t\t}, null, null, ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + \" ASC\");\n");
 
-        sb.append("\t\tc.moveToFirst();\n\n");
+        sb.append("\t\t").append(cursorName).append(".moveToFirst();\n\n");
 
-        sb.append("\t\tCursorAdapter adapter = new CursorAdapter(this, c, true) {\n")
+        sb.append("\t\tCursorAdapter ").append(adapterName).append(" = new CursorAdapter(this, ").append(cursorName).append(", true) {\n")
                 .append("\t\t\t@Override\n")
                 .append("\t\t\tpublic View newView(Context context, Cursor cursor, ViewGroup parent) {\n")
                 .append("\t\t\t\treturn new TextView(context);\n")
@@ -53,7 +55,7 @@ public class ContactsListActivityObject extends ActivityObject {
         else if (height.equals("wrap")) height = WRAP_CONTENT;
 
         sb.append("\t\t").append(getObjectName()).append(".setLayoutParams(new LinearLayout.LayoutParams(").append(width).append(", ").append(height).append("));\n");
-        sb.append("\t\t").append(getObjectName()).append(".setAdapter(adapter);\n");
+        sb.append("\t\t").append(getObjectName()).append(".setAdapter(").append(adapterName).append(");\n");
         if (action != null)
             sb.append("\t\t").append(getObjectName()).append(".setOnItemClickListener(new AdapterView.OnItemClickListener() {\n\t\t\t@Override\n\t\t\tpublic void onItemClick(AdapterView<?> parent, View view, int position, long id) {\n")
                     .append(action).append("\n\t\t\t}\n\t\t});\n");

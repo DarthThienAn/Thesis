@@ -238,6 +238,20 @@ public class SwingAppFrame extends JFrame {
         mainSpringLayout.putConstraint(SpringLayout.NORTH, jSeparator, 5, SpringLayout.SOUTH, headerPane);
 //        parentLayout.putConstraint(SpringLayout.NORTH, classPicker, 5, SpringLayout.SOUTH, headerPane);
 //        parentLayout.putConstraint(SpringLayout.NORTH, jSeparator, 5, SpringLayout.SOUTH, classPicker);
+
+        // run button
+        JButton runButton = new JButton("Run");
+        runButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                updateGlobalProjectProperties();
+                cmd.parseCmd("run");
+            }
+        });
+
+        mainContentPane.add(runButton);
+        mainSpringLayout.putConstraint(SpringLayout.WEST, runButton, 220, SpringLayout.EAST, headerPane);
+        mainSpringLayout.putConstraint(SpringLayout.SOUTH, runButton, -10, SpringLayout.SOUTH, headerPane);
     }
 
     /* Add the content panes */

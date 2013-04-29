@@ -9,12 +9,15 @@ public class CommandLineObject {
     private static final int CMD_OFFSET = 0;
     private static ActivityCode activityCode;
     private static AndroidManifestGenerator androidManifestGenerator;
+    //TODO: Make these a part of ActivityCode instead?
     private static String path;
     private static String projectName;
     private static String mainActivity;
     private static String packageName;
+    //TODO: this should really be a part of the ManifestGenerator
     private static PermissionManifestObject permissionManifestObject;
     private static StringBuilder commandList;
+    private static ArrayList<String> classFiles;
 
     private static boolean recoveryMode;
     private static BufferedReader recoveryReader;
@@ -26,6 +29,7 @@ public class CommandLineObject {
 
         //initialize command list to keep track
         commandList = new StringBuilder();
+        classFiles = new ArrayList<String>();
 
         //initialize default androidmanifest to start
         androidManifestGenerator = new AndroidManifestGenerator();
@@ -96,18 +100,10 @@ public class CommandLineObject {
         // creates a new android project with current name, activity, package
         else if (args[CMD_OFFSET].equals("create")) {
             createProject();
-            androidManifestGenerator = new AndroidManifestGenerator();
-            androidManifestGenerator.setApplicationName(projectName);
-            androidManifestGenerator.setMainActivityName(mainActivity);
-            androidManifestGenerator.addActivity(mainActivity);
-            androidManifestGenerator.setPackageName(packageName);
-            writeManifest();
             print("Project created");
         }
         // builds the project
         else if (args[CMD_OFFSET].equals("build")) {
-            androidManifestGenerator.addActivity(activityCode.getClassName());
-            androidManifestGenerator.setPermissionManifestObject(permissionManifestObject);
             writeManifest();
             print("Manifest updating. Building...");
             addFile();
@@ -119,6 +115,14 @@ public class CommandLineObject {
             installApplication();
             print("Application installed");
         }
+        // builds and installs the current project onto an attached USB device
+        else if (args[CMD_OFFSET].equals("run")) {
+            writeManifest();
+            addFile();
+            print("Manifest updating. Building...");
+            buildAndInstall();
+            print("Application installed");
+        }
         // reset the activitycode
         else if (args[CMD_OFFSET].equals("reset")) {
 //            resetProject();
@@ -126,6 +130,7 @@ public class CommandLineObject {
             androidManifestGenerator = new AndroidManifestGenerator();
             permissionManifestObject = new PermissionManifestObject();
             commandList = new StringBuilder();
+            classFiles = new ArrayList<String>();
         }
         else if (args[CMD_OFFSET].equals("help")) {
             if (args[CMD_OFFSET + 1].equals("path"))
@@ -160,27 +165,28 @@ public class CommandLineObject {
         // sets the project name to the first argument
         else if (args[CMD_OFFSET].equals("name")) {
             projectName = args[CMD_OFFSET + 1];
-            androidManifestGenerator.setApplicationName(projectName);
+//            androidManifestGenerator.setApplicationName(projectName);
             print("Project name updated to " + projectName);
         }
         // sets the project main activity to the first argument
         else if (args[CMD_OFFSET].equals("main")) {
             mainActivity = args[CMD_OFFSET + 1];
-            androidManifestGenerator.setMainActivityName(mainActivity);
+//            androidManifestGenerator.setMainActivityName(mainActivity);
             print("Main activity set to " + mainActivity);
         }
         // sets the project package name to the first argument
         else if (args[CMD_OFFSET].equals("package")) {
             packageName = args[CMD_OFFSET + 1];
             activityCode.setPackageName(packageName);
-            androidManifestGenerator.setPackageName(packageName);
+//            androidManifestGenerator.setPackageName(packageName);
             print("package name set to " + packageName);
         }
 
         // adds the current file to the project
         else if (args[CMD_OFFSET].equals("addfile")) {
             addFile();
-            androidManifestGenerator.addActivity(activityCode.getClassName());
+//            androidManifestGenerator.addActivity(activityCode.getClassName());
+            classFiles.add(activityCode.getClassName());
             print("File added to project");
         }
         // sets the current class name to the first argument
@@ -378,11 +384,13 @@ public class CommandLineObject {
                 String.format("%s\\%s", path, projectName),
                 mainActivity,
                 packageName);
+        System.out.println(command);
         try {
             Process child = Runtime.getRuntime().exec(command);
             child.waitFor();
             child.destroy();
         } catch (Exception e) {
+            System.out.print(e);
             e.printStackTrace();
         }
     }
@@ -390,11 +398,15 @@ public class CommandLineObject {
     private static void buildProject() {
         String commandTemplate = "cmd /C ant debug -f %s\\%s\\build.xml";
         String command = String.format(commandTemplate, path, projectName);
+        System.out.println(command);
         try {
             Process child = Runtime.getRuntime().exec(command);
-//            child.waitFor();
+            child.getInputStream().close();
+            child.getOutputStream().close();
+            child.waitFor();
 //            child.destroy();
         } catch (Exception e) {
+            System.out.print(e);
             e.printStackTrace();
         }
     }
@@ -423,6 +435,15 @@ public class CommandLineObject {
     }
 
     private static void writeManifest() {
+        androidManifestGenerator = new AndroidManifestGenerator();
+        androidManifestGenerator.setApplicationName(projectName);
+        androidManifestGenerator.setMainActivityName(mainActivity);
+        androidManifestGenerator.addActivity(mainActivity);
+        androidManifestGenerator.setPackageName(packageName);
+        androidManifestGenerator.addActivity(activityCode.getClassName());
+        for (String s : classFiles)
+            androidManifestGenerator.addActivity(s);
+        androidManifestGenerator.setPermissionManifestObject(permissionManifestObject);
 
         String pathTemplate = "%s\\%s\\AndroidManifest.xml";
         File f = new File(String.format(pathTemplate, path, projectName));
@@ -438,6 +459,21 @@ public class CommandLineObject {
             Process child = Runtime.getRuntime().exec(command);
             child.waitFor();
             child.destroy();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void buildAndInstall() {
+        String commandTemplate = "cmd /C ant debug install -f %s\\%s\\build.xml";
+        String command = String.format(commandTemplate, path, projectName);
+        System.out.println(command);
+        try {
+            Process child = Runtime.getRuntime().exec(command);
+            child.getInputStream().close();
+            child.getOutputStream().close();
+            child.waitFor();
+//            child.destroy();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -510,31 +546,6 @@ public class CommandLineObject {
         catch (IOException e) {
             print("Activity reset was unsuccessful");
         }
-    }
-
-    private static void newObject(String[] args) {
-        // set default object name in case it's not specified
-        String name = activityCode.getDefaultObjectName();
-        // initialize these to null, ButtonActivityObject should take care of null inputs
-        String text = null;
-        String height = null;
-        String width = null;
-
-        for (int i = (CMD_OFFSET + 1); i < args.length; i++) {
-            if (args[i].equals("-name")) {
-                name = args[i+1];
-            }
-            else if (args[i].equals("-text")) {
-                text = args[i+1];
-            }
-            else if (args[i].equals("-height"))
-                height = args[i+1];
-            else if (args[i].equals("-width"))
-                width = args[i+1];
-        }
-        activityCode.addActivityObject(new ButtonActivityObject(name, text, height, width, null));
-        activityCode.setImportFlag(Imports.ImportType.BUTTON, true);
-        print("button \"" + name + "\" added: ");
     }
 
     private static void print(String s) {
@@ -663,15 +674,10 @@ public class CommandLineObject {
 
     public void addDefaultFunctions() {
         List<Parameter> params = new ArrayList<Parameter>();
-        params.add(new Parameter("int", "a"));
-        params.add(new Parameter("int", "b"));
-
-        activityCode.addCustomFunction(new CustomFunction("addition", "return a + b;", "int", params));
-        activityCode.addCustomFunction(new CustomFunction("subtraction", "return a - b;", "int", params));
-
-        params = new ArrayList<Parameter>();
         params.add(new Parameter("double", "a"));
         params.add(new Parameter("double", "b"));
+        activityCode.addCustomFunction(new CustomFunction("addition", "return a + b;", "double", params));
+        activityCode.addCustomFunction(new CustomFunction("subtraction", "return a - b;", "double", params));
         activityCode.addCustomFunction(new CustomFunction("multiplication", "return a * b;", "double", params));
         activityCode.addCustomFunction(new CustomFunction("division", "return a / b;", "double", params));
         addSmsFunction();
