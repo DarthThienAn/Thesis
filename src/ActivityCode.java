@@ -98,6 +98,10 @@ public class ActivityCode {
         return imports.toString();
     }
 
+    public String printFunctions() {
+        return customFunctions.toString();
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -152,7 +156,7 @@ public class ActivityCode {
     }
 
     public String getDefaultObjectName() {
-        return "object" + (activityObjects.size() + 1);
+        return "widget" + (activityObjects.size() + 1);
     }
 
     public void setImportFlag(Imports.ImportType type, boolean value) {

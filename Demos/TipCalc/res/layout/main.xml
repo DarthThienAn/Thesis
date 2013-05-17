@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:padding="8dp"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent">
+    <EditText
+            android:id="@+id/pretip"
+            android:hint="Enter pre-tip amount here"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+    <TextView
+            android:id="@+id/tip"
+            android:text="Tip: 0.0"
+            android:textSize="18sp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+    <TextView
+            android:id="@+id/total"
+            android:text="Total: 0.0"
+            android:textSize="18sp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+    <Button
+            android:id="@+id/button10"
+            android:text="10%"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+    <Button
+            android:id="@+id/button15"
+            android:text="15%"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+    <Button
+            android:id="@+id/button20"
+            android:text="20%"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+</LinearLayout>
+

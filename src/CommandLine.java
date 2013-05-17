@@ -68,6 +68,10 @@ public class CommandLine {
         else if (args[CMD_OFFSET].equals("debugimports")) {
             print(activityCode.printImports());
         }
+        // prints out the current functions
+        else if (args[CMD_OFFSET].equals("debugfunctions")) {
+            print(activityCode.printFunctions());
+        }
         // prints out the project's manifest *not exact
         else if (args[CMD_OFFSET].equals("debugmanifest")) {
 //            writeManifest();
@@ -108,11 +112,11 @@ public class CommandLine {
             if (args[CMD_OFFSET + 1].equals("path"))
                 print("Usage: path <path name>");
             else if (args[CMD_OFFSET + 1].equals("name"))
-                print("Usage: name <project name>");
-            else if (args[CMD_OFFSET + 1].equals("main"))
-                print("Usage: main <class name>");
-            else if (args[CMD_OFFSET + 1].equals("package"))
-                print("Usage: package <package name>");
+                print("Usage: projectname <project name>");
+            else if (args[CMD_OFFSET + 1].equals("mainclass"))
+                print("Usage: mainclass <class name>");
+            else if (args[CMD_OFFSET + 1].equals("packagename"))
+                print("Usage: packagename <package name>");
             else if (args[CMD_OFFSET + 1].equals("button"))
                 print("Usage: button [-text this is a button] [-name myButton] [-action 0,1] <package name>");
         }
@@ -145,7 +149,7 @@ public class CommandLine {
             print("Main activity set to " + mainActivity);
         }
         // sets the project package name to the first argument
-        else if (args[CMD_OFFSET].equals("package")) {
+        else if (args[CMD_OFFSET].equals("packagename")) {
             packageName = args[CMD_OFFSET + 1];
             activityCode.setPackageName(packageName);
             androidManifestGenerator.setPackageName(packageName);

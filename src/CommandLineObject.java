@@ -89,6 +89,10 @@ public class CommandLineObject {
         }
         // prints out the current import string
         else if (args[CMD_OFFSET].equals("debugimports")) {
+            print(activityCode.printFunctions());
+        }
+        // prints out the current functions
+        else if (args[CMD_OFFSET].equals("debugfunctions")) {
             print(activityCode.printImports());
         }
         // prints out the project's manifest *not exact
@@ -131,16 +135,21 @@ public class CommandLineObject {
             permissionManifestObject = new PermissionManifestObject();
             commandList = new StringBuilder();
             classFiles = new ArrayList<String>();
+            path = DefaultConstants.DEFAULT_DIR_PATH;
+            projectName = DefaultConstants.DEFAULT_PROJECT_NAME;
+            mainActivity = DefaultConstants.DEFAULT_MAIN_ACTIVITY;
+            packageName = DefaultConstants.DEFAULT_PACKAGE_NAME;
+            addDefaultFunctions();
         }
         else if (args[CMD_OFFSET].equals("help")) {
             if (args[CMD_OFFSET + 1].equals("path"))
                 print("Usage: path <path name>");
-            else if (args[CMD_OFFSET + 1].equals("name"))
+            else if (args[CMD_OFFSET + 1].equals("projectname"))
                 print("Usage: name <project name>");
-            else if (args[CMD_OFFSET + 1].equals("main"))
+            else if (args[CMD_OFFSET + 1].equals("mainclass"))
                 print("Usage: main <class name>");
-            else if (args[CMD_OFFSET + 1].equals("package"))
-                print("Usage: package <package name>");
+            else if (args[CMD_OFFSET + 1].equals("packagename"))
+                print("Usage: packagename <package name>");
             else if (args[CMD_OFFSET + 1].equals("button"))
                 print("Usage: button [-text this is a button] [-name myButton] [-action 0,1] <package name>");
         }
@@ -163,19 +172,19 @@ public class CommandLineObject {
             print("Home directory updated to " + path);
         }
         // sets the project name to the first argument
-        else if (args[CMD_OFFSET].equals("name")) {
+        else if (args[CMD_OFFSET].equals("projectname")) {
             projectName = args[CMD_OFFSET + 1];
 //            androidManifestGenerator.setApplicationName(projectName);
             print("Project name updated to " + projectName);
         }
         // sets the project main activity to the first argument
-        else if (args[CMD_OFFSET].equals("main")) {
+        else if (args[CMD_OFFSET].equals("mainclass")) {
             mainActivity = args[CMD_OFFSET + 1];
 //            androidManifestGenerator.setMainActivityName(mainActivity);
             print("Main activity set to " + mainActivity);
         }
         // sets the project package name to the first argument
-        else if (args[CMD_OFFSET].equals("package")) {
+        else if (args[CMD_OFFSET].equals("packagename")) {
             packageName = args[CMD_OFFSET + 1];
             activityCode.setPackageName(packageName);
 //            androidManifestGenerator.setPackageName(packageName);
@@ -672,7 +681,7 @@ public class CommandLineObject {
         return activityCode.getActivityObjects();
     }
 
-    public void addDefaultFunctions() {
+    public static void addDefaultFunctions() {
         List<Parameter> params = new ArrayList<Parameter>();
         params.add(new Parameter("double", "a"));
         params.add(new Parameter("double", "b"));
@@ -683,7 +692,7 @@ public class CommandLineObject {
         addSmsFunction();
     }
 
-    public void addSmsFunction() {
+    public static void addSmsFunction() {
         List<Parameter> params = new ArrayList<Parameter>();
         params.add(new Parameter("String", "number"));
         params.add(new Parameter("String", "text"));

@@ -24,7 +24,7 @@ public class SwingAppFrame extends JFrame {
     private static final int PARAMETERS_HEIGHT = 600;
     private static final int HIERARCHY_WIDTH = 220;
     private static final int HIERARCHY_HEIGHT = 600;
-    private static final int PREVIEW_WIDTH = 350;
+    private static final int PREVIEW_WIDTH = 390;
     private static final int PREVIEW_HEIGHT = 400;
     private static final int WINDOW_WIDTH = 200;
     private static final int WINDOW_HEIGHT = 400;
@@ -34,17 +34,19 @@ public class SwingAppFrame extends JFrame {
 
     private static final String[] FUNCTION_HELP = { "addition(100, 20)", "subtraction(100, 20)", "multiplication(2.5, 1.0)", "division(10.0, 4.0)" };
 
-    private static final String[] BUTTON_PARAMETERS = {"Name: ", "Text: ", "Height: ", "Width: ", "Action: "};
-    private static final String[] TEXTVIEW_PARAMETERS = {"Name: ", "Text: ", "Height: ", "Width: "};
-    private static final String[] EDITTEXT_PARAMETERS = {"Name: ", "Text: ", "Height: ", "Width: ", "Hint: "};
-    private static final String[] CONTACTS_PARAMETERS = {"Name: ", "Height: ", "Width: ", "HasName: ", "HasNumber: ", "Divider: ", "Action: "};
-    private static final String[] CUSTOMFUNCTION_PARAMETERS = {"Name: ", "ReturnType: ", "Parameters: ", "Body: "};
+    private static final String[] TEXTVIEW_PARAMETERS = {"Widget Name: ", "Display Text: ", "Height: ", "Width: "};
+    private static final String[] EDITTEXT_PARAMETERS = {"Widget Name: ", "Default Text: ", "Height: ", "Width: ", "Hint: "};
+    private static final String[] BUTTON_PARAMETERS = {"Widget Name: ", "Display Text: ", "Height: ", "Width: ", "Action: "};
+    private static final String[] CONTACTS_PARAMETERS = {"Widget Name: ", "Height: ", "Width: ", "HasName: ", "HasNumber: ", "Divider: ", "Action: "};
+    private static final String[] CUSTOMFUNCTION_PARAMETERS = {"Function Name: ", "ReturnType: ", "Parameters: ", "Body: "};
+    private static final String[] CUSTOMIMPORT_PARAMETERS = {"Import Package: "};
 
-    private static final int BUTTON_TYPE = 0;
-    private static final int TEXTVIEW_TYPE = 1;
-    private static final int EDITTEXT_TYPE = 2;
+    private static final int TEXTVIEW_TYPE = 0;
+    private static final int EDITTEXT_TYPE = 1;
+    private static final int BUTTON_TYPE = 2;
     private static final int CONTACTS_TYPE = 3;
     private static final int CUSTOMFUNCTION_TYPE = 4;
+    private static final int CUSTOMIMPORT_TYPE = 5;
 
     private JPanel optionsPane, functionsPane, parametersPane, hierarchyPane, previewPane, componentsPane;
     private ArrayList<JTextField> headerFields;
@@ -245,6 +247,7 @@ public class SwingAppFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 updateGlobalProjectProperties();
+                cmd.parseCmd("create");
                 cmd.parseCmd("run");
             }
         });
@@ -264,23 +267,23 @@ public class SwingAppFrame extends JFrame {
         mainSpringLayout.putConstraint(SpringLayout.WEST, componentsPane, 5, SpringLayout.WEST, mainContentPane);
 
         optionsPane = generatePanel(getOptionsList());
-        functionsPane = generatePanel(getFunctionsList());
         parametersPane = generatePanel(getParametersList());
+        functionsPane = generatePanel(getFunctionsList());
         hierarchyPane = generatePanel(getHierarchyList());
         previewPane = generatePanel(getPreviewList());
 
 //        optionsPane.setAlignmentY(Component.TOP_ALIGNMENT);
         optionsPane.setPreferredSize(new Dimension(OPTIONS_WIDTH, OPTIONS_HEIGHT));
-        functionsPane.setPreferredSize(new Dimension(FUNCTIONS_WIDTH, FUNCTIONS_HEIGHT));
         parametersPane.setPreferredSize(new Dimension(PARAMETERS_WIDTH, PARAMETERS_HEIGHT));
+        functionsPane.setPreferredSize(new Dimension(FUNCTIONS_WIDTH, FUNCTIONS_HEIGHT));
         hierarchyPane.setPreferredSize(new Dimension(HIERARCHY_WIDTH, HIERARCHY_HEIGHT));
         previewPane.setPreferredSize(new Dimension(PREVIEW_WIDTH, PREVIEW_HEIGHT));
 
         componentsPane.add(optionsPane);
         componentsPane.add(Box.createRigidArea(new Dimension(10, 0)));
-        componentsPane.add(functionsPane);
-        componentsPane.add(Box.createRigidArea(new Dimension(10, 0)));
         componentsPane.add(parametersPane);
+        componentsPane.add(Box.createRigidArea(new Dimension(10, 0)));
+        componentsPane.add(functionsPane);
         componentsPane.add(Box.createRigidArea(new Dimension(10, 0)));
         componentsPane.add(hierarchyPane);
         componentsPane.add(Box.createRigidArea(new Dimension(10, 0)));
@@ -326,7 +329,7 @@ public class SwingAppFrame extends JFrame {
 
         JLabel title = new JLabel("Options");
 
-        String[] labels = {"Add Button", "Add TextView", "Add EditText", "Add Contacts List", "Create a Custom Function"};
+        String[] labels = {"Create TextView", "Create EditText", "Create Button", "Create Contacts List", "Create Custom Function", "Create Custom Import"};
         final JList<String> list = new JList<String>(labels); // Create the list
 //        list.setSelectedIndex(0); // Set initial state
 
@@ -431,7 +434,7 @@ public class SwingAppFrame extends JFrame {
 
     private ArrayList<JComponent> getParametersList() {
         ArrayList<JComponent> componentList = new ArrayList<JComponent>();
-        JLabel title = new JLabel("Parameters");
+        JLabel title = new JLabel("Properties");
         final JPanel parameters = generateParameterPanel(currentType);
 
         JButton addButton = new JButton("Add");
@@ -613,20 +616,23 @@ public class SwingAppFrame extends JFrame {
     private static JPanel generateParameterPanel(int type) {
         String[] labels;
         switch (type) {
-            case BUTTON_TYPE:
-                labels = BUTTON_PARAMETERS;
-                break;
             case TEXTVIEW_TYPE:
                 labels = TEXTVIEW_PARAMETERS;
                 break;
             case EDITTEXT_TYPE:
                 labels = EDITTEXT_PARAMETERS;
                 break;
+            case BUTTON_TYPE:
+                labels = BUTTON_PARAMETERS;
+                break;
             case CONTACTS_TYPE:
                 labels = CONTACTS_PARAMETERS;
                 break;
             case CUSTOMFUNCTION_TYPE:
                 labels = CUSTOMFUNCTION_PARAMETERS;
+                break;
+            case CUSTOMIMPORT_TYPE:
+                labels = CUSTOMIMPORT_PARAMETERS;
                 break;
             default:
                 return null;
@@ -673,9 +679,10 @@ public class SwingAppFrame extends JFrame {
             height = ((JTextField) parameters.getComponent(5)).getText().trim();
             width = ((JTextField) parameters.getComponent(7)).getText().trim();
         } catch (ClassCastException ignored) {}
+        catch (ArrayIndexOutOfBoundsException ignored) {}
 
         // auto-generate name if not specified
-        if (StringHelper.isNullorEmpty(name))
+        if (StringHelper.isNullorEmpty(name) && (type != CUSTOMIMPORT_TYPE))
             name = cmd.getNextDefaultObjectName();
 
         switch (type) {
@@ -739,9 +746,9 @@ public class SwingAppFrame extends JFrame {
                     sb.append("-height ").append(height).append(" ");
                 if (!StringHelper.isNullorEmpty(width))
                     sb.append("-width ").append(width).append(" ");
-                if (!StringHelper.isNullorEmpty(hasName))
+                if (!StringHelper.isNullorEmpty(hasName) && hasName.trim().equals("1"))
                     sb.append("-hasName ").append("1 ");
-                if (!StringHelper.isNullorEmpty(hasNumber))
+                if (!StringHelper.isNullorEmpty(hasNumber) && hasNumber.trim().equals("1"))
                     sb.append("-hasNumber ").append("1 ");
                 if (!StringHelper.isNullorEmpty(divider))
                     sb.append("-divider ").append(divider);
@@ -770,6 +777,17 @@ public class SwingAppFrame extends JFrame {
                 refreshPreviewPane();
                 refreshParametersPane();
                 break;
+            case CUSTOMIMPORT_TYPE:
+                object = null;
+                sb = new StringBuilder("customimport ");
+                if (!StringHelper.isNullorEmpty(name))
+                    sb.append(name);
+                else return null;
+                cmd.parseCmd(sb.toString());
+                refreshFunctionsPane();
+                refreshPreviewPane();
+                refreshParametersPane();
+                break;
             default:
                 return null;
         }
@@ -780,19 +798,19 @@ public class SwingAppFrame extends JFrame {
 
     // refreshOptionsPane not necessarily since it never changes
 
-    private void refreshFunctionsPane() {
-        componentsPane.remove(functionsPane);
-        functionsPane = generatePanel(getFunctionsList());
-        functionsPane.setPreferredSize(new Dimension(FUNCTIONS_WIDTH, FUNCTIONS_HEIGHT));
-        componentsPane.add(functionsPane, 2);
-        componentsPane.revalidate();
-    }
-
     private void refreshParametersPane() {
         componentsPane.remove(parametersPane);
         parametersPane = generatePanel(getParametersList());
         parametersPane.setPreferredSize(new Dimension(PARAMETERS_WIDTH, PARAMETERS_HEIGHT));
-        componentsPane.add(parametersPane, 4);
+        componentsPane.add(parametersPane, 2);
+        componentsPane.revalidate();
+    }
+
+    private void refreshFunctionsPane() {
+        componentsPane.remove(functionsPane);
+        functionsPane = generatePanel(getFunctionsList());
+        functionsPane.setPreferredSize(new Dimension(FUNCTIONS_WIDTH, FUNCTIONS_HEIGHT));
+        componentsPane.add(functionsPane, 4);
         componentsPane.revalidate();
     }
 
@@ -820,10 +838,10 @@ public class SwingAppFrame extends JFrame {
     }
 
     private void updateGlobalProjectProperties() {
-        cmd.parseCmd("name " + headerFields.get(0).getText());
-        cmd.parseCmd("package " + headerFields.get(1).getText());
+        cmd.parseCmd("projectname " + headerFields.get(0).getText());
+        cmd.parseCmd("packagename " + headerFields.get(1).getText());
         cmd.parseCmd("path " + headerFields.get(2).getText());
-        cmd.parseCmd("main " + headerFields.get(3).getText());
+        cmd.parseCmd("mainclass " + headerFields.get(3).getText());
         cmd.parseCmd("classname " + classNameField.getText());
     }
 
